@@ -1,200 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>India Explorer</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
-
-<style>
-body{
-    margin:0;
-    font-family: "Segoe UI", sans-serif;
-    background:#0f172a;
-    color:white;
-}
-
-/* Layout */
-.container{
-    display:flex;
-    height:100vh;
-}
-
-/* Map */
-#map{
-    flex:2;
-}
-
-/* Panel */
-.panel{
-    flex:1;
-    padding:20px;
-    display:none;
-    flex-direction:column;
-    background:#111827;
-    border-left:1px solid #1f2937;
-}
-
-/* Title */
-.panel h2{
-    color:#38bdf8;
-    margin-bottom:10px;
-}
-
-/* Description */
-.panel p{
-    color:#cbd5e1;
-}
-
-/* Buttons */
-.btn{
-    padding:12px;
-    margin-top:12px;
-    border-radius:10px;
-    text-align:center;
-    cursor:pointer;
-
-    background:#1e293b;
-    border:1px solid #334155;
-
-    transition:0.2s;
-}
-
-.btn:hover{
-    background:#38bdf8;
-    color:#000;
-}
-
-/* Image */
-.img-box{
-    margin-top:20px;
-}
-
-.img-box img{
-    width:100%;
-    height:220px;
-    object-fit:cover;
-    border-radius:12px;
-}
-
-/* Scroll fix */
-.panel{
-    overflow-y:auto;
-}
-</style>
+  <meta charset="UTF-8" />
+  <title>India Food Map</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
-
 <body>
 
 <div class="container">
 
-    <!-- MAP -->
-    <div id="map"></div>
+  <!-- LEFT MAP -->
+  <div id="map"></div>
 
-    <!-- PANEL -->
-    <div id="panel" class="panel">
-        <h2 id="title">STATE</h2>
-        <p id="desc">Click a state</p>
-
-        <div class="btn" onclick="showData('tradition')">Tradition</div>
-        <div class="btn" onclick="showData('culture')">Culture</div>
-        <div class="btn" onclick="showData('food')">Food</div>
-
-        <div class="img-box">
-            <img id="img" src="">
-        </div>
+  <!-- RIGHT PANEL -->
+  <div id="panel" class="panel">
+    <div class="overlay"></div>
+    <div class="content">
+      <h1 id="stateName"></h1>
+      <p id="foodName"></p>
     </div>
+  </div>
 
 </div>
 
-<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-
-<script>
-var map = L.map('map').setView([22.5, 78.9], 5);
-
-let selectedState = "";
-
-// DATA
-const stateData = {
-    "Karnataka": {
-        tradition:{
-            text:"Yakshagana, classical music and temple festivals.",
-            image:"images/karnataka_tradition.jpg"
-        },
-        culture:{
-            text:"Vijayanagara empire heritage, Hampi architecture.",
-            image:"images/karnataka_culture.jpg"
-        },
-        food:{
-            text:"Bisi Bele Bath, Mysore Pak.",
-            image:"images/karnataka_food.jpg"
-        }
-    }
-};
-
-fetch('in.json')
-.then(res => res.json())
-.then(data => {
-
-    var geoLayer = L.geoJSON(data, {
-
-        style:{
-            color:"#334155",
-            weight:1,
-            fillColor:"#f1f5f9",
-            fillOpacity:1
-        },
-
-        onEachFeature:function(feature, layer){
-
-            layer.on('mouseover', function(e){
-                e.target.setStyle({fillColor:"#bae6fd"});
-            });
-
-            layer.on('mouseout', function(e){
-                geoLayer.resetStyle(e.target);
-            });
-
-            layer.on('click', function(){
-
-                selectedState = feature.properties.st_nm;
-
-                document.getElementById("panel").style.display = "flex";
-                document.getElementById("title").innerText = selectedState;
-                document.getElementById("desc").innerText =
-                "Explore " + selectedState;
-
-                document.getElementById("img").src = "";
-
-                setTimeout(()=>{
-                    map.invalidateSize();
-                    map.fitBounds(layer.getBounds());
-                },120);
-            });
-        }
-
-    }).addTo(map);
-
-    map.fitBounds(geoLayer.getBounds());
-});
-
-function showData(type){
-
-    let data = stateData[selectedState];
-
-    if(!data){
-        document.getElementById("desc").innerText =
-        "No data for " + selectedState;
-        return;
-    }
-
-    let info = data[type];
-
-    document.getElementById("desc").innerText = info.text;
-    document.getElementById("img").src = info.image;
-}
-</script>
+<script src="script.js"></script>
+<script src="states/karnataka.js"></script>
+<script src="states/tamilnadu.js"></script>
 
 </body>
 </html>
