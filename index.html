@@ -12,6 +12,8 @@ body {
   margin: 0;
   font-family: sans-serif;
   overflow: hidden;
+  display: flex;
+  height: 100vh;
 }
 
 /* 🌍 GLOBE BACKGROUND */
@@ -27,29 +29,21 @@ body {
 
 /* MAP */
 #map {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  flex: 1;
   z-index: 0;
   display: none;
 }
 
 /* RIGHT PANEL */
 #panel {
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 350px;
-  height: 100vh;
-  background: rgba(0,0,0,0.6);
+  flex: 0 0 30%;
+  background: rgba(0,0,0,0.8);
   backdrop-filter: blur(20px);
   color: white;
-  transform: translateX(100%);
-  transition: 0.5s ease;
   z-index: 100;
   display: none;
+  flex-direction: column;
+  overflow-y: auto;
 }
 
 #panel.active {
@@ -80,7 +74,7 @@ body {
   color: white;
   padding: 10px;
   cursor: pointer;
-  z-index: 10;
+  z-index: 1001;
 }
 </style>
 </head>
@@ -151,6 +145,8 @@ setTimeout(() => {
 
 let map;
 let geoLayer;
+let selectedStateLayer = null;
+let dimmingLayer = null;
 
 function showIndiaMap(){
   document.getElementById('globeContainer').style.display = 'none';
@@ -159,12 +155,18 @@ function showIndiaMap(){
   if(!map){
     map = L.map('map', {
       zoomControl: true,
-      attributionControl: false
+      attributionControl: false,
+      minZoom: 4,
+      maxZoom: 9
     }).setView([22.9734, 78.6569], 5);
 
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      maxZoom: 19
+    // Satellite imagery layer (Esri)
+    L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+      maxZoom: 18
     }).addTo(map);
+
+    // Lock map to India bounds only
+    map.setMaxBounds([[5, 55], [38, 105]]);
 
     loadIndiaStates();
   }
@@ -175,6 +177,12 @@ function loadIndiaStates(){
     .then(res => res.json())
     .then(data => {
       geoLayer = L.geoJSON(data, {
+        filter: feature => {
+          const p = feature.properties || {};
+          const hasState = p.st_nm || p.state || p.STATE || p.ST_NM;
+          const hasDistrict = p.district || p.DISTRICT || p.dist_name || p.DISTRICT_NAME;
+          return Boolean(hasState) && !Boolean(hasDistrict);
+        },
         style: {
           color: '#3b82f6',
           weight: 2,
@@ -184,19 +192,51 @@ function loadIndiaStates(){
         onEachFeature: (feature, layer) => {
           layer.on('click', () => {
             const state = feature.properties.st_nm || feature.properties.name;
-            showStatePanel(state);
+            
+            // Reset previous selection
+            if(selectedStateLayer){
+              selectedStateLayer.setStyle({
+                color: '#3b82f6',
+                weight: 2,
+                fillColor: 'transparent',
+                fillOpacity: 0
+              });
+            }
+            
+            // Highlight new selection
+            layer.setStyle({
+              color: '#3b82f6',
+              weight: 3,
+              fillColor: '#3b82f6',
+              fillOpacity: 0.15
+            });
+            selectedStateLayer = layer;
+            
+            showStatePanel(state, layer);
           });
         }
       }).addTo(map);
+
+      // Bring state borders above dimming overlay
+      geoLayer.bringToFront();
     })
     .catch(err => console.error('Failed to load in.json', err));
 }
 
-function showStatePanel(state){
-  document.getElementById('panel').style.display = 'block';
+function showStatePanel(state, stateLayer){
+  document.getElementById('panel').style.display = 'flex';
   document.getElementById('panel').classList.add('active');
   document.getElementById('title').innerText = state;
   document.getElementById('desc').innerText = 'State: ' + state;
+  
+  // Recalculate map size after panel appears
+  setTimeout(() => {
+    map.invalidateSize();
+    // Center map on clicked state within the 70% map area
+    if(stateLayer && stateLayer.getBounds){
+      map.fitBounds(stateLayer.getBounds(), { padding: [50, 50] });
+    }
+  }, 0);
 }
 
 </script>
