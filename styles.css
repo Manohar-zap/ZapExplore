@@ -1,0 +1,117 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Segoe UI", sans-serif;
+}
+
+body{
+    background:#0f172a;
+    color:white;
+}
+
+/* MAP FULL */
+#map{
+    width:100%;
+    height:100vh;
+}
+
+#globeContainer{
+    position:absolute;
+    inset:0;
+    z-index:2000;
+    display:none;
+    background:#000;
+}
+
+/* TOGGLE */
+.toggle{
+    position:absolute;
+    top:20px;
+    left:20px;
+    z-index:1000;
+    padding:10px 15px;
+    background:#1e293b;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+/* PANEL */
+#panel{
+    position:absolute;
+    top:0;
+    right:0;
+    width:380px;
+    height:100%;
+
+    display:none;
+    flex-direction:column;
+    padding:20px;
+
+    transform:translateX(100%);
+    transition:0.4s ease;
+
+    background:rgba(15,23,42,0.95);
+    backdrop-filter:blur(10px);
+
+    z-index:1000;
+}
+
+#panel.active {
+    display:flex;
+}
+
+/* ACTIVE */
+#panel.active{
+    transform:translateX(0);
+}
+
+/* BG IMAGE */
+.panel-bg{
+    position:absolute;
+    inset:0;
+    background-size:cover;
+    background-position:center;
+    filter:blur(20px);
+    transform:scale(1.2);
+    z-index:0;
+}
+
+/* OVERLAY */
+.overlay{
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,0.6);
+    z-index:1;
+}
+
+/* CONTENT */
+.panel-content{
+    position:relative;
+    z-index:2;
+}
+
+/* BUTTON */
+.btn{
+    padding:12px;
+    margin-top:12px;
+    border-radius:12px;
+    text-align:center;
+    cursor:pointer;
+    background:#334155;
+    transition:0.2s;
+}
+
+.btn:hover{
+    background:#3b82f6;
+}
+
+/* IMAGE */
+.img-box img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+    border-radius:12px;
+    margin-top:20px;
+}
+
