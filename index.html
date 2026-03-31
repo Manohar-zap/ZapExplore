@@ -8,73 +8,255 @@
 <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
 
 <style>
+/* =========================
+   🌍 GLOBAL STYLES
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
 body {
-  margin: 0;
-  font-family: sans-serif;
-  overflow: hidden;
-  display: flex;
-  height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    display: flex;
+    height: 100vh;
+    background: #0f172a; /* Dark sleek background */
+    color: white;
 }
 
-/* 🌍 GLOBE BACKGROUND */
+/* =========================
+   🌍 GLOBE BACKGROUND
+========================= */
 #globeContainer {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-  display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: block;
+    background: #000;
 }
 
-/* MAP */
+/* =========================
+   🗺️ MAP STYLES (Satellite with subtle dark overlay)
+========================= */
 #map {
-  flex: 1;
-  z-index: 0;
-  display: none;
+    flex: 1;
+    z-index: 0;
+    display: none;
+    width: 100%;
+    height: 100vh;
+    filter: brightness(0.9); /* Subtly darken the map */
 }
 
-/* RIGHT PANEL */
+/* =========================
+   📱 RIGHT PANEL (UPGRADED GLASSMORPHISM)
+========================= */
 #panel {
-  flex: 0 0 30%;
-  background: rgba(0,0,0,0.8);
-  backdrop-filter: blur(20px);
-  color: white;
-  z-index: 100;
-  display: none;
-  flex-direction: column;
-  overflow-y: auto;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: min(420px, 90vw);
+    height: 100%;
+    display: none;
+    flex-direction: column;
+    z-index: 1000;
+    overflow: hidden;
+    
+    /* Smooth transition for opening/closing */
+    transform: translateX(100%);
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+    /* ✨ Glassmorphism Effect ✨ */
+    backdrop-filter: blur(20px);
+    background: rgba(15, 23, 42, 0.75); /* Dark translucent navy */
+    
+    /* Modern shadow and border */
+    border-left: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: -15px 0 50px rgba(0, 0, 0, 0.6);
 }
 
+/* Active class to slide panel in */
 #panel.active {
-  transform: translateX(0);
+    display: flex;
+    transform: translateX(0);
 }
 
-.panel-content {
-  padding: 20px;
+/* Close Button (✕) */
+.close-btn {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    font-size: 24px;
+    color: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    transition: 0.3s ease;
+    z-index: 10;
 }
 
+.close-btn:hover {
+    color: white;
+    transform: scale(1.1);
+}
+
+/* Header (Title) */
+.panel-header {
+    padding: 40px 30px 10px 30px;
+    position: relative;
+}
+
+#title {
+    font-size: 32px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    
+    /* ✨ Gradient Text ✨ */
+    background: linear-gradient(90deg, #ffffff, #38bdf8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 20px;
+}
+
+/* =========================
+   🔘 TAB BUTTONS
+========================= */
+.tabs-container {
+    display: flex;
+    gap: 10px;
+    padding: 0 30px;
+    margin-bottom: 25px;
+}
+
+/* Main button style */
 .btn {
-  margin: 10px 0;
-  padding: 10px;
-  background: #ffffff22;
-  cursor: pointer;
+    flex: 1;
+    padding: 12px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.05); /* Very faint background */
+    color: #94a3b8; /* Muted text */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Hover effect */
+.btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* ✨ Active Tab Style ✨ */
+.btn.active {
+    background: linear-gradient(135deg, #3b82f6, #2563eb); /* Vibrant blue gradient */
+    color: white;
+    border: none;
+    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.5);
+    font-weight: 800;
+}
+
+/* Shine effect on active button */
+.btn.active::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.6s ease-in-out;
+}
+
+.btn.active:hover::after {
+    left: 100%;
+}
+
+/* =========================
+   📝 CONTENT AREA
+========================= */
+.panel-content {
+    padding: 0 30px;
+    flex: 1;
+    overflow-y: auto;
+}
+
+#desc {
+    color: #cbd5e1; /* Soft gray for readability */
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+/* Image Box */
+.img-box {
+    width: 100%;
+    margin-top: auto; /* Pushes image to bottom */
+    padding: 20px 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(0, 0, 0, 0.2);
 }
 
 .img-box img {
-  width: 100%;
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    display: block;
 }
 
-/* TOGGLE BTN */
+/* Scrollbar styling for content area */
+.panel-content::-webkit-scrollbar {
+    width: 6px;
+}
+
+.panel-content::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.panel-content::-webkit-scrollbar-thumb {
+    background: rgba(56, 189, 248, 0.3);
+    border-radius: 3px;
+}
+
+/* =========================
+   🔘 TOGGLE BTN (Updated Visually)
+========================= */
 .toggle {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  background: black;
-  color: white;
-  padding: 10px;
-  cursor: pointer;
-  z-index: 1001;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 1001;
+    padding: 12px 20px;
+    
+    /* Modern UI style with blur */
+    background: linear-gradient(135deg, rgba(30, 41, 59, 0.9), rgba(51, 65, 85, 0.9));
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease;
+}
+
+.toggle:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.9), rgba(29, 78, 216, 0.9));
+    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
 }
 </style>
 </head>
@@ -83,58 +265,68 @@ body {
 
 <div class="toggle">Route Mode</div>
 
-<!-- 🌍 GLOBE -->
 <div id="globeContainer"></div>
 
-<!-- 🗺️ MAP -->
 <div id="map"></div>
 
 <div id="panel">
-    <div class="panel-content">
+    <div onclick="closePanel()" class="close-btn">✕</div>
+
+    <div class="panel-header">
         <h2 id="title">STATE</h2>
-        <p id="desc">Click a state</p>
+    </div>
 
-        <div class="btn">Tradition</div>
-        <div class="btn">Culture</div>
-        <div class="btn">Food</div>
+    <div class="tabs-container">
+        <div class="btn active" id="tab-tradition">Tradition</div>
+        <div class="btn" id="tab-culture">Culture</div>
+        <div class="btn" id="tab-food">Food</div>
+    </div>
 
-        <div class="img-box">
-            <img id="img" src="">
-        </div>
+    <div class="panel-content">
+        <p id="desc">Click a state to explore</p>
+    </div>
+
+    <div class="img-box">
+        <img id="img" src="" alt="State Info">
     </div>
 </div>
 
-<!-- LIBS -->
 <script src="https://unpkg.com/three@0.152.2/build/three.min.js"></script>
 <script src="https://unpkg.com/globe.gl"></script>
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 
 <script>
+// --- Panel Utility ---
+function closePanel(){
+  const panel = document.getElementById("panel");
+  panel.classList.remove("active");
+  // The CSS transition handles the sliding out animation.
+}
 
 /* =========================
    🌍 GLOBE SETUP
 ========================= */
-
 const globe = Globe()(document.getElementById('globeContainer'))
   .globeImageUrl('https://unpkg.com/three-globe/example/img/earth-blue-marble.jpg')
   .backgroundImageUrl('https://unpkg.com/three-globe/example/img/night-sky.png')
   .onGlobeClick(({ lat, lng }) => {
+    // Check if clicked near India to switch to map
     if(lat >= 6 && lat <= 36 && lng >= 60 && lng <= 100){
       showIndiaMap();
     }
   });
 
-// CONTROLS
+// Globe Controls Configuration
 const controls = globe.controls();
 controls.autoRotate = true;
 controls.autoRotateSpeed = 0.6;
 controls.enableZoom = false;
 controls.enablePan = false;
 
-// START GLOBAL VIEW
+// Initialize Globe View (starts far)
 globe.pointOfView({ lat: 20, lng: 0, altitude: 3 });
 
-// ZOOM TO INDIA
+// Automatic Zoom to India after delay
 setTimeout(() => {
   globe.pointOfView({
     lat: 22.9734,
@@ -143,100 +335,163 @@ setTimeout(() => {
   }, 3000);
 }, 2000);
 
+/* =========================
+   🗺️ MAP SETUP (LEAFLET)
+========================= */
 let map;
 let geoLayer;
 let selectedStateLayer = null;
-let dimmingLayer = null;
 
 function showIndiaMap(){
+  // Switch visibility
   document.getElementById('globeContainer').style.display = 'none';
   document.getElementById('map').style.display = 'block';
 
   if(!map){
+    // Initialize Leaflet Map
     map = L.map('map', {
       zoomControl: true,
       attributionControl: false,
       minZoom: 4,
       maxZoom: 9
-    }).setView([22.9734, 78.6569], 5);
+    }).setView([22.9734, 78.6569], 5); // Center on India
 
-    // Satellite imagery layer (Esri)
+    // Add satellite imagery layer (Esri)
     L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
       maxZoom: 18
     }).addTo(map);
 
-    // Lock map to India bounds only
-    map.setMaxBounds([[5, 55], [38, 105]]);
+    // Lock map bounds to India area
+    map.setMaxBounds([[5, 60], [38, 100]]);
 
     loadIndiaStates();
   }
 }
 
+// --- Load State GeoJSON ---
 function loadIndiaStates(){
-  fetch('in.json')
-    .then(res => res.json())
+  // Load GeoJSON state data (Simplified Filtering)
+  fetch('./in.json')
+    .then(res => {
+      if(!res.ok) throw new Error(`Failed to load GeoJSON: ${res.status}`);
+      return res.json();
+    })
     .then(data => {
       geoLayer = L.geoJSON(data, {
+        // ✨ Simplified Filtering: Show only state borders ✨
         filter: feature => {
           const p = feature.properties || {};
-          const hasState = p.st_nm || p.state || p.STATE || p.ST_NM;
-          const hasDistrict = p.district || p.DISTRICT || p.dist_name || p.DISTRICT_NAME;
+          // Check for common state property names and ensure no district property exists
+          const hasState = p.st_nm || p.state || p.STATE || p.ST_NM || p.name;
+          const hasDistrict = p.district || p.DISTRICT || p.dist_name;
           return Boolean(hasState) && !Boolean(hasDistrict);
         },
+        // Base style for state boundaries
         style: {
-          color: '#3b82f6',
-          weight: 2,
+          color: '#38bdf8', // Light blue borders
+          weight: 1.5,
           fillColor: 'transparent',
           fillOpacity: 0
         },
+        // Interaction when clicking a state
         onEachFeature: (feature, layer) => {
           layer.on('click', () => {
             const state = feature.properties.st_nm || feature.properties.name;
             
-            // Reset previous selection
+            // 1. Reset previous selection style
             if(selectedStateLayer){
               selectedStateLayer.setStyle({
-                color: '#3b82f6',
-                weight: 2,
+                color: '#38bdf8',
+                weight: 1.5,
                 fillColor: 'transparent',
                 fillOpacity: 0
               });
             }
             
-            // Highlight new selection
+            // 2. Highlight new selection (as seen in image 1)
             layer.setStyle({
-              color: '#3b82f6',
-              weight: 3,
-              fillColor: '#3b82f6',
-              fillOpacity: 0.15
+              color: '#ffffff', // White border on select
+              weight: 2,
+              fillColor: '#3b82f6', // Light blue fill
+              fillOpacity: 0.2
             });
             selectedStateLayer = layer;
             
+            // 3. Open the upgraded panel
             showStatePanel(state, layer);
           });
         }
       }).addTo(map);
-
-      // Bring state borders above dimming overlay
-      geoLayer.bringToFront();
     })
-    .catch(err => console.error('Failed to load in.json', err));
+    .catch(err => console.error('Error loading GeoJSON:', err));
 }
 
+// --- Display Upgraded Panel ---
 function showStatePanel(state, stateLayer){
-  document.getElementById('panel').style.display = 'flex';
-  document.getElementById('panel').classList.add('active');
-  document.getElementById('title').innerText = state;
-  document.getElementById('desc').innerText = 'State: ' + state;
+  const panel = document.getElementById('panel');
+  panel.classList.add('active'); // Slide in
+  panel.style.display = 'flex'; // Ensure flexbox layout
   
-  // Recalculate map size after panel appears
+  document.getElementById('title').innerText = state;
+  document.getElementById('desc').innerText = `Loading information for ${state}...`;
+  document.getElementById('img').src = ''; // Clear old image
+  
+  // Reset Tab Buttons: Set "Tradition" as active initially
+  const buttons = document.querySelectorAll('.tabs-container .btn');
+  buttons.forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-tradition').classList.add('active');
+
+  // Fetch state-specific data from 'states' folder
+  fetch(`./states/${state}.json`)
+    .then(res => {
+      if(!res.ok) throw new Error(`State data not found: ${state}`);
+      return res.json();
+    })
+    .then(data => {
+      // Store state data globally
+      window.currentStateData = data;
+      
+      // Display initial category (tradition)
+      displayStateCategory('tradition');
+      
+      // Setup Tab Clicks
+      buttons.forEach((btn, index) => {
+        btn.onclick = (e) => {
+          // 1. Update active button UI
+          buttons.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          
+          // 2. Load relevant content
+          const category = btn.innerText.toLowerCase();
+          displayStateCategory(category);
+        };
+      });
+    })
+    .catch(err => {
+      console.error('State data error:', err);
+      document.getElementById('desc').innerText = 'Information not available for this state.';
+    });
+  
+  // Recalculate map size and zoom to state
   setTimeout(() => {
     map.invalidateSize();
-    // Center map on clicked state within the 70% map area
     if(stateLayer && stateLayer.getBounds){
-      map.fitBounds(stateLayer.getBounds(), { padding: [50, 50] });
+        // Zoom to fit the state with padding
+        map.fitBounds(stateLayer.getBounds(), { padding: [50, 50] });
     }
-  }, 0);
+  }, 100);
+}
+
+// --- Content Switching Logic ---
+function displayStateCategory(category){
+  if(!window.currentStateData || !window.currentStateData[category]){
+    document.getElementById('desc').innerText = 'Information not available for this category.';
+    return;
+  }
+  
+  const data = window.currentStateData[category];
+  document.getElementById('desc').innerText = data.text;
+  document.getElementById('img').src = data.image;
 }
 
 </script>

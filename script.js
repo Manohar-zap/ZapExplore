@@ -19,6 +19,8 @@ let currentData = null;
 let globe;
 let introCompleted = false;
 let introTimers = [];
+let routingControl = null;
+let isRouteMode = false;
 
 // 🔥 START WITH 3D GLOBE TO INDIA ANIMATION
 start3DIntro();
@@ -189,8 +191,6 @@ function openPanel(state){
 
     document.getElementById("title").innerText = state;
     document.getElementById("desc").innerText = "Loading...";
-    document.getElementById("img").src = "";
-
     loadStateData(state);
 }
 
@@ -198,40 +198,90 @@ function openPanel(state){
 // 🔥 LOAD STATE DATA
 function loadStateData(state){
 
-    fetch(`data/${state}.json`)
-    .then(res => res.json())
-    .then(data => {
-
-        currentData = data;
-
-        showData("tradition");
-
+fetch(`./states/${state.replace(/ /g, ' ')}.json`)
+    .then(res => {
+      if(!res.ok) throw new Error(`State data not found: ${state}`);
+      return res.json();
     })
-    .catch(()=>{
-        document.getElementById("desc").innerText = "No data available";
+    .then(data => {
+      // Store state data globally
+      window.currentStateData = data;
+      window.currentStateName = state;
+      
+      // Display default (tradition) info
+      displayStateCategory('tradition');
+      
+      // Add event listeners to buttons
+      const buttons = document.querySelectorAll('.btn');
+      buttons.forEach((btn, index) => {
+        btn.onclick = () => {
+          const categories = ['tradition', 'culture', 'food'];
+          
+          // Remove active class from all buttons
+          buttons.forEach(b => b.classList.remove('active'));
+          // Add active class to clicked button
+          btn.classList.add('active');
+          
+          displayStateCategory(categories[index]);
+        };
+      });
+    })
+    .catch(err => {
+      console.error('Failed to load state data:', err);
+      document.getElementById('desc').innerText = 'Information not available';
     });
 }
 
 
 // 🔥 BUTTON SWITCH
-function showData(type){
+function displayStateCategory(category){
+  if(!window.currentStateData || !window.currentStateData[category]){
+    return;
+  }
+  
+  const data = window.currentStateData[category];
 
-    if(!currentData) return;
+  // TEXT
+  document.getElementById('desc').innerText = data.text;
 
-    let info = currentData[type];
-
-    document.getElementById("desc").innerText = info.text;
-    document.getElementById("img").src = info.image;
-
-    document.getElementById("panelBg").style.backgroundImage =
-        `url(${info.image})`;
+  // 🔥 BACKGROUND IMAGE (MAIN UPGRADE)
+  const panelBg = document.getElementById('panelBg');
+  if(panelBg){
+    panelBg.style.backgroundImage = `url(${data.image})`;
+  }
 }
-
 
 // 🔥 ROUTE MODE (optional)
-function toggleRoute(){
-    alert("Route mode coming soon 🚀");
-}
+function toggleRoute() {
+    isRouteMode = !isRouteMode;
 
+    if (isRouteMode) {
+        // 1. Close the state info panel if it's open
+        document.getElementById("panel").classList.remove("active");
+
+        // 2. Initialize Routing Control
+        // By default, it starts with two empty points (you can drag them!)
+        routingControl = L.Routing.control({
+            waypoints: [
+                L.latLng(28.6139, 77.2090), // Default Start: Delhi
+                L.latLng(19.0760, 72.8777)  // Default End: Mumbai
+            ],
+            lineOptions: {
+                styles: [{ color: '#3b82f6', weight: 6 }] // Blue road line
+            },
+            routeWhileDragging: true,
+            geocoder: L.Control.Geocoder ? L.Control.Geocoder.nominatim() : null, // Optional: add search
+            addWaypoints: true
+        }).addTo(map);
+
+        console.log("Route mode enabled. Drag the markers!");
+    } else {
+        // 3. Cleanup: Remove the routing UI and lines
+        if (routingControl) {
+            map.removeControl(routingControl);
+            routingControl = null;
+        }
+    }
+}
 
 
