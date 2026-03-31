@@ -1,9 +1,9 @@
 // 🌍 INIT MAP (EARTH VIEW)
 var map = L.map('map', {
-    zoomControl:false,
+    zoomControl:true,
     attributionControl:false,
-    scrollWheelZoom:false,
-    dragging:false
+    scrollWheelZoom:true,
+    dragging:true
 }).setView([20, 0], 2);
 
 // 🌍 SATELLITE (NO LABELS)
@@ -25,6 +25,19 @@ let isRouteMode = false;
 // 🔥 START WITH 3D GLOBE TO INDIA ANIMATION
 start3DIntro();
 
+function showIndiaMap() {
+  const globeEl = document.getElementById('globeContainer');
+  const mapEl = document.getElementById('map');
+
+  // Hide the globe completely
+  globeEl.style.display = 'none';
+  // Bring the map to the front
+  mapEl.style.display = 'block';
+  
+  if (!map) {
+    initMap(); // Only initialize if it hasn't been yet
+  }
+}
 function addIntroTimeout(fn, ms){
     const id = setTimeout(fn, ms);
     introTimers.push(id);
@@ -45,47 +58,32 @@ function goToIndiaFromGlobe(){
         globe.controls().autoRotate = false;
     }
 
-    const container = document.getElementById('globeContainer');
-    container.style.display = 'none';
-
     map.flyTo([22.5, 78.9], 5, { duration: 2.2 });
     loadIndiaMap();
+   setTimeout(() => {
+    const el = document.getElementById('globeContainer');
+    el.style.display = 'none';
+    el.innerHTML = '';   // 🔥 IMPORTANT FIX
+}, 2200);
 }
 
-function start3DIntro(){
-    console.log('start3DIntro called');
+function start3DIntro() {
+    globe = Globe()(document.getElementById('globeContainer'))
+        .globeImageUrl('//unpkg.com/three-globe/example/img/earth-blue-marble.jpg')
+        .onGlobeClick(({ lat, lng }) => {
+            // Only jump if clicking near India
+            if(lat >= 6 && lat <= 36 && lng >= 60 && lng <= 100) goToIndia();
+        });
 
-    const container = document.getElementById('globeContainer');
-    container.style.display = 'block';
-    container.innerHTML = '<div style="position:absolute; inset:0;display:flex;align-items:center;justify-content:center;color:white;font-size:18px;z-index:2001;">Globe loading...</div>';
+    // 1. Start the Zoom Animation
+    setTimeout(() => {
+        globe.pointOfView({ lat: 22.9, lng: 78.6, altitude: 1.2 }, 3000);
+    }, 1000);
 
-    if(typeof Globe === 'undefined'){
-        console.error('Globe library not loaded');
-        return;
-    }
-
-    globe = Globe()(container)
-        .globeImageUrl('https://unpkg.com/three-globe/example/img/earth-blue-marble.jpg')
-        .backgroundImageUrl('https://unpkg.com/three-globe/example/img/night-sky.png')
-        .showAtmosphere(true)
-        .animateIn(true)
-        .enablePointerInteraction(false); // intro-only globe, no interaction needed
-
-    globe.controls().autoRotate = true;
-    globe.controls().autoRotateSpeed = 0.2;
-
-    addIntroTimeout(()=>{
-        if(!introCompleted){
-            globe.controls().autoRotate = false;
-            globe.pointOfView({lat:22.5, lng:78.9, altitude:1.8}, 3000);
-        }
-    }, 1200);
-
-    addIntroTimeout(()=>{
-        if(!introCompleted){
-            goToIndiaFromGlobe();
-        }
-    }, 5600);
+    // 2. Switch to Map AFTER the zoom finishes
+    setTimeout(() => {
+        showIndiaMap();
+    }, 4500);
 }
 
 // 🧠 LOAD INDIA GEOJSON
@@ -250,38 +248,3 @@ function displayStateCategory(category){
     panelBg.style.backgroundImage = `url(${data.image})`;
   }
 }
-
-// 🔥 ROUTE MODE (optional)
-function toggleRoute() {
-    isRouteMode = !isRouteMode;
-
-    if (isRouteMode) {
-        // 1. Close the state info panel if it's open
-        document.getElementById("panel").classList.remove("active");
-
-        // 2. Initialize Routing Control
-        // By default, it starts with two empty points (you can drag them!)
-        routingControl = L.Routing.control({
-            waypoints: [
-                L.latLng(28.6139, 77.2090), // Default Start: Delhi
-                L.latLng(19.0760, 72.8777)  // Default End: Mumbai
-            ],
-            lineOptions: {
-                styles: [{ color: '#3b82f6', weight: 6 }] // Blue road line
-            },
-            routeWhileDragging: true,
-            geocoder: L.Control.Geocoder ? L.Control.Geocoder.nominatim() : null, // Optional: add search
-            addWaypoints: true
-        }).addTo(map);
-
-        console.log("Route mode enabled. Drag the markers!");
-    } else {
-        // 3. Cleanup: Remove the routing UI and lines
-        if (routingControl) {
-            map.removeControl(routingControl);
-            routingControl = null;
-        }
-    }
-}
-
-
