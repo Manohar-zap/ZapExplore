@@ -1,0 +1,245 @@
+[
+  {
+    "name": "Badrinath Temple",
+    "state": "Uttarakhand",
+    "lat": 30.7433,
+    "lng": 79.4938,
+    "category": "Char Dham",
+    "best_season": "May-Oct",
+    "description": "Vishnu temple in Himalayas"
+  },
+  {
+    "name": "Dwarkadhish Temple",
+    "state": "Gujarat",
+    "lat": 22.2442,
+    "lng": 68.9685,
+    "category": "Char Dham",
+    "best_season": "Oct-Mar",
+    "description": "Krishna temple in Dwarka"
+  },
+  {
+    "name": "Jagannath Temple",
+    "state": "Odisha",
+    "lat": 19.8047,
+    "lng": 85.8186,
+    "category": "Char Dham",
+    "best_season": "Oct-Feb",
+    "description": "Famous Rath Yatra temple"
+  },
+  {
+    "name": "Ramanathaswamy Temple",
+    "state": "Tamil Nadu",
+    "lat": 9.2881,
+    "lng": 79.3174,
+    "category": "Char Dham",
+    "best_season": "Oct-Apr",
+    "description": "Shiva temple with long corridors"
+  },
+  {
+    "name": "Somnath Temple",
+    "state": "Gujarat",
+    "lat": 20.888,
+    "lng": 70.4012,
+    "category": "Jyotirlinga",
+    "best_season": "Oct-Mar",
+    "description": "First Jyotirlinga"
+  },
+  {
+    "name": "Mallikarjuna Temple",
+    "state": "Andhra Pradesh",
+    "lat": 16.072,
+    "lng": 78.868,
+    "category": "Jyotirlinga",
+    "best_season": "Oct-Mar",
+    "description": "Srisailam temple"
+  },
+  {
+    "name": "Mahakaleshwar Temple",
+    "state": "Madhya Pradesh",
+    "lat": 23.1828,
+    "lng": 75.768,
+    "category": "Jyotirlinga",
+    "best_season": "Oct-Mar",
+    "description": "Ujjain temple"
+  },
+  {
+    "name": "Omkareshwar Temple",
+    "state": "Madhya Pradesh",
+    "lat": 22.2403,
+    "lng": 76.1511,
+    "category": "Jyotirlinga",
+    "best_season": "Oct-Mar",
+    "description": "Island temple"
+  },
+  {
+    "name": "Kedarnath Temple",
+    "state": "Uttarakhand",
+    "lat": 30.7352,
+    "lng": 79.0669,
+    "category": "Jyotirlinga",
+    "best_season": "May-Jun,Sep-Oct",
+    "description": "Himalayan Shiva temple"
+  },
+  {
+    "name": "Bhimashankar Temple",
+    "state": "Maharashtra",
+    "lat": 19.0713,
+    "lng": 73.553,
+    "category": "Jyotirlinga",
+    "best_season": "Oct-Mar",
+    "description": "Forest temple"
+  },
+  {
+    "name": "Kashi Vishwanath Temple",
+    "state": "Uttar Pradesh",
+    "lat": 25.3109,
+    "lng": 83.0107,
+    "category": "Jyotirlinga",
+    "best_season": "Oct-Mar",
+    "description": "Varanasi Shiva temple"
+  },
+  {
+    "name": "Trimbakeshwar Temple",
+    "state": "Maharashtra",
+    "lat": 19.932,
+    "lng": 73.53,
+    "category": "Jyotirlinga",
+    "best_season": "Oct-Mar",
+    "description": "Near Nashik"
+  },
+  {
+    "name": "Vaidyanath Temple",
+    "state": "Jharkhand",
+    "lat": 24.4829,
+    "lng": 86.699,
+    "category": "Jyotirlinga",
+    "best_season": "Oct-Mar",
+    "description": "Deoghar temple"
+  },
+  {
+    "name": "Nageshwar Temple",
+    "state": "Gujarat",
+    "lat": 22.4726,
+    "lng": 69.1465,
+    "category": "Jyotirlinga",
+    "best_season": "Oct-Mar",
+    "description": "Near Dwarka"
+  },
+  {
+    "name": "Grishneshwar Temple",
+    "state": "Maharashtra",
+    "lat": 20.0268,
+    "lng": 75.1791,
+    "category": "Jyotirlinga",
+    "best_season": "Oct-Mar",
+    "description": "Near Ellora"
+  },
+  {
+    "name": "Tirupati Balaji Temple",
+    "state": "Andhra Pradesh",
+    "lat": 13.6833,
+    "lng": 79.3478,
+    "category": "Famous",
+    "best_season": "All year",
+    "description": "Most visited temple"
+  },
+  {
+    "name": "Meenakshi Temple",
+    "state": "Tamil Nadu",
+    "lat": 9.9195,
+    "lng": 78.1193,
+    "category": "Famous",
+    "best_season": "Oct-Mar",
+    "description": "Madurai temple"
+  },
+  {
+    "name": "Vaishno Devi Temple",
+    "state": "Jammu & Kashmir",
+    "lat": 33.0307,
+    "lng": 74.9496,
+    "category": "Shakti Peetha",
+    "best_season": "Mar-Oct",
+    "description": "Cave shrine"
+  },
+  {
+    "name": "Kamakhya Temple",
+    "state": "Assam",
+    "lat": 26.1665,
+    "lng": 91.705,
+    "category": "Shakti Peetha",
+    "best_season": "Oct-Mar",
+    "description": "Hill temple"
+  },
+  {
+    "name": "Kalighat Temple",
+    "state": "West Bengal",
+    "lat": 22.5226,
+    "lng": 88.3426,
+    "category": "Shakti Peetha",
+    "best_season": "Oct-Mar",
+    "description": "Kolkata temple"
+  },
+  {
+    "name": "Golden Temple",
+    "state": "Punjab",
+    "lat": 31.62,
+    "lng": 74.8765,
+    "category": "Famous",
+    "best_season": "Oct-Mar",
+    "description": "Amritsar gurudwara"
+  },
+  {
+    "name": "Sabarimala Temple",
+    "state": "Kerala",
+    "lat": 9.4326,
+    "lng": 77.093,
+    "category": "Famous",
+    "best_season": "Nov-Jan",
+    "description": "Forest pilgrimage"
+  },
+  {
+    "name": "Shirdi Sai Baba Temple",
+    "state": "Maharashtra",
+    "lat": 19.7666,
+    "lng": 74.477,
+    "category": "Famous",
+    "best_season": "All year",
+    "description": "Sai Baba shrine"
+  },
+  {
+    "name": "Iskcon Temple Bangalore",
+    "state": "Karnataka",
+    "lat": 13.009,
+    "lng": 77.551,
+    "category": "Famous",
+    "best_season": "All year",
+    "description": "Krishna temple"
+  },
+  {
+    "name": "Padmanabhaswamy Temple",
+    "state": "Kerala",
+    "lat": 8.4828,
+    "lng": 76.943,
+    "category": "Famous",
+    "best_season": "Oct-Mar",
+    "description": "Rich temple"
+  },
+  {
+    "name": "Akshardham Temple Delhi",
+    "state": "Delhi",
+    "lat": 28.6127,
+    "lng": 77.2773,
+    "category": "Famous",
+    "best_season": "Oct-Mar",
+    "description": "Modern temple"
+  },
+  {
+    "name": "Kedarnath Trek Base Gaurikund",
+    "state": "Uttarakhand",
+    "lat": 30.63,
+    "lng": 79.021,
+    "category": "Trek",
+    "best_season": "May-Jun",
+    "description": "Trek starting point"
+  }
+]
