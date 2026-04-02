@@ -248,3 +248,40 @@ function displayStateCategory(category){
     panelBg.style.backgroundImage = `url(${data.image})`;
   }
 }
+
+// =========================
+// 🚗 ROUTE MODE
+// =========================
+let routeControl = null;
+
+document.querySelector('.toggle').addEventListener('click', () => {
+
+  // Open map if not already
+  showIndiaMap();
+
+  // Small delay so map fully loads
+  setTimeout(() => {
+
+    if (!map) {
+      console.error("Map not initialized yet");
+      return;
+    }
+
+    // Remove previous route
+    if (routeControl) {
+      map.removeControl(routeControl);
+    }
+
+    // Add route
+    routeControl = L.Routing.control({
+      waypoints: [
+        L.latLng(12.9716, 77.5946), // Bangalore
+        L.latLng(28.6139, 77.2090)  // Delhi
+      ],
+      routeWhileDragging: true,
+      show: false // hides side panel (important for your UI)
+    }).addTo(map);
+
+  }, 500);
+
+});
