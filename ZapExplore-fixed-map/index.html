@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>India Explorer</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; font-family:"Segoe UI",Tahoma,Geneva,Verdana,sans-serif; }
+body { overflow:hidden; height:100vh; background:#0f172a; color:white; }
+
+#globeContainer { position:fixed; top:0; left:0; width:100%; height:100%; z-index:10; background:#000; }
+#map { position:fixed; top:0; left:0; width:100%; height:100%; z-index:5; background:#0f172a; display:none; }
+
+/* ── Side Panel ── */
+#panel {
+  position:fixed; top:0; right:0; width:min(520px,92vw); height:100%;
+  display:none; flex-direction:column; z-index:2000; overflow:hidden;
+  transform:translateX(100%); transition:transform 0.45s cubic-bezier(0.25,0.46,0.45,0.94);
+  backdrop-filter:blur(24px); background:rgba(10,18,35,0.85);
+  border-left:1px solid rgba(255,255,255,0.08); box-shadow:-20px 0 60px rgba(0,0,0,0.7);
+}
+#panel.active { display:flex; transform:translateX(0); }
+.close-btn { position:absolute; top:22px; right:22px; font-size:22px; color:rgba(255,255,255,0.45); cursor:pointer; transition:0.2s; z-index:10; }
+.close-btn:hover { color:white; transform:scale(1.15); }
+.panel-header { padding:36px 28px 8px; }
+#panel-mode-label { font-size:10px; letter-spacing:3px; text-transform:uppercase; color:#38bdf8; margin-bottom:6px; }
+#panel-title { font-size:24px; font-weight:900; letter-spacing:0.5px; text-transform:uppercase; background:linear-gradient(90deg,#fff,#38bdf8); -webkit-background-clip:text; -webkit-text-fill-color:transparent; line-height:1.2; margin-bottom:4px; }
+
+/* Tabs */
+.tabs-container { display:flex; gap:8px; padding:14px 28px; }
+.tab-btn { flex:1; padding:10px 4px; border-radius:9px; background:rgba(255,255,255,0.05); color:#94a3b8; border:1px solid rgba(255,255,255,0.1); cursor:pointer; transition:all 0.22s; text-align:center; font-weight:600; font-size:11px; text-transform:uppercase; letter-spacing:1px; }
+.tab-btn:hover { background:rgba(255,255,255,0.1); color:white; }
+.tab-btn.active { background:linear-gradient(135deg,#3b82f6,#1d4ed8); color:white; border:none; box-shadow:0 6px 18px rgba(59,130,246,0.4); }
+
+/* Meta chips */
+.meta-row { display:flex; gap:8px; flex-wrap:wrap; padding:0 28px 14px; }
+.chip { padding:5px 12px; border-radius:18px; font-size:11px; font-weight:600; }
+.chip-blue  { background:rgba(56,189,248,0.1); border:1px solid rgba(56,189,248,0.25); color:#7dd3fc; }
+.chip-gold  { background:rgba(251,191,36,0.1); border:1px solid rgba(251,191,36,0.25); color:#fcd34d; }
+.chip span  { color:#e2e8f0; margin-left:4px; }
+
+/* Highlight tags */
+.hl-section { padding:0 28px 16px; }
+.hl-section h4 { font-size:10px; letter-spacing:2px; text-transform:uppercase; color:#475569; margin-bottom:8px; }
+.hl-tag { display:inline-block; margin:2px 4px 2px 0; padding:4px 11px; border-radius:14px; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1); font-size:12px; color:#e2e8f0; }
+
+/* Panel content */
+.panel-content { padding:0 28px; flex:1; overflow-y:auto; }
+.panel-content::-webkit-scrollbar { width:4px; }
+.panel-content::-webkit-scrollbar-thumb { background:rgba(56,189,248,0.2); border-radius:2px; }
+#desc { color:#cbd5e1; font-size:15px; line-height:1.85; }
+
+.img-box { padding:16px 28px 22px; border-top:1px solid rgba(255,255,255,0.07); background:rgba(0,0,0,0.18); }
+.img-box img { width:100%; height:auto; border-radius:10px; box-shadow:0 8px 24px rgba(0,0,0,0.5); display:block; }
+
+/* HERO HEADER */
+.hero-header {
+  position: relative;
+  height: 180px;
+  overflow: hidden;
+  padding: 0;
+}
+
+#header-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: none;
+  filter: brightness(0.7);
+}
+
+/* DARK OVERLAY */
+.header-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.2),
+    rgba(0,0,0,0.6),
+    rgba(0,0,0,0.9)
+  );
+}
+
+/* TEXT OVER IMAGE */
+.header-content {
+  position: absolute;
+  bottom: 16px;
+  left: 20px;
+  right: 20px;
+  z-index: 2;
+}
+
+/* FIX TITLE VISIBILITY */
+#panel-title {
+  font-size: 26px;
+  font-weight: 900;
+  color: white;   /* 🔥 remove gradient for readability */
+  text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+  -webkit-text-fill-color: white;
+  background: none;
+}
+
+
+#islandPanel {
+  position: fixed;
+  bottom: 24px;
+  left: 20px;
+  z-index: 9999;
+
+  width: 260px;
+  padding: 14px;
+
+  border-radius: 16px;
+  background: rgba(10,18,35,0.95);
+  backdrop-filter: blur(18px);
+
+  box-shadow: 0 -12px 40px rgba(0,0,0,0.6);
+
+  display: flex;
+  flex-direction: column;
+
+  transform: translateX(0);
+  transition: transform 0.3s ease;
+}
+/* Hide dock by default (shift left) */
+#btnDock {
+  left: -160px;
+  transition: left 0.3s ease;
+}
+
+/* When open */
+#btnDock.open {
+  left: 20px;
+}
+
+/* Arrow button */
+#dockToggle {
+  position: fixed;
+
+  bottom: 15px;   /* just above island */
+  left: 140px;     /* align with island (20px + padding feel) */
+
+  width: 28px;
+  height: 28px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: none;
+  border-radius: 6px;
+  border: 0px solid rgba(255,255,255,0.1);
+
+  color: #e2e8f0;
+  cursor: pointer;
+
+  z-index: 10000;
+}
+
+#dockToggle:hover {
+  transform: scale(1.1);
+}
+
+.dock-btn {
+  width: 100%;
+  padding: 10px 12px;
+
+  border-radius: 10px;
+
+  background: transparent;   /* 🔥 KEY CHANGE */
+  border: 1px solid rgba(255,255,255,0.08);
+
+  color: #e2e8f0;
+
+  font-weight: 600;
+  font-size: 13px;
+
+  box-shadow: none;          /* 🔥 remove floating feel */
+  transition: all 0.2s;
+}
+
+.dock-btn:hover {
+  background: rgba(255,255,255,0.06);
+  transform: translateY(-2px);
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px); /* start lower */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0); /* final position */
+  }
+}
+
+.island-content {
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.island-content.active {
+  display: flex;
+  animation: slideUp 0.35s cubic-bezier(0.25,0.46,0.45,0.94);
+}
+
+.island-title {
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+  margin-bottom: 10px;
+}
+.island-content {
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+ animation: fadeUp 0.25s ease;
+}
+.island-top {
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+#islandPanel {
+  display: flex;
+  flex-direction: column;
+}
+.island-tabs {
+  display: flex;
+  flex-direction: column;   /* 🔥 stack like others */
+  gap: 10px;
+  margin-top: 10px;
+  padding: 0;
+  background: none;
+}
+/* hide island to left */
+#islandPanel {
+  transform: translateY(0);
+  transition: transform 0.35s cubic-bezier(0.25,0.46,0.45,0.94);
+}
+/* hidden state */
+#islandPanel.closed {
+  transform: translateY(120%);
+}
+/* close button inside island */
+#islandClose {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+
+  /* make it look like part of island */
+  background: rgba(0,0,0,0.4);
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+#islandHandle {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 24px;
+  height: 48px;
+
+  background: rgba(10,18,35,0.95);
+  border-radius: 8px;
+  border: 0px solid rgba(255,255,255,0.1);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #e2e8f0;
+  font-size: 16px;
+  cursor: pointer;
+
+  box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+  transition: 0.2s;
+}
+
+#islandHandle:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+#islandPanel:not(.closed) ~ #dockToggle {
+  display: none;
+}
+/* CLOSED → show open arrow */
+#islandPanel.closed #dockToggle {
+  display: none;
+}
+
+/* CLOSED → hide close arrow */
+#islandPanel.closed #islandHandle {
+  display: none;
+}
+
+/* OPEN → show close arrow */
+#islandPanel:not(.closed) #islandHandle {
+  display: flex;
+}
+
+/* OPEN → hide open arrow */
+#islandPanel:not(.closed) ~ #dockToggle {
+  display: none;
+}
+
+.tab-btn2 {
+  width: 100%;
+  padding: 12px 14px;
+
+  border-radius: 12px;
+
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+
+  color: #e2e8f0;
+  font-size: 13px;
+  font-weight: 600;
+
+  text-align: left;   /* 🔥 IMPORTANT */
+  transition: all 0.2s;
+}
+
+.tab-btn2:hover {
+  background: rgba(255,255,255,0.08);
+}
+
+/* active */
+.tab-btn2.active {
+  background: linear-gradient(135deg,#3b82f6,#1d4ed8);
+  color: white;
+  border: none;
+}
+/* remove floating feel */
+.dock-btn {
+  width: 100%;
+}
+
+/* vertical pills */
+.route-pill,
+.temple-pill {
+  width: 100%;
+  padding: 12px 14px;
+
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 600;
+
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+
+  color: #e2e8f0;
+  transition: all 0.2s;
+}
+
+/* hover */
+.route-pill:hover,
+.temple-pill:hover {
+  background: rgba(255,255,255,0.08);
+}
+
+/* active */
+.temple-pill.on {
+  background: linear-gradient(135deg,#f59e0b,#d97706);
+  color: white;
+  border: none;
+}
+
+.route-pill.on {
+  background: linear-gradient(135deg,#3b82f6,#1d4ed8);
+  color: white;
+  border: none;
+}
+.temple-pill:hover { background:rgba(251,191,36,0.14); color:#fff; }
+.temple-pill.on { background:linear-gradient(135deg,#d97706,#b45309); border:none; color:#fff; box-shadow:0 3px 14px rgba(217,119,6,0.4); }
+
+/* Loading spinner */
+.route-loading {
+  font-size:12px; color:#64748b; padding:4px 12px; font-style:italic;
+}
+
+/* Tooltip */
+.tt {
+  background:rgba(10,18,35,0.92) !important; border:1px solid rgba(255,255,255,0.12) !important;
+  color:#e2e8f0 !important; font-size:12px !important; font-weight:600 !important;
+  border-radius:7px !important; padding:4px 10px !important;
+  box-shadow:0 4px 12px rgba(0,0,0,0.4) !important; white-space:nowrap;
+}
+.tt::before,.tt::after { display:none !important; }
+</style>
+</head>
+<body>
+
+<div id="globeContainer"></div>
+<div id="map"></div>
+
+<div id="dockToggle">⮝</div>   <!-- OUTSIDE -->
+
+<div id="islandPanel" class="closed">
+
+  <div id="islandHandle">⮟</div>
+<div class="island-content active" id="mainCategories">
+  <div class="island-title">Explore</div>
+
+  <div class="dock-btn">Waterfalls</div>
+  <div class="dock-btn">Treks</div>
+  <div class="dock-btn">Monuments</div>
+  <div class="dock-btn">Beaches</div>
+</div>
+  <!-- TOP BUTTONS -->
+<div class="island-tabs">
+  <button class="tab-btn2" id="routeBtn">Routes</button>
+  <button class="tab-btn2" id="templeBtn">Temples</button>
+</div>
+
+  <!-- CONTENT -->
+  <div id="routeList" class="island-content"></div>
+  <div id="templeFilterList" class="island-content"></div>
+</div>
+
+<!-- Side panel -->
+<div id="panel">
+  <div class="close-btn" onclick="closePanel()">&#x2715;</div>
+  <div class="panel-header hero-header">
+  <img id="header-img" src="" alt="">
+  <div class="header-overlay"></div>
+
+  <div class="header-content">
+    <div id="panel-mode-label">STATE</div>
+    <h2 id="panel-title">—</h2>
+  </div>
+ </div>
+  <div class="tabs-container" id="stateTabs">
+    <div class="tab-btn active" data-cat="tradition">Tradition</div>
+    <div class="tab-btn" data-cat="culture">Culture</div>
+    <div class="tab-btn" data-cat="food">Food</div>
+  </div>
+  <div class="meta-row" id="panelMeta" style="display:none;"></div>
+  <div class="hl-section" id="panelHl" style="display:none;"></div>
+  <div class="panel-content"><p id="desc">Click a state to explore.</p></div>
+</div>
+
+<script src="https://unpkg.com/three@0.152.2/build/three.min.js"></script>
+<script src="https://unpkg.com/globe.gl"></script>
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script>
+/* ═══════════════════════════════════
+   ROUTE DATA
+═══════════════════════════════════ */
+const ROUTES = [
+  {
+    id:"ecr", name:"East Coast Road", distance:"690 km", best_time:"Oct–Mar",
+    highlights:["Chennai","Mahabalipuram","Pondicherry"],
+    description:"Scenic coastal highway along the Bay of Bengal with beaches, temples, and sunrise views.",
+    from:[13.0827,80.2707], to:[11.9416,79.8083],
+    waypoints:[[12.6208,80.1961],[12.2253,79.9994]]
+  },
+  {
+    id:"leh_manali", name:"Leh–Manali Highway", distance:"474 km", best_time:"Jun–Sep",
+    highlights:["Rohtang Pass","Baralacha La","Tanglang La"],
+    description:"One of the highest motorable roads in the world, crossing multiple high-altitude passes.",
+    from:[32.2396,77.1887], to:[34.1526,77.5771],
+    waypoints:[[32.876,77.507],[33.358,77.615]]
+  },
+  {
+    id:"mumbai_pune", name:"Mumbai–Pune Expressway", distance:"94 km", best_time:"All year",
+    highlights:["Lonavala","Khandala","Khopoli"],
+    description:"India's first expressway — fast, tunnel-studded, with dramatic Western Ghats scenery.",
+    from:[19.076,72.8777], to:[18.5204,73.8567],
+    waypoints:[[19.0397,73.0787],[18.7557,73.409]]
+  },
+  {
+    id:"nh66", name:"NH66 Coastal Highway", distance:"1600 km", best_time:"Nov–Feb",
+    highlights:["Mumbai","Goa","Mangalore","Kochi"],
+    description:"Long coastal highway offering beaches, backwaters, and lush greenery down India's west coast.",
+    from:[19.076,72.8777], to:[9.9312,76.2673],
+    waypoints:[[15.2993,74.124],[12.9141,74.856]]
+  },
+  {
+    id:"srinagar_leh", name:"Srinagar–Leh Highway", distance:"434 km", best_time:"May–Oct",
+    highlights:["Zoji La","Kargil","Magnetic Hill"],
+    description:"Historic Himalayan route connecting the Kashmir Valley to Ladakh via dramatic passes.",
+    from:[34.0837,74.7973], to:[34.1526,77.5771],
+    waypoints:[[34.489,75.757],[34.5553,76.1345]]
+  }
+];
+
+const ROUTE_COLORS = {
+  ecr:'#f97316', leh_manali:'#a855f7', mumbai_pune:'#22c55e',
+  nh66:'#f59e0b', srinagar_leh:'#ec4899'
+};
+
+/* ═══════════════════════════════════
+   TEMPLE DATA
+═══════════════════════════════════ */
+let TEMPLES = [];
+async function loadTemples() {
+  try {
+    const res = await fetch('./all_temples.json');
+    const raw = await res.json();
+
+    // 🔥 FIX DATA HERE (no need to touch JSON file)
+    TEMPLES = raw.map(t => ({
+      name: t.name || "Unknown Temple",
+      state: t.state || "India",
+      lat: t.lat,
+      lng: t.lng,
+      category: t.category || "Famous",
+      best_season: t.best_season || "All year",
+      description: t.description || "No description available"
+    }));
+
+    console.log("Temples fixed + loaded:", TEMPLES.length);
+
+  } catch (e) {
+    console.error("Temple load error:", e);
+  }
+}
+const TEMPLE_CATS = ["All","Char Dham","Jyotirlinga","Shakti Peetha","Famous","Trek"];
+const TEMPLE_COLORS = {
+  "Char Dham":"#f59e0b","Jyotirlinga":"#818cf8",
+  "Shakti Peetha":"#f472b6","Famous":"#34d399","Trek":"#60a5fa","All":"#fbbf24"
+};
+
+/* ═══════════════════════════════════
+   APP STATE
+═══════════════════════════════════ */
+let map = null, geoLayer = null, selectedStateLayer = null, globeInstance = null;
+let activeMode = null;          // null | 'route' | 'temple'
+let activeRouteLayers = {};     // id → {line, markers[]}
+let selectedRouteId = null;
+let templeMarkers = [];
+let activeTempleFilter = "All";
+let isMapActive = false;
+/* ═══════════════════════════════════
+   MODE MANAGER — mutual exclusion
+═══════════════════════════════════ */
+function setMode(mode) {
+  if (activeMode === mode) {
+    // same button clicked again → toggle off
+    deactivateMode(mode);
+    activeMode = null;
+    return;
+  }
+  // turn off whatever is on
+  if (activeMode) deactivateMode(activeMode);
+  activeMode = mode;
+  activateMode(mode);
+}
+
+function activateMode(mode) {
+  document.getElementById('header-img').style.display = 'none';
+  closePanel();
+  clearSelectedState();
+  clearRoutes();
+  clearTemples();
+
+  // ✅ HIDE main options
+  document.getElementById('mainCategories').classList.remove('active');
+
+  // reset dynamic
+  document.getElementById('routeList').classList.remove('active');
+  document.getElementById('templeFilterList').classList.remove('active');
+
+  if (mode === 'route') {
+    document.getElementById('routeBtn').classList.add('active');
+    document.getElementById('routeList').classList.add('active');
+    buildRoutePicker();
+  } 
+  else if (mode === 'temple') {
+    document.getElementById('templeBtn').classList.add('active');
+    document.getElementById('templeFilterList').classList.add('active');
+    buildTemplePicker();
+    renderTemples("All");
+  }
+}
+
+function deactivateMode(mode) {
+  document.getElementById('mainCategories').classList.add('active');
+  if (mode === 'route') {
+    document.getElementById('routeBtn').classList.remove('active');
+    clearRoutes();
+  } 
+  else if (mode === 'temple') {
+    document.getElementById('templeBtn').classList.remove('active');
+    clearTemples();
+  }
+
+  // 🔥 just hide content, not island
+document.getElementById('routeList').classList.remove('active');
+document.getElementById('templeFilterList').classList.remove('active');
+
+  closePanel();
+}
+/* ═══════════════════════════════════
+   GLOBE
+═══════════════════════════════════ */
+window.addEventListener('load', () => {
+  globeInstance = Globe()(document.getElementById('globeContainer'))
+    .globeImageUrl('https://unpkg.com/three-globe/example/img/earth-blue-marble.jpg')
+    .backgroundImageUrl('https://unpkg.com/three-globe/example/img/night-sky.png')
+    .onGlobeClick(({lat,lng}) => {
+      if (lat>=6&&lat<=36&&lng>=60&&lng<=100) transitionToMap();
+    });
+  const ctrl = globeInstance.controls();
+  ctrl.autoRotate=true; ctrl.autoRotateSpeed=0.6; ctrl.enableZoom=false; ctrl.enablePan=false;
+  globeInstance.pointOfView({lat:20,lng:20,altitude:2.5});
+  setTimeout(() => globeInstance.pointOfView({lat:22.97,lng:78.66,altitude:1.2},3000), 800);
+ 
+});
+
+function transitionToMap() {
+  if (isMapActive) return;
+
+  const g = document.getElementById('globeContainer');
+  const m = document.getElementById('map');
+
+  g.style.display = 'none';
+  m.style.display = 'block';
+
+  // 🔥 SHOW ISLAND HERE
+  document.getElementById('islandPanel').style.display = 'flex';
+
+  isMapActive = true;
+
+  if (!map) initLeaflet();
+  else requestAnimationFrame(() => map.invalidateSize());
+}
+/* ═══════════════════════════════════
+   LEAFLET
+═══════════════════════════════════ */
+function initLeaflet() {
+  const indiaBounds = [
+    [6.0, 68.0],   // SW (Kanyakumari side)
+    [37.0, 97.0]   // NE (Arunachal side)
+  ];
+
+map = L.map('map', {
+  zoomControl: true,
+  attributionControl: false,
+
+  minZoom: 5,
+  maxZoom: 14,
+
+  
+  maxBoundsViscosity: 0.5,   // 🔥 smooth drag
+
+  worldCopyJump: false,      // prevent repeating world
+  maxBoundsViscosity: 0.5
+}).setView([22.97, 78.66], 5);
+
+  L.tileLayer(
+    'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
+    { maxZoom: 18,
+        noWrap: true,        // 🔥 stops world repeat 
+    }
+  ).addTo(map);
+
+  setTimeout(() => {
+    map.invalidateSize();
+    loadIndiaStates();
+  }, 200);
+}
+
+/* ═══════════════════════════════════
+   STATES
+═══════════════════════════════════ */
+function loadIndiaStates() {
+  fetch('./in.json').then(r=>r.json()).then(data=>{
+    geoLayer = L.geoJSON(data,{
+      filter:f=>{
+        const p=f.properties||{};
+        return Boolean(p.st_nm||p.state||p.STATE||p.ST_NM||p.name)&&!Boolean(p.district||p.DISTRICT||p.dist_name);
+      },
+      style:{color:'#38bdf8',weight:1.5,fillColor:'transparent',fillOpacity:0},
+      onEachFeature:(feature,layer)=>{
+        layer.on('mouseover',()=>{ if(layer!==selectedStateLayer) layer.setStyle({color:'#7dd3fc',weight:2}); });
+        layer.on('mouseout', ()=>{ if(layer!==selectedStateLayer) layer.setStyle({color:'#38bdf8',weight:1.5}); });
+        layer.on('click',()=>{
+          if (activeMode) return;
+          const name=feature.properties.st_nm||feature.properties.name||feature.properties.STATE||'Unknown';
+          if (selectedStateLayer) selectedStateLayer.setStyle({color:'#38bdf8',weight:1.5,fillColor:'transparent',fillOpacity:0});
+          layer.setStyle({color:'#fff',weight:2.5,fillColor:'#3b82f6',fillOpacity:0.2});
+          selectedStateLayer=layer;
+          setTimeout(()=>{ map.invalidateSize(); map.fitBounds(layer.getBounds(),{padding:[50,50]}); },100);
+          showStatePanel(name);
+        });
+      }
+    }).addTo(map);
+  }).catch(e=>console.error('GeoJSON:',e));
+}
+
+/* ═══════════════════════════════════
+   STATE PANEL
+═══════════════════════════════════ */
+function showStatePanel(state) {
+  document.getElementById('panel-mode-label').innerText = 'STATE';
+  document.getElementById('panel-title').innerText = state;
+  document.getElementById('desc').innerText = 'Loading…';
+  document.getElementById('header-img').style.display='none';
+  showPanelSections('state');
+  openPanel();
+
+  fetch('./states/'+state+'.json')
+    .then(r=>{ if(!r.ok) throw r; return r.json(); })
+    .then(data=>{
+      window.currentStateData=data;
+      displayStateCat('tradition');
+      document.querySelectorAll('#stateTabs .tab-btn').forEach(btn=>{
+        btn.onclick=()=>{
+          document.querySelectorAll('#stateTabs .tab-btn').forEach(b=>b.classList.remove('active'));
+          btn.classList.add('active');
+          displayStateCat(btn.dataset.cat);
+        };
+      });
+    })
+    .catch(()=>{ document.getElementById('desc').innerText='Information not available.'; });
+}
+
+function clearSelectedState() {
+  if (selectedStateLayer) {
+    selectedStateLayer.setStyle({
+      color:'#38bdf8',
+      weight:1.5,
+      fillColor:'transparent',
+      fillOpacity:0.05
+    });
+    selectedStateLayer = null;
+  }
+}
+
+function displayStateCat(cat) {
+  const d = window.currentStateData?.[cat];
+
+  document.getElementById('desc').innerText = d?.text || 'Not available.';
+
+  const img = document.getElementById('header-img');
+  if (d?.image) {
+    img.src = d.image;
+    img.style.display = 'block';
+  } else {
+    img.style.display = 'none';
+  }
+}
+
+/* ═══════════════════════════════════
+   ROUTE MODE — OSRM real roads
+═══════════════════════════════════ */
+function buildRoutePicker() {
+  const list=document.getElementById('routeList');
+  list.innerHTML='';
+  ROUTES.forEach(r=>{
+    const pill=document.createElement('div');
+    pill.className='route-pill';
+    pill.id='rpill-'+r.id;
+    pill.style.borderColor=ROUTE_COLORS[r.id]+'55';
+    pill.innerHTML=`<span style="color:${ROUTE_COLORS[r.id]};margin-right:5px;">●</span>${r.name}`;
+    pill.onclick=()=>selectRoute(r.id);
+    list.appendChild(pill);
+  });
+}
+
+async function selectRoute(id) {
+  // toggle off
+  if (selectedRouteId===id) {
+    clearRoutes();
+    selectedRouteId=null;
+    document.querySelectorAll('.route-pill').forEach(p=>p.classList.remove('on'));
+    closePanel();
+    return;
+  }
+  clearRoutes();
+  document.querySelectorAll('.route-pill').forEach(p=>p.classList.remove('on'));
+  selectedRouteId=id;
+  document.getElementById('rpill-'+id)?.classList.add('on');
+
+  const route=ROUTES.find(r=>r.id===id);
+  const color=ROUTE_COLORS[id];
+
+  // show panel immediately with loading state
+  showRoutePanel(route, color, true);
+
+  // Build OSRM coordinate string: from → waypoints → to
+  const pts = [route.from, ...route.waypoints, route.to];
+  const coordStr = pts.map(c=>c[1]+','+c[0]).join(';');
+  const url = `https://router.project-osrm.org/route/v1/driving/${coordStr}?overview=full&geometries=geojson`;
+
+  try {
+    const res = await fetch(url);
+    const data = await res.json();
+    if (!data.routes || !data.routes[0]) throw new Error('No route');
+
+    const geojson = data.routes[0].geometry;
+    const coords = geojson.coordinates.map(c=>[c[1],c[0]]); // OSRM → [lat,lng]
+
+    const line = L.polyline(coords, {
+      color, weight:5, opacity:0.92, lineCap:'round', lineJoin:'round'
+    }).addTo(map);
+
+    // animate dash offset on the SVG path
+    animateLine(line);
+
+    // endpoint markers
+    const markers=[];
+    [[route.from,'start'],[route.to,'end']].forEach(([c,pos])=>{
+      const isStart=pos==='start';
+      const icon=L.divIcon({
+        html:`<div style="width:14px;height:14px;background:${color};border-radius:50%;border:2.5px solid #fff;box-shadow:0 0 10px ${color};"></div>`,
+        iconSize:[14,14],iconAnchor:[7,7],className:''
+      });
+      const m=L.marker([c[0],c[1]],{icon}).addTo(map);
+      m.bindTooltip(isStart?route.highlights[0]:route.highlights[route.highlights.length-1],
+        {permanent:true,direction:'top',offset:[0,-10],className:'tt',opacity:1});
+      markers.push(m);
+    });
+
+    activeRouteLayers[id]={line,markers};
+    map.fitBounds(line.getBounds(),{padding:[60,60]});
+    showRoutePanel(route, color, false);
+
+  } catch(e) {
+    console.error('OSRM error, falling back to straight line:', e);
+    // fallback: straight polyline
+    const pts2 = [route.from, ...route.waypoints, route.to];
+    const line = L.polyline(pts2, {color,weight:4,opacity:0.85,dashArray:'10 6'}).addTo(map);
+    activeRouteLayers[id]={line,markers:[]};
+    map.fitBounds(line.getBounds(),{padding:[60,60]});
+    showRoutePanel(route, color, false);
+  }
+}
+
+function animateLine(polyline) {
+  let off = 0;
+
+  function step() {
+    if (!map || !map.hasLayer(polyline)) return;
+
+    off = (off + 0.5) % 20;
+
+    // ✅ ONLY target this polyline's element
+    const el = polyline._path;
+
+    if (el) {
+      el.style.strokeDasharray = '14 6';
+      el.style.strokeDashoffset = -off;
+    }
+
+    requestAnimationFrame(step);
+  }
+
+  requestAnimationFrame(step);
+}
+function clearRoutes() {
+  Object.values(activeRouteLayers).forEach(rl=>{
+    if(rl.line) map.removeLayer(rl.line);
+    rl.markers.forEach(m=>map.removeLayer(m));
+  });
+  activeRouteLayers={};
+  selectedRouteId=null;
+  document.querySelectorAll('.route-pill').forEach(p=>p.classList.remove('on'));
+}
+
+function showRoutePanel(route, color, loading) {
+  document.getElementById('panel-mode-label').innerHTML=
+    `<span style="color:${color}">●</span> SCENIC ROUTE`;
+  document.getElementById('panel-title').innerText=route.name;
+  document.getElementById('desc').innerText= loading
+    ? '⏳ Fetching real road data…'
+    : route.description;
+
+  document.getElementById('panelMeta').innerHTML=`
+    <div class="chip chip-blue">📏<span>${route.distance}</span></div>
+    <div class="chip chip-blue">🗓<span>${route.best_time}</span></div>
+  `;
+  document.getElementById('panelHl').innerHTML=
+    '<h4>Key Stops</h4>'+route.highlights.map(h=>`<span class="hl-tag">${h}</span>`).join('');
+  document.getElementById('header-img').style.display='none';
+  showPanelSections('route');
+  openPanel();
+}
+
+/* ═══════════════════════════════════
+   TEMPLE MODE
+═══════════════════════════════════ */
+function buildTemplePicker() {
+  const list=document.getElementById('templeFilterList');
+  list.innerHTML = `<div class="island-title">FILTER TEMPLES</div>`;
+  TEMPLE_CATS.forEach(cat=>{
+    const pill=document.createElement('div');
+    pill.className='temple-pill'+(cat==='All'?' on':'');
+    pill.id='tpill-'+cat.replace(/\s/g,'_');
+    pill.innerHTML=`<span style="color:${TEMPLE_COLORS[cat]};margin-right:5px;">●</span>${cat}`;
+    pill.onclick=()=>{
+      document.querySelectorAll('.temple-pill').forEach(p=>p.classList.remove('on'));
+      pill.classList.add('on');
+      activeTempleFilter=cat;
+      renderTemples(cat);
+    };
+    list.appendChild(pill);
+  });
+}
+
+function clearTemples() {
+  templeMarkers.forEach(m=>map.removeLayer(m));
+  templeMarkers=[];
+}
+
+function renderTemples(filter) {
+  clearTemples();
+  (filter==='All'?TEMPLES:TEMPLES.filter(t=>t.category===filter)).forEach(t=>{
+    const color=TEMPLE_COLORS[t.category]||'#fbbf24';
+    const templeIcon = L.icon({
+    iconUrl: "Om_symbol.svg.webp", // adjust path if needed
+   iconSize: [16, 16]
+    });
+
+   const m = L.marker([t.lat, t.lng], { icon: templeIcon }).addTo(map);
+    m.on('click',()=>showTemplePanel(t));
+    m.bindTooltip(t.name,{direction:'top',offset:[0,-8],className:'tt',opacity:1});
+    templeMarkers.push(m);
+  });
+}
+
+async function fetchWikiData(name) {
+  try {
+    // 🔍 Step 1: search similar names
+    const searchUrl = `https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=${encodeURIComponent(name)}&format=json&origin=*`;
+    
+    const searchRes = await fetch(searchUrl);
+    const searchData = await searchRes.json();
+
+    if (!searchData.query.search.length) {
+      return { text: "No info available", image: null };
+    }
+
+    // 🎯 take best match
+    const bestMatch = searchData.query.search[0].title;
+
+    // 📄 Step 2: get summary of that page
+    const summaryUrl = `https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(bestMatch)}`;
+    
+    const res = await fetch(summaryUrl);
+    const data = await res.json();
+
+    return {
+      text: data.extract || "No info available",
+      image: data.thumbnail?.source || null
+    };
+
+  } catch (e) {
+    console.error("Wiki error:", e);
+    return { text: "No info available", image: null };
+  }
+}
+
+async function showTemplePanel(t) {
+  showPanelSections('temple');
+  const color = TEMPLE_COLORS[t.category] || '#fbbf24';
+
+  // 🔥 HIDE STATE TABS
+  document.getElementById('stateTabs').style.display = 'none';
+
+  document.getElementById('panel-mode-label').innerHTML = `🛕 TEMPLE`;
+  document.getElementById('panel-title').innerText = t.name;
+  document.getElementById('desc').innerHTML = "";
+ 
+  openPanel();
+
+  const wiki = await fetchWikiData(t.name);
+
+  document.getElementById('desc').innerHTML = `
+    <h4 style="color:#38bdf8;margin-bottom:8px;">Overview</h4>
+    ${wiki?.text || t.description}
+
+    <h4 style="color:#38bdf8;margin-top:16px;">Details</h4>
+    📍 ${t.state} <br>
+    🛕 ${t.category} <br>
+    🗓 ${t.best_season}
+  `;
+
+  const headerImg = document.getElementById('header-img');
+
+if (wiki?.image) {
+  headerImg.src = wiki.image;
+  headerImg.style.display = 'block';
+} else {
+  headerImg.style.display = 'none';
+}
+}
+
+/* ═══════════════════════════════════
+   PANEL HELPERS
+═══════════════════════════════════ */
+function showPanelSections(mode) {
+  document.getElementById('stateTabs').style.display = mode==='state'?'flex':'none';
+  document.getElementById('panelMeta').style.display = (mode==='route'||mode==='temple')?'flex':'none';
+  document.getElementById('panelHl').style.display   = mode==='route'?'block':'none';
+  // reset state tabs
+  if (mode==='state') {
+    document.querySelectorAll('#stateTabs .tab-btn').forEach((b,i)=>b.classList.toggle('active',i===0));
+  }
+}
+
+function openPanel()  { const p=document.getElementById('panel'); p.style.display='flex'; p.classList.add('active'); }
+function closePanel() {
+  const panel = document.getElementById('panel');
+  panel.classList.remove('active');
+
+  // 🔥 CLEAR HEADER + CONTENT
+  document.getElementById('panel-mode-label').innerText = '';
+  document.getElementById('panel-title').innerText = '';
+  document.getElementById('desc').innerText = '';
+
+  document.getElementById('panelMeta').innerHTML = '';
+  document.getElementById('panelHl').innerHTML = '';
+
+ document.getElementById('header-img').style.display = 'none';
+}
+/* ═══════════════════════════════════
+   BUTTON WIRING
+═══════════════════════════════════ */
+// 🗺 ROUTE BUTTON (FAST)
+document.getElementById('routeBtn').addEventListener('click', () => {
+  transitionToMap();
+
+  // ensure map is ready, then run instantly
+  if (!map) {
+    initLeaflet(); // force init immediately
+  }
+
+  setMode('route'); // no delay
+});
+
+
+// 🛕 TEMPLE BUTTON (FAST)
+document.getElementById('templeBtn').addEventListener('click', async () => {
+  transitionToMap();
+
+  if (TEMPLES.length === 0) {
+    await loadTemples();
+  }
+
+  if (!map) {
+    setTimeout(() => setMode('temple'), 200);
+  } else {
+    setMode('temple');
+  }
+});
+
+const island = document.getElementById('islandPanel');
+const toggle = document.getElementById('dockToggle');
+const handle = document.getElementById('islandHandle');
+
+// open
+toggle.onclick = () => {
+  island.classList.remove('closed');
+};
+
+handle.onclick = () => {
+  island.classList.add('closed');
+};
+</script>
+</body>
+</html>

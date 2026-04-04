@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>3D Globe</title>
+  <style>
+    body { margin: 0; }
+    #globeViz { width: 100vw; height: 100vh; }
+  </style>
+</head>
+<body>
+
+<div id="globeViz"></div>
+
+<script src="https://unpkg.com/three@0.152.2/build/three.min.js"></script>
+<script src="https://unpkg.com/globe.gl"></script>
+
+<script>
+  const globe = Globe()(document.getElementById('globeViz'))
+    .globeImageUrl('https://unpkg.com/three-globe/example/img/earth-blue-marble.jpg')
+    .backgroundImageUrl('https://unpkg.com/three-globe/example/img/night-sky.png');
+
+  globe.controls().autoRotate = true;
+  globe.controls().autoRotateSpeed = 0.5;
+</script>
+
+</body>
+</html>
