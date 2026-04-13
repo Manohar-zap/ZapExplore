@@ -1,0 +1,69 @@
+
+[
+
+
+  {"name":"Badrinath Temple","state":"Uttarakhand","lat":30.7433,"lng":79.4938,"category":"Yatra","group":"Char Dham"},
+  {"name":"Kedarnath Temple","state":"Uttarakhand","lat":30.7352,"lng":79.0669,"category":"Yatra","group":"Char Dham"},
+  {"name":"Gangotri Temple","state":"Uttarakhand","lat":30.9947,"lng":78.9398,"category":"Yatra","group":"Char Dham"},
+  {"name":"Yamunotri Temple","state":"Uttarakhand","lat":31.0140,"lng":78.4600,"category":"Yatra","group":"Char Dham"},
+
+  {"name":"Dwarkadhish Temple","state":"Gujarat","lat":22.2442,"lng":68.9685,"category":"Yatra","group":"Char Dham India"},
+  {"name":"Jagannath Temple","state":"Odisha","lat":19.8047,"lng":85.8180,"category":"Yatra","group":"Char Dham India"},
+  {"name":"Rameswaram Temple","state":"Tamil Nadu","lat":9.2881,"lng":79.3174,"category":"Yatra","group":"Char Dham India"},
+
+  {"name":"Somnath Temple","state":"Gujarat","lat":20.8880,"lng":70.4012,"category":"Yatra","group":"Jyotirlinga"},
+  {"name":"Mallikarjuna Temple","state":"Andhra Pradesh","lat":16.0724,"lng":78.8689,"category":"Yatra","group":"Jyotirlinga"},
+  {"name":"Mahakaleshwar Temple","state":"Madhya Pradesh","lat":23.1828,"lng":75.7680,"category":"Yatra","group":"Jyotirlinga"},
+  {"name":"Omkareshwar Temple","state":"Madhya Pradesh","lat":22.2410,"lng":76.1510,"category":"Yatra","group":"Jyotirlinga"},
+  {"name":"Bhimashankar Temple","state":"Maharashtra","lat":19.0710,"lng":73.5350,"category":"Yatra","group":"Jyotirlinga"},
+  {"name":"Kashi Vishwanath Temple","state":"Uttar Pradesh","lat":25.3109,"lng":83.0107,"category":"Yatra","group":"Jyotirlinga"},
+  {"name":"Trimbakeshwar Temple","state":"Maharashtra","lat":19.9320,"lng":73.5300,"category":"Yatra","group":"Jyotirlinga"},
+  {"name":"Vaidyanath Temple","state":"Jharkhand","lat":24.4886,"lng":86.6940,"category":"Yatra","group":"Jyotirlinga"},
+  {"name":"Nageshwar Temple","state":"Gujarat","lat":22.4650,"lng":69.1500,"category":"Yatra","group":"Jyotirlinga"},
+  {"name":"Ramanathaswamy Temple","state":"Tamil Nadu","lat":9.2881,"lng":79.3174,"category":"Yatra","group":"Jyotirlinga"},
+  {"name":"Grishneshwar Temple","state":"Maharashtra","lat":20.0268,"lng":75.1790,"category":"Yatra","group":"Jyotirlinga"},
+
+  {"name":"Mayureshwar Temple","state":"Maharashtra","lat":18.4520,"lng":74.0680,"category":"Yatra","group":"Ashta Vinayak"},
+  {"name":"Siddhivinayak Temple (Siddhatek)","state":"Maharashtra","lat":18.4390,"lng":74.7010,"category":"Yatra","group":"Ashta Vinayak"},
+  {"name":"Ballaleshwar Temple","state":"Maharashtra","lat":18.5340,"lng":73.1790,"category":"Yatra","group":"Ashta Vinayak"},
+  {"name":"Varadvinayak Temple","state":"Maharashtra","lat":18.7530,"lng":73.3850,"category":"Yatra","group":"Ashta Vinayak"},
+  {"name":"Chintamani Temple","state":"Maharashtra","lat":18.4910,"lng":73.8610,"category":"Yatra","group":"Ashta Vinayak"},
+  {"name":"Girijatmaj Temple","state":"Maharashtra","lat":19.1900,"lng":73.8780,"category":"Yatra","group":"Ashta Vinayak"},
+  {"name":"Vighnahar Temple","state":"Maharashtra","lat":19.3200,"lng":74.0230,"category":"Yatra","group":"Ashta Vinayak"},
+  {"name":"Mahaganapati Temple","state":"Maharashtra","lat":18.7540,"lng":74.2430,"category":"Yatra","group":"Ashta Vinayak"},
+
+  {"name":"Tungnath Temple","state":"Uttarakhand","lat":30.4894,"lng":79.2167,"category":"Yatra","group":"Panch Kedar"},
+  {"name":"Rudranath Temple","state":"Uttarakhand","lat":30.5770,"lng":79.2980,"category":"Yatra","group":"Panch Kedar"},
+  {"name":"Madhyamaheshwar Temple","state":"Uttarakhand","lat":30.6490,"lng":79.1830,"category":"Yatra","group":"Panch Kedar"},
+  {"name":"Kalpeshwar Temple","state":"Uttarakhand","lat":30.5330,"lng":79.3230,"category":"Yatra","group":"Panch Kedar"},
+
+
+  {"name":"Vaishno Devi Temple","state":"Jammu and Kashmir","lat":33.0300,"lng":74.9490,"category":"Treks"},
+  {"name":"Amarnath Cave","state":"Jammu and Kashmir","lat":34.2146,"lng":75.5017,"category":"Treks"},
+  {"name":"Sabarimala Temple","state":"Kerala","lat":9.4326,"lng":77.0870,"category":"Treks"},
+  {"name":"Hemkund Sahib","state":"Uttarakhand","lat":30.7260,"lng":79.6150,"category":"Treks"},
+
+
+  {"name":"Tirumala Venkateswara Temple","state":"Andhra Pradesh","lat":13.6833,"lng":79.3475,"category":"Famous"},
+  {"name":"Meenakshi Temple","state":"Tamil Nadu","lat":9.9195,"lng":78.1193,"category":"Famous"},
+  {"name":"Golden Temple","state":"Punjab","lat":31.6200,"lng":74.8765,"category":"Famous"},
+  {"name":"Akshardham Temple","state":"Delhi","lat":28.6127,"lng":77.2773,"category":"Famous"},
+
+
+  {"name":"Kumbh Mela Prayagraj","state":"Uttar Pradesh","lat":25.4358,"lng":81.8463,"category":"Events"},
+  {"name":"Rath Yatra Puri","state":"Odisha","lat":19.8135,"lng":85.8312,"category":"Events"},
+  {"name":"Kanwar Yatra","state":"North India","lat":28.6139,"lng":77.2090,"category":"Events"},
+  {"name":"Amarnath Yatra","state":"Jammu and Kashmir","lat":34.2146,"lng":75.5017,"category":"Events"},
+
+  {"name":"Ayodhya","state":"Uttar Pradesh","lat":26.7996,"lng":82.2042,"category":"Circuits","circuit":"Ramayana"},
+  {"name":"Chitrakoot","state":"MP/UP","lat":25.2000,"lng":80.9000,"category":"Circuits","circuit":"Ramayana"},
+  {"name":"Panchavati","state":"Maharashtra","lat":19.9975,"lng":73.7898,"category":"Circuits","circuit":"Ramayana"},
+  {"name":"Hampi","state":"Karnataka","lat":15.3350,"lng":76.4600,"category":"Circuits","circuit":"Ramayana"},
+
+  {"name":"Mathura","state":"Uttar Pradesh","lat":27.4924,"lng":77.6737,"category":"Circuits","circuit":"Krishna"},
+  {"name":"Vrindavan","state":"Uttar Pradesh","lat":27.5806,"lng":77.7000,"category":"Circuits","circuit":"Krishna"},
+
+  {"name":"Bodh Gaya","state":"Bihar","lat":24.6950,"lng":84.9910,"category":"Circuits","circuit":"Buddhist"},
+  {"name":"Sarnath","state":"Uttar Pradesh","lat":25.3810,"lng":83.0210,"category":"Circuits","circuit":"Buddhist"},
+  {"name":"Kushinagar","state":"Uttar Pradesh","lat":26.7400,"lng":83.8900,"category":"Circuits","circuit":"Buddhist"}
+]

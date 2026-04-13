@@ -9,7 +9,13 @@
 * { margin:0; padding:0; box-sizing:border-box; font-family:"Segoe UI",Tahoma,Geneva,Verdana,sans-serif; }
 body { overflow:hidden; height:100vh; background:#0f172a; color:white; }
 
-#globeContainer { position:fixed; top:0; left:0; width:100%; height:100%; z-index:10; background:#000; }
+#globeContainer{
+    position:absolute;
+    inset:0;
+    z-index:2000;
+    display:block;   /* ✅ SHOW GLOBE */
+    background:#000;
+}
 #map { position:fixed; top:0; left:0; width:100%; height:100%; z-index:5; background:#0f172a; display:none; }
 
 /* ── Side Panel ── */
@@ -74,12 +80,6 @@ body { overflow:hidden; height:100vh; background:#0f172a; color:white; }
 .header-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(0,0,0,0.2),
-    rgba(0,0,0,0.6),
-    rgba(0,0,0,0.9)
-  );
 }
 
 /* TEXT OVER IMAGE */
@@ -113,7 +113,7 @@ body { overflow:hidden; height:100vh; background:#0f172a; color:white; }
 
   border-radius: 16px;
   background: rgba(10,18,35,0.95);
-  backdrop-filter: blur(18px);
+  backdrop-filter: blur(12px);
 
   box-shadow: 0 -12px 40px rgba(0,0,0,0.6);
 
@@ -309,25 +309,24 @@ body { overflow:hidden; height:100vh; background:#0f172a; color:white; }
   display: none;
 }
 
-.tab-btn2 {
-  width: 100%;
-  padding: 12px 14px;
+.tab-btn2{
+  width:100%;
+  padding:12px 14px;
+  border-radius:12px;
 
-  border-radius: 12px;
+  background: rgba(255,255,255,0.03);
+  border:1px solid rgba(255,255,255,0.06);
 
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
+  color:var(--text-main);
+  font-size:13px;
+  font-weight:600;
 
-  color: #e2e8f0;
-  font-size: 13px;
-  font-weight: 600;
-
-  text-align: left;   /* 🔥 IMPORTANT */
-  transition: all 0.2s;
+  transition:all 0.2s;
 }
 
-.tab-btn2:hover {
-  background: rgba(255,255,255,0.08);
+/* hover */
+.tab-btn2:hover{
+  background: rgba(255,255,255,0.06);
 }
 
 /* active */
@@ -339,6 +338,18 @@ body { overflow:hidden; height:100vh; background:#0f172a; color:white; }
 /* remove floating feel */
 .dock-btn {
   width: 100%;
+}
+
+/* Routes → Air (white/soft) */
+#routeBtn.active{
+  border-left:3px solid var(--white);
+  background:rgba(203,213,245,0.08);
+}
+
+/* Temples → Earth (yellow) */
+#templeBtn.active{
+  border-left:3px solid var(--yellow);
+  background:rgba(234,179,8,0.08);
 }
 
 /* vertical pills */
@@ -365,17 +376,22 @@ body { overflow:hidden; height:100vh; background:#0f172a; color:white; }
 }
 
 /* active */
-.temple-pill.on {
-  background: linear-gradient(135deg,#f59e0b,#d97706);
-  color: white;
-  border: none;
+.temple-pill.on{
+  border-left:3px solid var(--yellow);
+  background:rgba(234,179,8,0.08);
+  box-shadow:none; /* remove glow */
 }
 
-.route-pill.on {
-  background: linear-gradient(135deg,#3b82f6,#1d4ed8);
-  color: white;
-  border: none;
+.route-pill{
+  background:rgba(255,255,255,0.03);
+  border:1px solid rgba(255,255,255,0.06);
 }
+
+.route-pill.on{
+  border-left:3px solid var(--blue);
+  background:rgba(59,130,246,0.08);
+}
+
 .temple-pill:hover { background:rgba(251,191,36,0.14); color:#fff; }
 .temple-pill.on { background:linear-gradient(135deg,#d97706,#b45309); border:none; color:#fff; box-shadow:0 3px 14px rgba(217,119,6,0.4); }
 
@@ -392,10 +408,132 @@ body { overflow:hidden; height:100vh; background:#0f172a; color:white; }
   box-shadow:0 4px 12px rgba(0,0,0,0.4) !important; white-space:nowrap;
 }
 .tt::before,.tt::after { display:none !important; }
+
+.temple-pill:first-child {
+  color: #38bdf8;
+  font-weight: 700;
+}
+body::before{
+  content:'';
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  height:3px;
+
+  background:linear-gradient(
+    to right,
+    var(--blue),
+    var(--white),
+    var(--red),
+    var(--green),
+    var(--yellow)
+  );
+
+  opacity:0.6;
+  z-index:9999;
+}
+
+#loginBtn{
+  position:absolute;
+  top:20px;
+  left:20px;
+  z-index:9999;
+
+  padding:8px 14px;
+  border-radius:10px;
+
+  background:rgba(15,23,42,0.8);
+  border:1px solid rgba(255,255,255,0.2);
+
+  color:white;
+  cursor:pointer;
+  backdrop-filter:blur(10px);
+}
+
+#loginBtn:hover{
+  background:#3b82f6;
+}
+.login-popup{
+  position:fixed;
+  inset:0;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  background:rgba(0,0,0,0.7);
+  z-index:10000;
+}
+
+.login-popup.active{
+  display:flex;
+}
+
+.login-box{
+  background:#0f172a;
+  padding:25px;
+  border-radius:12px;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+
 </style>
 </head>
 <body>
+  <script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import { 
+  getAuth, 
+  GoogleAuthProvider, 
+  signInWithPopup,
+  onAuthStateChanged
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
+const firebaseConfig = {
+  apiKey: "AIzaSyDc5EHSbjvq_L3uKIPrWeE3g6oKTDdobI0",
+  authDomain: "zapexplore.firebaseapp.com",
+  projectId: "zapexplore",
+  appId: "1:400484091827:web:f5f31450f158ccf476adc6"
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+
+const provider = new GoogleAuthProvider();
+
+// GOOGLE LOGIN
+window.googleLogin = () => {
+  signInWithPopup(auth, provider)
+    .then(res => {
+      const user = res.user;
+      console.log("Logged in:", user.displayName);
+
+      // 🔥 change button text
+      document.getElementById("loginBtn").innerText = user.displayName;
+
+      closeLogin();
+    })
+    .catch(err => alert(err.message));
+};
+
+// TRACK USER (refresh safe)
+onAuthStateChanged(auth, user => {
+  if (user) {
+    document.getElementById("loginBtn").innerText = user.displayName;
+  }
+});
+</script>
+
+  <button id="loginBtn">Login</button>
+<div id="loginPopup" class="login-popup">
+  <div class="login-box">
+    <h3>Login</h3>
+    <button onclick="googleLogin()">Continue with Google</button>
+    <button onclick="appleLogin()">Continue with Apple</button>
+    <button onclick="closeLogin()">Cancel</button>
+  </div>
+</div>
 <div id="globeContainer"></div>
 <div id="map"></div>
 
@@ -438,7 +576,7 @@ body { overflow:hidden; height:100vh; background:#0f172a; color:white; }
   <div class="tabs-container" id="stateTabs">
     <div class="tab-btn active" data-cat="tradition">Tradition</div>
     <div class="tab-btn" data-cat="culture">Culture</div>
-    <div class="tab-btn" data-cat="food">Food</div>
+    <div class="tab-btn" data-cat="history">History</div>
   </div>
   <div class="meta-row" id="panelMeta" style="display:none;"></div>
   <div class="hl-section" id="panelHl" style="display:none;"></div>
@@ -446,9 +584,18 @@ body { overflow:hidden; height:100vh; background:#0f172a; color:white; }
 </div>
 
 <script src="https://unpkg.com/three@0.152.2/build/three.min.js"></script>
-<script src="https://unpkg.com/globe.gl"></script>
+<script src="https://cdn.jsdelivr.net/npm/globe.gl@2.32.1/dist/globe.gl.min.js"></script>
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 <script>
+
+  document.getElementById("loginBtn").onclick = () => {
+  document.getElementById("loginPopup").classList.add("active");
+};
+
+function closeLogin(){
+  document.getElementById("loginPopup").classList.remove("active");
+}
+
 /* ═══════════════════════════════════
    ROUTE DATA
 ═══════════════════════════════════ */
@@ -491,8 +638,11 @@ const ROUTES = [
 ];
 
 const ROUTE_COLORS = {
-  ecr:'#f97316', leh_manali:'#a855f7', mumbai_pune:'#22c55e',
-  nh66:'#f59e0b', srinagar_leh:'#ec4899'
+  ecr:'#3B82F6',        // blue
+  leh_manali:'#CBD5F5', // air
+  mumbai_pune:'#22C55E',
+  nh66:'#EAB308',
+  srinagar_leh:'#EF4444'
 };
 
 /* ═══════════════════════════════════
@@ -501,32 +651,50 @@ const ROUTE_COLORS = {
 let TEMPLES = [];
 async function loadTemples() {
   try {
-    const res = await fetch('./all_temples.json');
-    const raw = await res.json();
+    const files = [
+  './temples/ashta_vinayak.json',
+  './temples/bhootha_lingas.json',
+  './temples/char_dham.json',
+  './temples/chota_char_dham.json',
+  './temples/jyotirlinga.json',
+  './temples/panch_kedar.json',
+  './temples/divya_108.json'
+];
 
-    // 🔥 FIX DATA HERE (no need to touch JSON file)
-    TEMPLES = raw.map(t => ({
-      name: t.name || "Unknown Temple",
-      state: t.state || "India",
-      lat: t.lat,
-      lng: t.lng,
-      category: t.category || "Famous",
-      best_season: t.best_season || "All year",
-      description: t.description || "No description available"
-    }));
+    const responses = await Promise.all(files.map(f => fetch(f)));
+    const jsonData = await Promise.all(responses.map(r => r.json()));
 
-    console.log("Temples fixed + loaded:", TEMPLES.length);
+    // 🔥 merge all arrays
+    const combined = jsonData.flat();
+
+    TEMPLES = combined.map(t => ({
+  name: t.name || "Unknown Temple",
+  state: t.state || "India",
+
+  // 🔥 FIX HERE
+  lat: Number(t.lat || t.latitude),
+  lng: Number(t.lng || t.longitude),
+
+  category: t.category || "Yatra",
+  subcategory: t.subcategory || "General",
+
+  best_season: t.best_season || "All year",
+  description: t.description || "No description available"
+}));
+
+    console.log("All temple sets loaded:", TEMPLES.length);
 
   } catch (e) {
     console.error("Temple load error:", e);
   }
 }
-const TEMPLE_CATS = ["All","Char Dham","Jyotirlinga","Shakti Peetha","Famous","Trek"];
-const TEMPLE_COLORS = {
-  "Char Dham":"#f59e0b","Jyotirlinga":"#818cf8",
-  "Shakti Peetha":"#f472b6","Famous":"#34d399","Trek":"#60a5fa","All":"#fbbf24"
+document.getElementById("loginBtn").onclick = () => {
+  document.getElementById("loginPopup").classList.add("active");
 };
 
+function closeLogin(){
+  document.getElementById("loginPopup").classList.remove("active");
+}
 /* ═══════════════════════════════════
    APP STATE
 ═══════════════════════════════════ */
@@ -695,31 +863,101 @@ function loadIndiaStates() {
   }).catch(e=>console.error('GeoJSON:',e));
 }
 
+async function fetchStateWiki(state) {
+  try {
+    const url = `https://en.wikipedia.org/w/api.php?action=parse&page=${encodeURIComponent(state)}&format=json&origin=*`;
+
+    const res = await fetch(url);
+    const data = await res.json();
+
+    const html = data.parse.text["*"];
+
+    return {
+      html: html
+    };
+
+  } catch (e) {
+    console.error("Wiki error:", e);
+    return { html: "" };
+  }
+}
+
 /* ═══════════════════════════════════
    STATE PANEL
 ═══════════════════════════════════ */
-function showStatePanel(state) {
+async function showStatePanel(state) {
   document.getElementById('panel-mode-label').innerText = 'STATE';
   document.getElementById('panel-title').innerText = state;
   document.getElementById('desc').innerText = 'Loading…';
-  document.getElementById('header-img').style.display='none';
+
   showPanelSections('state');
   openPanel();
 
-  fetch('./states/'+state+'.json')
-    .then(r=>{ if(!r.ok) throw r; return r.json(); })
-    .then(data=>{
-      window.currentStateData=data;
-      displayStateCat('tradition');
-      document.querySelectorAll('#stateTabs .tab-btn').forEach(btn=>{
-        btn.onclick=()=>{
-          document.querySelectorAll('#stateTabs .tab-btn').forEach(b=>b.classList.remove('active'));
-          btn.classList.add('active');
-          displayStateCat(btn.dataset.cat);
-        };
-      });
-    })
-    .catch(()=>{ document.getElementById('desc').innerText='Information not available.'; });
+ const wiki = await fetchStateWiki(state);
+ window.currentStateHTML = wiki.html;
+
+ // default overview
+ document.getElementById('desc').innerHTML =
+  extractSection(wiki.html, "intro");
+
+  const img = document.getElementById('header-img');
+  if (wiki.image) {
+    img.src = wiki.image;
+    img.style.display = 'block';
+  } else {
+    img.style.display = 'none';
+  }
+}
+document.querySelectorAll('#stateTabs .tab-btn').forEach(btn => {
+  btn.onclick = () => {
+    document.querySelectorAll('#stateTabs .tab-btn')
+      .forEach(b => b.classList.remove('active'));
+
+    btn.classList.add('active');
+
+    displayStateCat(btn.dataset.cat);
+  };
+});
+
+function extractSection(html, type) {
+  const div = document.createElement('div');
+  div.innerHTML = html;
+
+  const sections = div.querySelectorAll('h2, h3, p');
+
+  let current = "";
+  let result = [];
+
+  sections.forEach(el => {
+    if (el.tagName === "H2" || el.tagName === "H3") {
+      current = el.innerText.toLowerCase();
+    } 
+    else if (el.tagName === "P") {
+
+      if (type === "history" && current.includes("history")) {
+        result.push(el.innerText);
+      }
+
+      else if (type === "culture" && current.includes("culture")) {
+        result.push(el.innerText);
+      }
+
+      else if (type === "tradition" &&
+        (current.includes("culture") || current.includes("society") || current.includes("custom"))
+      ) {
+        result.push(el.innerText);
+      }
+    }
+  });
+
+  // fallback
+  if (result.length === 0) {
+    result = [...div.querySelectorAll('p')]
+      .map(p => p.innerText)
+      .slice(0, 3);
+  }
+
+  return result.slice(0, 5).join("<br><br>");
 }
 
 function clearSelectedState() {
@@ -735,17 +973,10 @@ function clearSelectedState() {
 }
 
 function displayStateCat(cat) {
-  const d = window.currentStateData?.[cat];
+  if (!window.currentStateHTML) return;
 
-  document.getElementById('desc').innerText = d?.text || 'Not available.';
-
-  const img = document.getElementById('header-img');
-  if (d?.image) {
-    img.src = d.image;
-    img.style.display = 'block';
-  } else {
-    img.style.display = 'none';
-  }
+  document.getElementById('desc').innerHTML =
+    extractSection(window.currentStateHTML, cat);
 }
 
 /* ═══════════════════════════════════
@@ -887,24 +1118,52 @@ function showRoutePanel(route, color, loading) {
 /* ═══════════════════════════════════
    TEMPLE MODE
 ═══════════════════════════════════ */
-function buildTemplePicker() {
-  const list=document.getElementById('templeFilterList');
+function buildTemplePicker(level = "main", parent = null) {
+  const list = document.getElementById('templeFilterList');
   list.innerHTML = `<div class="island-title">FILTER TEMPLES</div>`;
-  TEMPLE_CATS.forEach(cat=>{
-    const pill=document.createElement('div');
-    pill.className='temple-pill'+(cat==='All'?' on':'');
-    pill.id='tpill-'+cat.replace(/\s/g,'_');
-    pill.innerHTML=`<span style="color:${TEMPLE_COLORS[cat]};margin-right:5px;">●</span>${cat}`;
-    pill.onclick=()=>{
-      document.querySelectorAll('.temple-pill').forEach(p=>p.classList.remove('on'));
-      pill.classList.add('on');
-      activeTempleFilter=cat;
-      renderTemples(cat);
-    };
-    list.appendChild(pill);
-  });
-}
 
+  if (level === "main") {
+    Object.keys(TEMPLE_STRUCTURE).forEach(cat => {
+      const pill = document.createElement('div');
+      pill.className = 'temple-pill';
+      pill.innerText = cat;
+
+      pill.onclick = () => {
+     if (TEMPLE_STRUCTURE[cat].length > 0) {
+     buildTemplePicker("sub", cat);   // has children → go deeper
+     } else {
+     renderTemples("All");            // no children → show all
+     }
+      };
+
+      list.appendChild(pill);
+    });
+  }
+
+  else if (level === "sub") {
+    // 🔙 Back button
+    const back = document.createElement('div');
+    back.className = 'temple-pill';
+    back.innerText = "← Back";
+    back.onclick = () => buildTemplePicker("main");
+    list.appendChild(back);
+
+    TEMPLE_STRUCTURE[parent].forEach(sub => {
+      const pill = document.createElement('div');
+      pill.className = 'temple-pill';
+      pill.innerText = sub;
+
+      pill.onclick = () => {
+     document.querySelectorAll('.temple-pill').forEach(p=>p.classList.remove('on'));
+      pill.classList.add('on');
+
+     renderTemples(sub);
+     };
+
+      list.appendChild(pill);
+    });
+  }
+}
 function clearTemples() {
   templeMarkers.forEach(m=>map.removeLayer(m));
   templeMarkers=[];
@@ -912,19 +1171,79 @@ function clearTemples() {
 
 function renderTemples(filter) {
   clearTemples();
-  (filter==='All'?TEMPLES:TEMPLES.filter(t=>t.category===filter)).forEach(t=>{
-    const color=TEMPLE_COLORS[t.category]||'#fbbf24';
-    const templeIcon = L.icon({
-    iconUrl: "Om_symbol.svg.webp", // adjust path if needed
-   iconSize: [16, 16]
+  console.log("TEMPLES:", TEMPLES);
+  console.log("FILTER:", filter);
+  const filtered = (filter === 'All'
+  ? TEMPLES
+  : TEMPLES.filter(t =>
+      (t.subcategory || "")
+        .toLowerCase()
+        .replace(/\s+/g, '') === filter.toLowerCase().replace(/\s+/g, '')
+    )
+).filter(t => !isNaN(t.lat) && !isNaN(t.lng));
+
+  const templeIcon = L.icon({
+    iconUrl: "Om_symbol.svg.webp",
+    iconSize: [16, 16]
+  });
+
+  filtered.forEach(t => {
+    const m = L.marker([t.lat, t.lng], { icon: templeIcon }).addTo(map);
+
+    m.on('click', () => showTemplePanel(t));
+    m.bindTooltip(t.name, {
+      direction: 'top',
+      offset: [0, -8],
+      className: 'tt',
+      opacity: 1
     });
 
-   const m = L.marker([t.lat, t.lng], { icon: templeIcon }).addTo(map);
-    m.on('click',()=>showTemplePanel(t));
-    m.bindTooltip(t.name,{direction:'top',offset:[0,-8],className:'tt',opacity:1});
     templeMarkers.push(m);
   });
+
+  // 🔥 MOVE THIS OUTSIDE LOOP
+  if (templeMarkers.length > 0) {
+    const group = L.featureGroup(templeMarkers);
+    map.fitBounds(group.getBounds(), { padding: [50,50] });
+  }
 }
+const TEMPLE_CATS = [
+  "All",
+  "Ashta Vinayak",
+  "Bhootha Lingas",
+  "Char Dham",
+  "Chota Char Dham",
+  "Jyotirlinga",
+  "Panch Kedar"
+];
+
+const TEMPLE_STRUCTURE = {
+  "All": [],
+  "Yatra": [
+    "Char Dham",
+    "Chota Char Dham",
+    "Jyotirlinga",
+    "Ashta Vinayak",
+    "Panch Kedar",
+    "Bhootha Lingas",
+    "Divya Desams"   // 🔥 ADD THIS
+  ],
+  "Famous": [],
+  "Treks": [],
+  "Events": [],
+  "Circuits": []
+};
+
+const TEMPLE_COLORS = {
+  "Ashta Vinayak": "#f59e0b",
+  "Bhootha Lingas": "#60a5fa",
+  "Char Dham": "#34d399",
+  "Chota Char Dham": "#f472b6",
+  "Jyotirlinga": "#818cf8",
+  "Panch Kedar": "#fbbf24",
+  "Divya Desams": "#22c55e",
+  "All": "#fbbf24"
+};
 
 async function fetchWikiData(name) {
   try {
@@ -1043,6 +1362,7 @@ document.getElementById('templeBtn').addEventListener('click', async () => {
 
   if (TEMPLES.length === 0) {
     await loadTemples();
+    console.log("Loaded temples:", TEMPLES.length);
   }
 
   if (!map) {

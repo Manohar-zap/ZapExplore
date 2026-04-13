@@ -1,0 +1,14 @@
+[
+  {"name":"Somnath Temple","state":"Gujarat","lat":20.8880,"lng":70.4012,"category":"Yatra","subcategory":"Jyotirlinga"},
+  {"name":"Mallikarjuna Temple","state":"Andhra Pradesh","lat":16.0725,"lng":78.8680,"category":"Yatra","subcategory":"Jyotirlinga"},
+  {"name":"Mahakaleshwar Temple","state":"Madhya Pradesh","lat":23.1828,"lng":75.7680,"category":"Yatra","subcategory":"Jyotirlinga"},
+  {"name":"Omkareshwar Temple","state":"Madhya Pradesh","lat":22.2450,"lng":76.1510,"category":"Yatra","subcategory":"Jyotirlinga"},
+  {"name":"Kedarnath Temple","state":"Uttarakhand","lat":30.7352,"lng":79.0669,"category":"Yatra","subcategory":"Jyotirlinga"},
+  {"name":"Bhimashankar Temple","state":"Maharashtra","lat":19.0715,"lng":73.5363,"category":"Yatra","subcategory":"Jyotirlinga"},
+  {"name":"Kashi Vishwanath Temple","state":"Uttar Pradesh","lat":25.3109,"lng":83.0107,"category":"Yatra","subcategory":"Jyotirlinga"},
+  {"name":"Trimbakeshwar Temple","state":"Maharashtra","lat":19.9320,"lng":73.5290,"category":"Yatra","subcategory":"Jyotirlinga"},
+  {"name":"Vaidyanath Temple","state":"Jharkhand","lat":24.4829,"lng":86.6996,"category":"Yatra","subcategory":"Jyotirlinga"},
+  {"name":"Nageshwar Temple","state":"Gujarat","lat":22.4670,"lng":69.1630,"category":"Yatra","subcategory":"Jyotirlinga"},
+  {"name":"Ramanathaswamy Temple","state":"Tamil Nadu","lat":9.2881,"lng":79.3174,"category":"Yatra","subcategory":"Jyotirlinga"},
+  {"name":"Grishneshwar Temple","state":"Maharashtra","lat":20.0258,"lng":75.1790,"category":"Yatra","subcategory":"Jyotirlinga"}
+]

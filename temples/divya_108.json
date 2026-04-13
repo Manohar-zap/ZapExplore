@@ -1,0 +1,974 @@
+[
+  {
+    "name": "Sri Ranganathaswamy Temple",
+    "location": "Srirangam",
+    "state": "Tamil Nadu",
+    "lat": 10.8625,
+    "lng": 78.6897,
+    "category": "Yatra",
+    "subcategory": "Divya Desams"
+  },
+  {
+    "name": "Thiruko\u1e3bi (Uraiyur)",
+    "location": "Trichy",
+    "state": "Tamil Nadu",
+    "lat": 10.82,
+    "lng": 78.67,
+    "category": "Yatra",
+    "subcategory": "Divya Desams"
+  },
+  {
+    "name": "Thirukkarambanoor (Uttamar Koil)",
+    "location": "Trichy",
+    "state": "Tamil Nadu",
+    "lat": 10.49,
+    "lng": 78.81,
+    "category": "Yatra",
+    "subcategory": "Divya Desams"
+  },
+  {
+    "name": "Pundarikakshan Perumal",
+    "location": "Thiruvellarai",
+    "state": "Tamil Nadu",
+    "lat": 10.96,
+    "lng": 78.67,
+    "category": "Yatra",
+    "subcategory": "Divya Desams"
+  },
+  {
+    "name": "Vadivazhagiya Nambi",
+    "location": "Anbil",
+    "state": "Tamil Nadu",
+    "lat": 10.8677,
+    "lng": 78.8822,
+    "category": "Yatra",
+    "subcategory": "Divya Desams"
+  },
+  {
+    "name": "Appakkudathaan Perumal",
+    "location": "Koviladi",
+    "state": "Tamil Nadu",
+    "lat": 10.8393,
+    "lng": 78.8891,
+    "category": "Yatra",
+    "subcategory": "Divya Desams"
+  },
+  {
+    "name": "Hara Saabha Vimocchana",
+    "location": "Kandiyur",
+    "state": "Tamil Nadu",
+    "lat": 10.8603,
+    "lng": 79.1089,
+    "category": "Yatra",
+    "subcategory": "Divya Desams"
+  },
+  {
+    "name": "Jagathrakshaga Perumal",
+    "location": "Aduthurai",
+    "state": "Tamil Nadu",
+    "lat": 10.9252,
+    "lng": 79.2035,
+    "category": "Yatra",
+    "subcategory": "Divya Desams"
+  },
+  {
+    "name": "Gajendra Varadha Perumal",
+    "location": "Kabisthalam",
+    "state": "Tamil Nadu",
+    "lat": 10.9469,
+    "lng": 79.2565,
+    "category": "Yatra",
+    "subcategory": "Divya Desams"
+  },
+  {
+    "name": "Valvil Ramar Temple",
+    "location": "Pullaboothangudi",
+    "state": "Tamil Nadu",
+    "lat": 10.9248,
+    "lng": 79.2965,
+    "category": "Yatra",
+    "subcategory": "Divya Desams"
+  },
+  {
+    "name": "Aandu Alakkum Ayan",
+    "location": "Adhanur",
+    "state": "Tamil Nadu",
+    "lat": 10.92,
+    "lng": 79.29,
+    "category": "Yatra",
+    "subcategory": "Divya Desams"
+  },
+  {
+    "name": "Sarangapani Temple",
+    "location": "Kumbakonam",
+    "state": "Tamil Nadu",
+    "lat": 10.9594,
+    "lng": 79.3747,
+    "category": "Yatra",
+    "subcategory": "Divya Desams"
+  },
+  {
+    "name": "Oppiliappan Temple",
+    "location": "Thirunageswaram",
+    "state": "Tamil Nadu",
+    "lat": 10.9634,
+    "lng": 79.43,
+    "category": "Yatra",
+    "subcategory": "Divya Desams"
+  },
+  {
+    "name": "Thirunarayur Nambi",
+    "location": "Nachiyar Koil",
+    "state": "Tamil Nadu",
+    "lat": 10.9167,
+    "lng": 79.4333,
+    "category": "Yatra",
+    "subcategory": "Divya Desams"
+  },
+  {
+    "name": "Saranathan Temple",
+    "location": "Tirucherai",
+    "state": "Tamil Nadu",
+    "lat": 10.877,
+    "lng": 79.452,
+    "category": "Yatra",
+    "subcategory": "Divya Desams"
+  },
+  {
+    "name": "Bhaktavatsala Perumal",
+    "location": "Tirukannamangai",
+    "state": "Tamil Nadu",
+    "lat": 10.7936,
+    "lng": 79.5852,
+    "category": "Yatra",
+    "subcategory": "Divya Desams"
+  },
+  {
+    "name": "Nathan Koil",
+    "location": "Nandipura",
+    "state": "Tamil Nadu",
+    "lat": 10.927,
+    "lng": 79.378,
+    "category": "Yatra",
+    "subcategory": "Divya Desams"
+  },
+  {
+    "name": "Kola Valvilli Ramar",
+    "location": "Tiruvelliyangudi",
+    "state": "Tamil Nadu",
+    "lat": 11.05,
+    "lng": 79.44,
+    "category": "Yatra",
+    "subcategory": "Divya Desams"
+  },
+  {
+    "name": "Parimala Ranganatha",
+    "location": "Mayiladuthurai",
+    "state": "Tamil Nadu",
+    "lat": 11.1092,
+    "lng": 79.6453,
+    "category": "Yatra",
+    "subcategory": "Divya Desams"
+  },
+  {
+    "name": "Devaadi Raja Perumal",
+    "location": "Therazhandur",
+    "state": "Tamil Nadu",
+    "lat": 11.033,
+    "lng": 79.578,
+    "category": "Yatra",
+    "subcategory": "Divya Desams"
+  },
+  {
+    "name": "Arulmaakadal Perumal",
+    "location": "Sirupuliyur",
+    "state": "Tamil Nadu",
+    "lat": 10.945,
+    "lng": 79.658,
+    "category": "Yatra",
+    "subcategory": "Divya Desams"
+  },
+  {
+    "name": "Sowriraja Perumal",
+    "location": "Thirukannapuram",
+    "state": "Tamil Nadu",
+    "lat": 10.8684,
+    "lng": 79.7042,
+    "category": "Yatra",
+    "subcategory": "Divya Desams"
+  },
+  {
+    "name": "Soundaryaraja Perumal",
+    "location": "Nagapattinam",
+    "state": "Tamil Nadu",
+    "lat": 10.7628,
+    "lng": 79.8406,
+    "category": "Yatra",
+    "subcategory": "Divya Desams"
+  },
+  {
+    "name": "Loganatha Perumal",
+    "location": "Thirukkannankudi",
+    "state": "Tamil Nadu",
+    "lat": 10.75,
+    "lng": 79.76,
+    "category": "Yatra",
+    "subcategory": "Divya Desams"
+  },
+  {
+    "name": "Nanmadhiya Perumal",
+    "location": "Thalaichangadu",
+    "state": "Tamil Nadu",
+    "lat": 11.134,
+    "lng": 79.789,
+    "category": "Yatra",
+    "subcategory": "Divya Desams"
+  },
+  {
+    "name": "Thadalar Seerkazhi",
+    "location": "Sirkazhi",
+    "state": "Tamil Nadu",
+    "lat": 11.2333,
+    "lng": 79.7333,
+    "category": "Yatra",
+    "subcategory": "Divya Desams"
+  },
+  {
+    "name": "Srinivasa Perumal",
+    "location": "Annan Koil",
+    "state": "Tamil Nadu",
+    "lat": 11.187,
+    "lng": 79.792,
+    "category": "Yatra",
+    "subcategory": "Divya Desams"
+  },
+  {
+    "name": "Deiva Naayaga Perumal",
+    "location": "Devanar Thogai",
+    "state": "Tamil Nadu",
+    "lat": 11.183,
+    "lng": 79.8,
+    "category": "Yatra",
+    "subcategory": "Divya Desams"
+  },
+  {
+    "name": "Lakshmi Narasimha",
+    "location": "Tiruvalli",
+    "state": "Tamil Nadu",
+    "lat": 11.196,
+    "lng": 79.775,
+    "category": "Yatra",
+    "subcategory": "Divya Desams"
+  },
+  {
+    "name": "Gopala Krishna",
+    "location": "Kavalampadi",
+    "state": "Tamil Nadu",
+    "lat": 11.185,
+    "lng": 79.785,
+    "category": "Yatra",
+    "subcategory": "Divya Desams"
+  },
+  {
+    "name": "Varadharaja Perumal",
+    "location": "Manikoodam",
+    "state": "Tamil Nadu",
+    "lat": 11.189,
+    "lng": 79.788,
+    "category": "Yatra",
+    "subcategory": "Divya Desams"
+  },
+  {
+    "name": "Thamaraiyal Kelvan",
+    "location": "Parthanpalli",
+    "state": "Tamil Nadu",
+    "lat": 11.178,
+    "lng": 79.814,
+    "category": "Yatra",
+    "subcategory": "Divya Desams"
+  },
+  {
+    "name": "Narayana Perumal",
+    "location": "Manimada Koil",
+    "state": "Tamil Nadu",
+    "lat": 11.188,
+    "lng": 79.78,
+    "category": "Yatra",
+    "subcategory": "Divya Desams"
+  },
+  {
+    "name": "Kuda Maadu Koothan",
+    "location": "Arimeya Vinnagaram",
+    "state": "Tamil Nadu",
+    "lat": 11.187,
+    "lng": 79.783,
+    "category": "Yatra",
+    "subcategory": "Divya Desams"
+  },
+  {
+    "name": "Seganmaal Ranganatha",
+    "location": "Tetri Ambalam",
+    "state": "Tamil Nadu",
+    "lat": 11.186,
+    "lng": 79.782,
+    "category": "Yatra",
+    "subcategory": "Divya Desams"
+  },
+  {
+    "name": "Per Arulaalan",
+    "location": "Sempon Sei Koil",
+    "state": "Tamil Nadu",
+    "lat": 11.1885,
+    "lng": 79.781,
+    "category": "Yatra",
+    "subcategory": "Divya Desams"
+  },
+  {
+    "name": "Purushothama Perumal",
+    "location": "Vinnil Purushothama",
+    "state": "Tamil Nadu",
+    "lat": 11.1895,
+    "lng": 79.7825,
+    "category": "Yatra",
+    "subcategory": "Divya Desams"
+  },
+  {
+    "name": "Vaigundha Nathan",
+    "location": "Vaikunda Vinnagaram",
+    "state": "Tamil Nadu",
+    "lat": 11.19,
+    "lng": 79.784,
+    "category": "Yatra",
+    "subcategory": "Divya Desams"
+  },
+  {
+    "name": "Madhava Perumal",
+    "location": "Thiruvelakkulam",
+    "state": "Tamil Nadu",
+    "lat": 11.192,
+    "lng": 79.786,
+    "category": "Yatra",
+    "subcategory": "Divya Desams"
+  },
+  {
+    "name": "Pallikonda Perumal",
+    "location": "Thiruchitra Koodam",
+    "state": "Tamil Nadu",
+    "lat": 11.3992,
+    "lng": 79.6936,
+    "category": "Yatra",
+    "subcategory": "Divya Desams"
+  },
+  {
+    "name": "Devanathaswamy",
+    "location": "Tiruvandipuram",
+    "state": "Tamil Nadu",
+    "lat": 11.745,
+    "lng": 79.709,
+    "category": "Yatra",
+    "subcategory": "Divya Desams"
+  },
+  {
+    "name": "Trivikrama Perumal",
+    "location": "Tirukoyilur",
+    "state": "Tamil Nadu",
+    "lat": 11.9667,
+    "lng": 79.2,
+    "category": "Yatra",
+    "subcategory": "Divya Desams"
+  },
+  {
+    "name": "Varadharaja Perumal",
+    "location": "Kanchipuram",
+    "state": "Tamil Nadu",
+    "lat": 12.819,
+    "lng": 79.7252,
+    "category": "Yatra",
+    "subcategory": "Divya Desams"
+  },
+  {
+    "name": "Aadhikesava Perumal",
+    "location": "Ashtabujakaram",
+    "state": "Tamil Nadu",
+    "lat": 12.825,
+    "lng": 79.712,
+    "category": "Yatra",
+    "subcategory": "Divya Desams"
+  },
+  {
+    "name": "Yathothakaari Perumal",
+    "location": "Tiruvekka",
+    "state": "Tamil Nadu",
+    "lat": 12.824,
+    "lng": 79.711,
+    "category": "Yatra",
+    "subcategory": "Divya Desams"
+  },
+  {
+    "name": "Azhagiya Singar",
+    "location": "Velukkai",
+    "state": "Tamil Nadu",
+    "lat": 12.823,
+    "lng": 79.706,
+    "category": "Yatra",
+    "subcategory": "Divya Desams"
+  },
+  {
+    "name": "Deepa Prakasar",
+    "location": "Thiruthanka",
+    "state": "Tamil Nadu",
+    "lat": 12.827,
+    "lng": 79.702,
+    "category": "Yatra",
+    "subcategory": "Divya Desams"
+  },
+  {
+    "name": "Aadhi Varaha Perumal",
+    "location": "Kalvanoor",
+    "state": "Tamil Nadu",
+    "lat": 12.84,
+    "lng": 79.703,
+    "category": "Yatra",
+    "subcategory": "Divya Desams"
+  },
+  {
+    "name": "Ulagalantha Perumal",
+    "location": "Ooragam",
+    "state": "Tamil Nadu",
+    "lat": 12.8392,
+    "lng": 79.705,
+    "category": "Yatra",
+    "subcategory": "Divya Desams"
+  },
+  {
+    "name": "Jagadeeshwarar",
+    "location": "Neeragam",
+    "state": "Tamil Nadu",
+    "lat": 12.8395,
+    "lng": 79.7055,
+    "category": "Yatra",
+    "subcategory": "Divya Desams"
+  },
+  {
+    "name": "Karunakara Perumal",
+    "location": "Kaaragam",
+    "state": "Tamil Nadu",
+    "lat": 12.8398,
+    "lng": 79.706,
+    "category": "Yatra",
+    "subcategory": "Divya Desams"
+  },
+  {
+    "name": "Thirukkaar vaanar",
+    "location": "Kaarvaanam",
+    "state": "Tamil Nadu",
+    "lat": 12.84,
+    "lng": 79.7065,
+    "category": "Yatra",
+    "subcategory": "Divya Desams"
+  },
+  {
+    "name": "Vaikunda Perumal",
+    "location": "Parameswara Vinnagaram",
+    "state": "Tamil Nadu",
+    "lat": 12.837,
+    "lng": 79.707,
+    "category": "Yatra",
+    "subcategory": "Divya Desams"
+  },
+  {
+    "name": "Pavala Vannar",
+    "location": "Pavala Vannan",
+    "state": "Tamil Nadu",
+    "lat": 12.845,
+    "lng": 79.706,
+    "category": "Yatra",
+    "subcategory": "Divya Desams"
+  },
+  {
+    "name": "Nilathingal Thundathan",
+    "location": "Nilathingal Thundam",
+    "state": "Tamil Nadu",
+    "lat": 12.841,
+    "lng": 79.703,
+    "category": "Yatra",
+    "subcategory": "Divya Desams"
+  },
+  {
+    "name": "Pandava Thoodhar",
+    "location": "Paadagam",
+    "state": "Tamil Nadu",
+    "lat": 12.8427,
+    "lng": 79.6994,
+    "category": "Yatra",
+    "subcategory": "Divya Desams"
+  },
+  {
+    "name": "Vijayaraghava Perumal",
+    "location": "Tirupputkuzhi",
+    "state": "Tamil Nadu",
+    "lat": 12.871,
+    "lng": 79.623,
+    "category": "Yatra",
+    "subcategory": "Divya Desams"
+  },
+  {
+    "name": "Parthasarathy Temple",
+    "location": "Triplicane",
+    "state": "Tamil Nadu",
+    "lat": 13.0538,
+    "lng": 80.2764,
+    "category": "Yatra",
+    "subcategory": "Divya Desams"
+  },
+  {
+    "name": "Neervanna Perumal",
+    "location": "Thiruneermalai",
+    "state": "Tamil Nadu",
+    "lat": 12.9592,
+    "lng": 80.1136,
+    "category": "Yatra",
+    "subcategory": "Divya Desams"
+  },
+  {
+    "name": "Nithya Kalyana Perumal",
+    "location": "Thiruvidandai",
+    "state": "Tamil Nadu",
+    "lat": 12.7634,
+    "lng": 80.2464,
+    "category": "Yatra",
+    "subcategory": "Divya Desams"
+  },
+  {
+    "name": "Sthala Sayana Perumal",
+    "location": "Mahabalipuram",
+    "state": "Tamil Nadu",
+    "lat": 12.6197,
+    "lng": 80.1925,
+    "category": "Yatra",
+    "subcategory": "Divya Desams"
+  },
+  {
+    "name": "Bhaktavatsala Perumal",
+    "location": "Tirunindravur",
+    "state": "Tamil Nadu",
+    "lat": 13.111,
+    "lng": 80.027,
+    "category": "Yatra",
+    "subcategory": "Divya Desams"
+  },
+  {
+    "name": "Veeraraghava Perumal",
+    "location": "Tiruvallur",
+    "state": "Tamil Nadu",
+    "lat": 13.1345,
+    "lng": 79.9094,
+    "category": "Yatra",
+    "subcategory": "Divya Desams"
+  },
+  {
+    "name": "Yoga Narasimha",
+    "location": "Sholingur",
+    "state": "Tamil Nadu",
+    "lat": 13.111,
+    "lng": 79.425,
+    "category": "Yatra",
+    "subcategory": "Divya Desams"
+  },
+  {
+    "name": "Koodal Azhagar",
+    "location": "Madurai",
+    "state": "Tamil Nadu",
+    "lat": 9.9174,
+    "lng": 78.1132,
+    "category": "Yatra",
+    "subcategory": "Divya Desams"
+  },
+  {
+    "name": "Kaalamegha Perumal",
+    "location": "Tirumohur",
+    "state": "Tamil Nadu",
+    "lat": 9.954,
+    "lng": 78.204,
+    "category": "Yatra",
+    "subcategory": "Divya Desams"
+  },
+  {
+    "name": "Kallalagar Temple",
+    "location": "Alagar Koyil",
+    "state": "Tamil Nadu",
+    "lat": 10.074,
+    "lng": 78.213,
+    "category": "Yatra",
+    "subcategory": "Divya Desams"
+  },
+  {
+    "name": "Uraga Mellanayaan",
+    "location": "Thirukoshtiyur",
+    "state": "Tamil Nadu",
+    "lat": 10.06,
+    "lng": 78.55,
+    "category": "Yatra",
+    "subcategory": "Divya Desams"
+  },
+  {
+    "name": "Sathyagirinatha",
+    "location": "Thirumeyyam",
+    "state": "Tamil Nadu",
+    "lat": 10.248,
+    "lng": 78.751,
+    "category": "Yatra",
+    "subcategory": "Divya Desams"
+  },
+  {
+    "name": "Kalyana Jagannatha",
+    "location": "Thirupullanni",
+    "state": "Tamil Nadu",
+    "lat": 9.283,
+    "lng": 78.825,
+    "category": "Yatra",
+    "subcategory": "Divya Desams"
+  },
+  {
+    "name": "Nindra Narayana",
+    "location": "Thiruthankaal",
+    "state": "Tamil Nadu",
+    "lat": 9.483,
+    "lng": 77.662,
+    "category": "Yatra",
+    "subcategory": "Divya Desams"
+  },
+  {
+    "name": "Vadabhatra Saayi",
+    "location": "Srivilliputhur",
+    "state": "Tamil Nadu",
+    "lat": 9.5097,
+    "lng": 77.6322,
+    "category": "Yatra",
+    "subcategory": "Divya Desams"
+  },
+  {
+    "name": "Azhagiya Nambi",
+    "location": "Thirukurungudi",
+    "state": "Tamil Nadu",
+    "lat": 8.441,
+    "lng": 77.567,
+    "category": "Yatra",
+    "subcategory": "Divya Desams"
+  },
+  {
+    "name": "Totadri Nathan",
+    "location": "Nanguneri",
+    "state": "Tamil Nadu",
+    "lat": 8.487,
+    "lng": 77.66,
+    "category": "Yatra",
+    "subcategory": "Divya Desams"
+  },
+  {
+    "name": "Srivaikuntanathan",
+    "location": "Srivaikuntam",
+    "state": "Tamil Nadu",
+    "lat": 8.636,
+    "lng": 77.913,
+    "category": "Yatra",
+    "subcategory": "Divya Desams"
+  },
+  {
+    "name": "Vijayasana Perumal",
+    "location": "Varagunamangai",
+    "state": "Tamil Nadu",
+    "lat": 8.623,
+    "lng": 77.935,
+    "category": "Yatra",
+    "subcategory": "Divya Desams"
+  },
+  {
+    "name": "Bhoomipalaka",
+    "location": "Thirupulinkudi",
+    "state": "Tamil Nadu",
+    "lat": 8.618,
+    "lng": 77.948,
+    "category": "Yatra",
+    "subcategory": "Divya Desams"
+  },
+  {
+    "name": "Aravindha Lochana",
+    "location": "Twin Thirupathi",
+    "state": "Tamil Nadu",
+    "lat": 8.608,
+    "lng": 77.973,
+    "category": "Yatra",
+    "subcategory": "Divya Desams"
+  },
+  {
+    "name": "Devapiran",
+    "location": "Twin Thirupathi",
+    "state": "Tamil Nadu",
+    "lat": 8.6085,
+    "lng": 77.9735,
+    "category": "Yatra",
+    "subcategory": "Divya Desams"
+  },
+  {
+    "name": "Srinivasa Perumal",
+    "location": "Thirukulanthai",
+    "state": "Tamil Nadu",
+    "lat": 8.627,
+    "lng": 77.989,
+    "category": "Yatra",
+    "subcategory": "Divya Desams"
+  },
+  {
+    "name": "Magara NedungKuzhai",
+    "location": "Thirupperai",
+    "state": "Tamil Nadu",
+    "lat": 8.615,
+    "lng": 78.024,
+    "category": "Yatra",
+    "subcategory": "Divya Desams"
+  },
+  {
+    "name": "Vaitha Maanitha",
+    "location": "Thirukoloor",
+    "state": "Tamil Nadu",
+    "lat": 8.608,
+    "lng": 77.996,
+    "category": "Yatra",
+    "subcategory": "Divya Desams"
+  },
+  {
+    "name": "Aadhinatha Swamy",
+    "location": "Alwar Thirunagiri",
+    "state": "Tamil Nadu",
+    "lat": 8.605,
+    "lng": 77.887,
+    "category": "Yatra",
+    "subcategory": "Divya Desams"
+  },
+  {
+    "name": "Appan Temple",
+    "location": "Thiruvattaru",
+    "state": "Tamil Nadu",
+    "lat": 8.33,
+    "lng": 77.27,
+    "category": "Yatra",
+    "subcategory": "Divya Desams"
+  },
+  {
+    "name": "Padmanabhaswamy",
+    "location": "Thiruvananthapuram",
+    "state": "Kerala",
+    "lat": 8.483,
+    "lng": 76.9436,
+    "category": "Yatra",
+    "subcategory": "Divya Desams"
+  },
+  {
+    "name": "Maayapiran Perumal",
+    "location": "Thirupuliyur",
+    "state": "Kerala",
+    "lat": 9.313,
+    "lng": 76.623,
+    "category": "Yatra",
+    "subcategory": "Divya Desams"
+  },
+  {
+    "name": "Imayavarappa",
+    "location": "Thirucchenkundroor",
+    "state": "Kerala",
+    "lat": 9.325,
+    "lng": 76.611,
+    "category": "Yatra",
+    "subcategory": "Divya Desams"
+  },
+  {
+    "name": "Parthasarathy",
+    "location": "Aranmula",
+    "state": "Kerala",
+    "lat": 9.3308,
+    "lng": 76.6853,
+    "category": "Yatra",
+    "subcategory": "Divya Desams"
+  },
+  {
+    "name": "Paambanaiyappa",
+    "location": "Thiruvanvandoor",
+    "state": "Kerala",
+    "lat": 9.365,
+    "lng": 76.596,
+    "category": "Yatra",
+    "subcategory": "Divya Desams"
+  },
+  {
+    "name": "Kolapira Perumal",
+    "location": "Thiruvalla",
+    "state": "Kerala",
+    "lat": 9.387,
+    "lng": 76.577,
+    "category": "Yatra",
+    "subcategory": "Divya Desams"
+  },
+  {
+    "name": "Athpudha Narayana",
+    "location": "Thirukkadithaanam",
+    "state": "Kerala",
+    "lat": 9.435,
+    "lng": 76.533,
+    "category": "Yatra",
+    "subcategory": "Divya Desams"
+  },
+  {
+    "name": "Katkaraiappa",
+    "location": "Thrikkakara",
+    "state": "Kerala",
+    "lat": 10.0344,
+    "lng": 76.33,
+    "category": "Yatra",
+    "subcategory": "Divya Desams"
+  },
+  {
+    "name": "Moozhikkalathaan",
+    "location": "Thirumoozhikkalam",
+    "state": "Kerala",
+    "lat": 10.183,
+    "lng": 76.366,
+    "category": "Yatra",
+    "subcategory": "Divya Desams"
+  },
+  {
+    "name": "Uyyavantha Perumal",
+    "location": "Thiruvithuvakkodu",
+    "state": "Kerala",
+    "lat": 10.825,
+    "lng": 76.225,
+    "category": "Yatra",
+    "subcategory": "Divya Desams"
+  },
+  {
+    "name": "Naavaay Mugundha",
+    "location": "Thirunavaya",
+    "state": "Kerala",
+    "lat": 10.85,
+    "lng": 75.983,
+    "category": "Yatra",
+    "subcategory": "Divya Desams"
+  },
+  {
+    "name": "Venkateswara Temple",
+    "location": "Tirumala",
+    "state": "Andhra Pradesh",
+    "lat": 13.6833,
+    "lng": 79.3472,
+    "category": "Yatra",
+    "subcategory": "Divya Desams"
+  },
+  {
+    "name": "Ahobilam Narasimha",
+    "location": "Ahobilam",
+    "state": "Andhra Pradesh",
+    "lat": 15.1333,
+    "lng": 78.7167,
+    "category": "Yatra",
+    "subcategory": "Divya Desams"
+  },
+  {
+    "name": "Dwarkadhish Temple",
+    "location": "Dwarka",
+    "state": "Gujarat",
+    "lat": 22.2376,
+    "lng": 68.9674,
+    "category": "Yatra",
+    "subcategory": "Divya Desams"
+  },
+  {
+    "name": "Ram Janmabhoomi",
+    "location": "Ayodhya",
+    "state": "Uttar Pradesh",
+    "lat": 26.7956,
+    "lng": 82.2,
+    "category": "Yatra",
+    "subcategory": "Divya Desams"
+  },
+  {
+    "name": "Naimisharanya",
+    "location": "Sitapur",
+    "state": "Uttar Pradesh",
+    "lat": 27.35,
+    "lng": 80.4833,
+    "category": "Yatra",
+    "subcategory": "Divya Desams"
+  },
+  {
+    "name": "Navamohana Krishna",
+    "location": "Mathura (Aayarpadi)",
+    "state": "Uttar Pradesh",
+    "lat": 27.4925,
+    "lng": 77.6736,
+    "category": "Yatra",
+    "subcategory": "Divya Desams"
+  },
+  {
+    "name": "Govardhana Nesa",
+    "location": "Mathura",
+    "state": "Uttar Pradesh",
+    "lat": 27.492,
+    "lng": 77.673,
+    "category": "Yatra",
+    "subcategory": "Divya Desams"
+  },
+  {
+    "name": "Neelamega Perumal",
+    "location": "Devaprayag",
+    "state": "Uttarakhand",
+    "lat": 30.145,
+    "lng": 78.598,
+    "category": "Yatra",
+    "subcategory": "Divya Desams"
+  },
+  {
+    "name": "Paramapurusha",
+    "location": "Joshimutt",
+    "state": "Uttarakhand",
+    "lat": 30.55,
+    "lng": 79.566,
+    "category": "Yatra",
+    "subcategory": "Divya Desams"
+  },
+  {
+    "name": "Badri Narayana",
+    "location": "Badrinath",
+    "state": "Uttarakhand",
+    "lat": 30.7447,
+    "lng": 79.4912,
+    "category": "Yatra",
+    "subcategory": "Divya Desams"
+  },
+  {
+    "name": "Muktinath Temple",
+    "location": "Saligramam",
+    "state": "Nepal",
+    "lat": 28.8167,
+    "lng": 83.8667,
+    "category": "Yatra",
+    "subcategory": "Divya Desams"
+  },
+  {
+    "name": "Thiruparkadal",
+    "location": "Celestial",
+    "state": "N/A",
+    "lat": null,
+    "lng": null,
+    "category": "Yatra",
+    "subcategory": "Divya Desams"
+  },
+  {
+    "name": "Paramapadam",
+    "location": "Vaikuntha",
+    "state": "N/A",
+    "lat": null,
+    "lng": null,
+    "category": "Yatra",
+    "subcategory": "Divya Desams"
+  }
+]
