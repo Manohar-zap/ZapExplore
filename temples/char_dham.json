@@ -1,6 +1,6 @@
 [
-  {"name":"Badrinath Temple","state":"Uttarakhand","lat":30.7433,"lng":79.4938,"category":"Yatra","subcategory":"Bada Char Dham"},
-  {"name":"Dwarkadhish Temple","state":"Gujarat","lat":22.2442,"lng":68.9685,"category":"Yatra","subcategory":"Bada Char Dham"},
-  {"name":"Jagannath Temple","state":"Odisha","lat":19.8135,"lng":85.8312,"category":"Yatra","subcategory":"Bada Char Dham"},
-  {"name":"Ramanathaswamy Temple","state":"Tamil Nadu","lat":9.2881,"lng":79.3174,"category":"Yatra","subcategory":"Bada Char Dham"}
+  {"name":"Badrinath Temple","state":"Uttarakhand","lat":30.7433,"lng":79.4938,"category":"Yatra","subcategory":"Char Dham"},
+  {"name":"Dwarkadhish Temple","state":"Gujarat","lat":22.2442,"lng":68.9685,"category":"Yatra","subcategory":"Char Dham"},
+  {"name":"Jagannath Temple","state":"Odisha","lat":19.8135,"lng":85.8312,"category":"Yatra","subcategory":"Char Dham"},
+  {"name":"Ramanathaswamy Temple","state":"Tamil Nadu","lat":9.2881,"lng":79.3174,"category":"Yatra","subcategory":"Char Dham"}
 ]
