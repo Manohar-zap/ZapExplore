@@ -1,0 +1,2338 @@
+[
+  {
+    "id": "route_1",
+    "name": "Leh\u2013Manali Highway 1",
+    "distance": "varies",
+    "best_time": "All year",
+    "highlights": [
+      "Manali",
+      "Rohtang Pass",
+      "Sarchu",
+      "Leh"
+    ],
+    "description": "Leh\u2013Manali Highway 1 scenic route.",
+    "from": [
+      32.2396,
+      77.1887
+    ],
+    "to": [
+      34.1526,
+      77.5771
+    ],
+    "waypoints": [
+      [
+        32.876,
+        77.507
+      ],
+      [
+        33.358,
+        77.615
+      ]
+    ],
+    "category": "mountain"
+  },
+  {
+    "id": "route_2",
+    "name": "Srinagar\u2013Leh Highway 2",
+    "distance": "varies",
+    "best_time": "All year",
+    "highlights": [
+      "Manali",
+      "Rohtang Pass",
+      "Sarchu",
+      "Leh"
+    ],
+    "description": "Srinagar\u2013Leh Highway 2 scenic route.",
+    "from": [
+      34.0837,
+      74.7973
+    ],
+    "to": [
+      34.1526,
+      77.5771
+    ],
+    "waypoints": [
+      [
+        34.3,
+        75.5
+      ],
+      [
+        34.45,
+        76.8
+      ]
+    ],
+    "category": "coastal"
+  },
+  {
+    "id": "route_3",
+    "name": "Spiti Circuit 3",
+    "distance": "varies",
+    "best_time": "All year",
+    "highlights": [
+      "Shimla",
+      "Kaza",
+      "Tabo",
+      "Manali"
+    ],
+    "description": "Spiti Circuit 3 scenic route.",
+    "from": [
+      31.1048,
+      77.1734
+    ],
+    "to": [
+      32.2396,
+      77.1887
+    ],
+    "waypoints": [
+      [
+        32.24,
+        78.03
+      ]
+    ],
+    "category": "ghat"
+  },
+  {
+    "id": "route_4",
+    "name": "Mumbai\u2013Goa NH66 4",
+    "distance": "varies",
+    "best_time": "All year",
+    "highlights": [
+      "Mumbai",
+      "Ratnagiri",
+      "Goa"
+    ],
+    "description": "Mumbai\u2013Goa NH66 4 scenic route.",
+    "from": [
+      19.076,
+      72.8777
+    ],
+    "to": [
+      15.2993,
+      74.124
+    ],
+    "waypoints": [
+      [
+        17,
+        73.3
+      ]
+    ],
+    "category": "desert"
+  },
+  {
+    "id": "route_5",
+    "name": "ECR 5",
+    "distance": "varies",
+    "best_time": "All year",
+    "highlights": [
+      "Chennai",
+      "Mahabalipuram",
+      "Pondicherry"
+    ],
+    "description": "ECR 5 scenic route.",
+    "from": [
+      13.0827,
+      80.2707
+    ],
+    "to": [
+      11.9416,
+      79.8083
+    ],
+    "waypoints": [
+      [
+        12.62,
+        80.19
+      ]
+    ],
+    "category": "temple"
+  },
+  {
+    "id": "route_6",
+    "name": "Leh\u2013Manali Highway 6",
+    "distance": "varies",
+    "best_time": "All year",
+    "highlights": [
+      "Manali",
+      "Rohtang Pass",
+      "Sarchu",
+      "Leh"
+    ],
+    "description": "Leh\u2013Manali Highway 6 scenic route.",
+    "from": [
+      32.2396,
+      77.1887
+    ],
+    "to": [
+      34.1526,
+      77.5771
+    ],
+    "waypoints": [
+      [
+        32.876,
+        77.507
+      ],
+      [
+        33.358,
+        77.615
+      ]
+    ],
+    "category": "forest"
+  },
+  {
+    "id": "route_7",
+    "name": "Srinagar\u2013Leh Highway 7",
+    "distance": "varies",
+    "best_time": "All year",
+    "highlights": [
+      "Manali",
+      "Rohtang Pass",
+      "Sarchu",
+      "Leh"
+    ],
+    "description": "Srinagar\u2013Leh Highway 7 scenic route.",
+    "from": [
+      34.0837,
+      74.7973
+    ],
+    "to": [
+      34.1526,
+      77.5771
+    ],
+    "waypoints": [
+      [
+        34.3,
+        75.5
+      ],
+      [
+        34.45,
+        76.8
+      ]
+    ],
+    "category": "city"
+  },
+  {
+    "id": "route_8",
+    "name": "Spiti Circuit 8",
+    "distance": "varies",
+    "best_time": "All year",
+    "highlights": [
+      "Shimla",
+      "Kaza",
+      "Tabo",
+      "Manali"
+    ],
+    "description": "Spiti Circuit 8 scenic route.",
+    "from": [
+      31.1048,
+      77.1734
+    ],
+    "to": [
+      32.2396,
+      77.1887
+    ],
+    "waypoints": [
+      [
+        32.24,
+        78.03
+      ]
+    ],
+    "category": "expressway"
+  },
+  {
+    "id": "route_9",
+    "name": "Mumbai\u2013Goa NH66 9",
+    "distance": "varies",
+    "best_time": "All year",
+    "highlights": [
+      "Mumbai",
+      "Ratnagiri",
+      "Goa"
+    ],
+    "description": "Mumbai\u2013Goa NH66 9 scenic route.",
+    "from": [
+      19.076,
+      72.8777
+    ],
+    "to": [
+      15.2993,
+      74.124
+    ],
+    "waypoints": [
+      [
+        17,
+        73.3
+      ]
+    ],
+    "category": "mountain"
+  },
+  {
+    "id": "route_10",
+    "name": "ECR 10",
+    "distance": "varies",
+    "best_time": "All year",
+    "highlights": [
+      "Chennai",
+      "Mahabalipuram",
+      "Pondicherry"
+    ],
+    "description": "ECR 10 scenic route.",
+    "from": [
+      13.0827,
+      80.2707
+    ],
+    "to": [
+      11.9416,
+      79.8083
+    ],
+    "waypoints": [
+      [
+        12.62,
+        80.19
+      ]
+    ],
+    "category": "coastal"
+  },
+  {
+    "id": "route_11",
+    "name": "Leh\u2013Manali Highway 11",
+    "distance": "varies",
+    "best_time": "All year",
+    "highlights": [
+      "Manali",
+      "Rohtang Pass",
+      "Sarchu",
+      "Leh"
+    ],
+    "description": "Leh\u2013Manali Highway 11 scenic route.",
+    "from": [
+      32.2396,
+      77.1887
+    ],
+    "to": [
+      34.1526,
+      77.5771
+    ],
+    "waypoints": [
+      [
+        32.876,
+        77.507
+      ],
+      [
+        33.358,
+        77.615
+      ]
+    ],
+    "category": "ghat"
+  },
+  {
+    "id": "route_12",
+    "name": "Srinagar\u2013Leh Highway 12",
+    "distance": "varies",
+    "best_time": "All year",
+    "highlights": [
+      "Manali",
+      "Rohtang Pass",
+      "Sarchu",
+      "Leh"
+    ],
+    "description": "Srinagar\u2013Leh Highway 12 scenic route.",
+    "from": [
+      34.0837,
+      74.7973
+    ],
+    "to": [
+      34.1526,
+      77.5771
+    ],
+    "waypoints": [
+      [
+        34.3,
+        75.5
+      ],
+      [
+        34.45,
+        76.8
+      ]
+    ],
+    "category": "desert"
+  },
+  {
+    "id": "route_13",
+    "name": "Spiti Circuit 13",
+    "distance": "varies",
+    "best_time": "All year",
+    "highlights": [
+      "Shimla",
+      "Kaza",
+      "Tabo",
+      "Manali"
+    ],
+    "description": "Spiti Circuit 13 scenic route.",
+    "from": [
+      31.1048,
+      77.1734
+    ],
+    "to": [
+      32.2396,
+      77.1887
+    ],
+    "waypoints": [
+      [
+        32.24,
+        78.03
+      ]
+    ],
+    "category": "temple"
+  },
+  {
+    "id": "route_14",
+    "name": "Mumbai\u2013Goa NH66 14",
+    "distance": "varies",
+    "best_time": "All year",
+    "highlights": [
+      "Mumbai",
+      "Ratnagiri",
+      "Goa"
+    ],
+    "description": "Mumbai\u2013Goa NH66 14 scenic route.",
+    "from": [
+      19.076,
+      72.8777
+    ],
+    "to": [
+      15.2993,
+      74.124
+    ],
+    "waypoints": [
+      [
+        17,
+        73.3
+      ]
+    ],
+    "category": "forest"
+  },
+  {
+    "id": "route_15",
+    "name": "ECR 15",
+    "distance": "varies",
+    "best_time": "All year",
+    "highlights": [
+      "Chennai",
+      "Mahabalipuram",
+      "Pondicherry"
+    ],
+    "description": "ECR 15 scenic route.",
+    "from": [
+      13.0827,
+      80.2707
+    ],
+    "to": [
+      11.9416,
+      79.8083
+    ],
+    "waypoints": [
+      [
+        12.62,
+        80.19
+      ]
+    ],
+    "category": "city"
+  },
+  {
+    "id": "route_16",
+    "name": "Leh\u2013Manali Highway 16",
+    "distance": "varies",
+    "best_time": "All year",
+    "highlights": [
+      "Manali",
+      "Rohtang Pass",
+      "Sarchu",
+      "Leh"
+    ],
+    "description": "Leh\u2013Manali Highway 16 scenic route.",
+    "from": [
+      32.2396,
+      77.1887
+    ],
+    "to": [
+      34.1526,
+      77.5771
+    ],
+    "waypoints": [
+      [
+        32.876,
+        77.507
+      ],
+      [
+        33.358,
+        77.615
+      ]
+    ],
+    "category": "expressway"
+  },
+  {
+    "id": "route_17",
+    "name": "Srinagar\u2013Leh Highway 17",
+    "distance": "varies",
+    "best_time": "All year",
+    "highlights": [
+      "Manali",
+      "Rohtang Pass",
+      "Sarchu",
+      "Leh"
+    ],
+    "description": "Srinagar\u2013Leh Highway 17 scenic route.",
+    "from": [
+      34.0837,
+      74.7973
+    ],
+    "to": [
+      34.1526,
+      77.5771
+    ],
+    "waypoints": [
+      [
+        34.3,
+        75.5
+      ],
+      [
+        34.45,
+        76.8
+      ]
+    ],
+    "category": "mountain"
+  },
+  {
+    "id": "route_18",
+    "name": "Spiti Circuit 18",
+    "distance": "varies",
+    "best_time": "All year",
+    "highlights": [
+      "Shimla",
+      "Kaza",
+      "Tabo",
+      "Manali"
+    ],
+    "description": "Spiti Circuit 18 scenic route.",
+    "from": [
+      31.1048,
+      77.1734
+    ],
+    "to": [
+      32.2396,
+      77.1887
+    ],
+    "waypoints": [
+      [
+        32.24,
+        78.03
+      ]
+    ],
+    "category": "coastal"
+  },
+  {
+    "id": "route_19",
+    "name": "Mumbai\u2013Goa NH66 19",
+    "distance": "varies",
+    "best_time": "All year",
+    "highlights": [
+      "Mumbai",
+      "Ratnagiri",
+      "Goa"
+    ],
+    "description": "Mumbai\u2013Goa NH66 19 scenic route.",
+    "from": [
+      19.076,
+      72.8777
+    ],
+    "to": [
+      15.2993,
+      74.124
+    ],
+    "waypoints": [
+      [
+        17,
+        73.3
+      ]
+    ],
+    "category": "ghat"
+  },
+  {
+    "id": "route_20",
+    "name": "ECR 20",
+    "distance": "varies",
+    "best_time": "All year",
+    "highlights": [
+      "Chennai",
+      "Mahabalipuram",
+      "Pondicherry"
+    ],
+    "description": "ECR 20 scenic route.",
+    "from": [
+      13.0827,
+      80.2707
+    ],
+    "to": [
+      11.9416,
+      79.8083
+    ],
+    "waypoints": [
+      [
+        12.62,
+        80.19
+      ]
+    ],
+    "category": "desert"
+  },
+  {
+    "id": "route_21",
+    "name": "Leh\u2013Manali Highway 21",
+    "distance": "varies",
+    "best_time": "All year",
+    "highlights": [
+      "Manali",
+      "Rohtang Pass",
+      "Sarchu",
+      "Leh"
+    ],
+    "description": "Leh\u2013Manali Highway 21 scenic route.",
+    "from": [
+      32.2396,
+      77.1887
+    ],
+    "to": [
+      34.1526,
+      77.5771
+    ],
+    "waypoints": [
+      [
+        32.876,
+        77.507
+      ],
+      [
+        33.358,
+        77.615
+      ]
+    ],
+    "category": "temple"
+  },
+  {
+    "id": "route_22",
+    "name": "Srinagar\u2013Leh Highway 22",
+    "distance": "varies",
+    "best_time": "All year",
+    "highlights": [
+      "Manali",
+      "Rohtang Pass",
+      "Sarchu",
+      "Leh"
+    ],
+    "description": "Srinagar\u2013Leh Highway 22 scenic route.",
+    "from": [
+      34.0837,
+      74.7973
+    ],
+    "to": [
+      34.1526,
+      77.5771
+    ],
+    "waypoints": [
+      [
+        34.3,
+        75.5
+      ],
+      [
+        34.45,
+        76.8
+      ]
+    ],
+    "category": "forest"
+  },
+  {
+    "id": "route_23",
+    "name": "Spiti Circuit 23",
+    "distance": "varies",
+    "best_time": "All year",
+    "highlights": [
+      "Shimla",
+      "Kaza",
+      "Tabo",
+      "Manali"
+    ],
+    "description": "Spiti Circuit 23 scenic route.",
+    "from": [
+      31.1048,
+      77.1734
+    ],
+    "to": [
+      32.2396,
+      77.1887
+    ],
+    "waypoints": [
+      [
+        32.24,
+        78.03
+      ]
+    ],
+    "category": "city"
+  },
+  {
+    "id": "route_24",
+    "name": "Mumbai\u2013Goa NH66 24",
+    "distance": "varies",
+    "best_time": "All year",
+    "highlights": [
+      "Mumbai",
+      "Ratnagiri",
+      "Goa"
+    ],
+    "description": "Mumbai\u2013Goa NH66 24 scenic route.",
+    "from": [
+      19.076,
+      72.8777
+    ],
+    "to": [
+      15.2993,
+      74.124
+    ],
+    "waypoints": [
+      [
+        17,
+        73.3
+      ]
+    ],
+    "category": "expressway"
+  },
+  {
+    "id": "route_25",
+    "name": "ECR 25",
+    "distance": "varies",
+    "best_time": "All year",
+    "highlights": [
+      "Chennai",
+      "Mahabalipuram",
+      "Pondicherry"
+    ],
+    "description": "ECR 25 scenic route.",
+    "from": [
+      13.0827,
+      80.2707
+    ],
+    "to": [
+      11.9416,
+      79.8083
+    ],
+    "waypoints": [
+      [
+        12.62,
+        80.19
+      ]
+    ],
+    "category": "mountain"
+  },
+  {
+    "id": "route_26",
+    "name": "Leh\u2013Manali Highway 26",
+    "distance": "varies",
+    "best_time": "All year",
+    "highlights": [
+      "Manali",
+      "Rohtang Pass",
+      "Sarchu",
+      "Leh"
+    ],
+    "description": "Leh\u2013Manali Highway 26 scenic route.",
+    "from": [
+      32.2396,
+      77.1887
+    ],
+    "to": [
+      34.1526,
+      77.5771
+    ],
+    "waypoints": [
+      [
+        32.876,
+        77.507
+      ],
+      [
+        33.358,
+        77.615
+      ]
+    ],
+    "category": "coastal"
+  },
+  {
+    "id": "route_27",
+    "name": "Srinagar\u2013Leh Highway 27",
+    "distance": "varies",
+    "best_time": "All year",
+    "highlights": [
+      "Manali",
+      "Rohtang Pass",
+      "Sarchu",
+      "Leh"
+    ],
+    "description": "Srinagar\u2013Leh Highway 27 scenic route.",
+    "from": [
+      34.0837,
+      74.7973
+    ],
+    "to": [
+      34.1526,
+      77.5771
+    ],
+    "waypoints": [
+      [
+        34.3,
+        75.5
+      ],
+      [
+        34.45,
+        76.8
+      ]
+    ],
+    "category": "ghat"
+  },
+  {
+    "id": "route_28",
+    "name": "Spiti Circuit 28",
+    "distance": "varies",
+    "best_time": "All year",
+    "highlights": [
+      "Shimla",
+      "Kaza",
+      "Tabo",
+      "Manali"
+    ],
+    "description": "Spiti Circuit 28 scenic route.",
+    "from": [
+      31.1048,
+      77.1734
+    ],
+    "to": [
+      32.2396,
+      77.1887
+    ],
+    "waypoints": [
+      [
+        32.24,
+        78.03
+      ]
+    ],
+    "category": "desert"
+  },
+  {
+    "id": "route_29",
+    "name": "Mumbai\u2013Goa NH66 29",
+    "distance": "varies",
+    "best_time": "All year",
+    "highlights": [
+      "Mumbai",
+      "Ratnagiri",
+      "Goa"
+    ],
+    "description": "Mumbai\u2013Goa NH66 29 scenic route.",
+    "from": [
+      19.076,
+      72.8777
+    ],
+    "to": [
+      15.2993,
+      74.124
+    ],
+    "waypoints": [
+      [
+        17,
+        73.3
+      ]
+    ],
+    "category": "temple"
+  },
+  {
+    "id": "route_30",
+    "name": "ECR 30",
+    "distance": "varies",
+    "best_time": "All year",
+    "highlights": [
+      "Chennai",
+      "Mahabalipuram",
+      "Pondicherry"
+    ],
+    "description": "ECR 30 scenic route.",
+    "from": [
+      13.0827,
+      80.2707
+    ],
+    "to": [
+      11.9416,
+      79.8083
+    ],
+    "waypoints": [
+      [
+        12.62,
+        80.19
+      ]
+    ],
+    "category": "forest"
+  },
+  {
+    "id": "route_31",
+    "name": "Leh\u2013Manali Highway 31",
+    "distance": "varies",
+    "best_time": "All year",
+    "highlights": [
+      "Manali",
+      "Rohtang Pass",
+      "Sarchu",
+      "Leh"
+    ],
+    "description": "Leh\u2013Manali Highway 31 scenic route.",
+    "from": [
+      32.2396,
+      77.1887
+    ],
+    "to": [
+      34.1526,
+      77.5771
+    ],
+    "waypoints": [
+      [
+        32.876,
+        77.507
+      ],
+      [
+        33.358,
+        77.615
+      ]
+    ],
+    "category": "city"
+  },
+  {
+    "id": "route_32",
+    "name": "Srinagar\u2013Leh Highway 32",
+    "distance": "varies",
+    "best_time": "All year",
+    "highlights": [
+      "Manali",
+      "Rohtang Pass",
+      "Sarchu",
+      "Leh"
+    ],
+    "description": "Srinagar\u2013Leh Highway 32 scenic route.",
+    "from": [
+      34.0837,
+      74.7973
+    ],
+    "to": [
+      34.1526,
+      77.5771
+    ],
+    "waypoints": [
+      [
+        34.3,
+        75.5
+      ],
+      [
+        34.45,
+        76.8
+      ]
+    ],
+    "category": "expressway"
+  },
+  {
+    "id": "route_33",
+    "name": "Spiti Circuit 33",
+    "distance": "varies",
+    "best_time": "All year",
+    "highlights": [
+      "Shimla",
+      "Kaza",
+      "Tabo",
+      "Manali"
+    ],
+    "description": "Spiti Circuit 33 scenic route.",
+    "from": [
+      31.1048,
+      77.1734
+    ],
+    "to": [
+      32.2396,
+      77.1887
+    ],
+    "waypoints": [
+      [
+        32.24,
+        78.03
+      ]
+    ],
+    "category": "mountain"
+  },
+  {
+    "id": "route_34",
+    "name": "Mumbai\u2013Goa NH66 34",
+    "distance": "varies",
+    "best_time": "All year",
+    "highlights": [
+      "Mumbai",
+      "Ratnagiri",
+      "Goa"
+    ],
+    "description": "Mumbai\u2013Goa NH66 34 scenic route.",
+    "from": [
+      19.076,
+      72.8777
+    ],
+    "to": [
+      15.2993,
+      74.124
+    ],
+    "waypoints": [
+      [
+        17,
+        73.3
+      ]
+    ],
+    "category": "coastal"
+  },
+  {
+    "id": "route_35",
+    "name": "ECR 35",
+    "distance": "varies",
+    "best_time": "All year",
+    "highlights": [
+      "Chennai",
+      "Mahabalipuram",
+      "Pondicherry"
+    ],
+    "description": "ECR 35 scenic route.",
+    "from": [
+      13.0827,
+      80.2707
+    ],
+    "to": [
+      11.9416,
+      79.8083
+    ],
+    "waypoints": [
+      [
+        12.62,
+        80.19
+      ]
+    ],
+    "category": "ghat"
+  },
+  {
+    "id": "route_36",
+    "name": "Leh\u2013Manali Highway 36",
+    "distance": "varies",
+    "best_time": "All year",
+    "highlights": [
+      "Manali",
+      "Rohtang Pass",
+      "Sarchu",
+      "Leh"
+    ],
+    "description": "Leh\u2013Manali Highway 36 scenic route.",
+    "from": [
+      32.2396,
+      77.1887
+    ],
+    "to": [
+      34.1526,
+      77.5771
+    ],
+    "waypoints": [
+      [
+        32.876,
+        77.507
+      ],
+      [
+        33.358,
+        77.615
+      ]
+    ],
+    "category": "desert"
+  },
+  {
+    "id": "route_37",
+    "name": "Srinagar\u2013Leh Highway 37",
+    "distance": "varies",
+    "best_time": "All year",
+    "highlights": [
+      "Manali",
+      "Rohtang Pass",
+      "Sarchu",
+      "Leh"
+    ],
+    "description": "Srinagar\u2013Leh Highway 37 scenic route.",
+    "from": [
+      34.0837,
+      74.7973
+    ],
+    "to": [
+      34.1526,
+      77.5771
+    ],
+    "waypoints": [
+      [
+        34.3,
+        75.5
+      ],
+      [
+        34.45,
+        76.8
+      ]
+    ],
+    "category": "temple"
+  },
+  {
+    "id": "route_38",
+    "name": "Spiti Circuit 38",
+    "distance": "varies",
+    "best_time": "All year",
+    "highlights": [
+      "Shimla",
+      "Kaza",
+      "Tabo",
+      "Manali"
+    ],
+    "description": "Spiti Circuit 38 scenic route.",
+    "from": [
+      31.1048,
+      77.1734
+    ],
+    "to": [
+      32.2396,
+      77.1887
+    ],
+    "waypoints": [
+      [
+        32.24,
+        78.03
+      ]
+    ],
+    "category": "forest"
+  },
+  {
+    "id": "route_39",
+    "name": "Mumbai\u2013Goa NH66 39",
+    "distance": "varies",
+    "best_time": "All year",
+    "highlights": [
+      "Mumbai",
+      "Ratnagiri",
+      "Goa"
+    ],
+    "description": "Mumbai\u2013Goa NH66 39 scenic route.",
+    "from": [
+      19.076,
+      72.8777
+    ],
+    "to": [
+      15.2993,
+      74.124
+    ],
+    "waypoints": [
+      [
+        17,
+        73.3
+      ]
+    ],
+    "category": "city"
+  },
+  {
+    "id": "route_40",
+    "name": "ECR 40",
+    "distance": "varies",
+    "best_time": "All year",
+    "highlights": [
+      "Chennai",
+      "Mahabalipuram",
+      "Pondicherry"
+    ],
+    "description": "ECR 40 scenic route.",
+    "from": [
+      13.0827,
+      80.2707
+    ],
+    "to": [
+      11.9416,
+      79.8083
+    ],
+    "waypoints": [
+      [
+        12.62,
+        80.19
+      ]
+    ],
+    "category": "expressway"
+  },
+  {
+    "id": "route_41",
+    "name": "Leh\u2013Manali Highway 41",
+    "distance": "varies",
+    "best_time": "All year",
+    "highlights": [
+      "Manali",
+      "Rohtang Pass",
+      "Sarchu",
+      "Leh"
+    ],
+    "description": "Leh\u2013Manali Highway 41 scenic route.",
+    "from": [
+      32.2396,
+      77.1887
+    ],
+    "to": [
+      34.1526,
+      77.5771
+    ],
+    "waypoints": [
+      [
+        32.876,
+        77.507
+      ],
+      [
+        33.358,
+        77.615
+      ]
+    ],
+    "category": "mountain"
+  },
+  {
+    "id": "route_42",
+    "name": "Srinagar\u2013Leh Highway 42",
+    "distance": "varies",
+    "best_time": "All year",
+    "highlights": [
+      "Manali",
+      "Rohtang Pass",
+      "Sarchu",
+      "Leh"
+    ],
+    "description": "Srinagar\u2013Leh Highway 42 scenic route.",
+    "from": [
+      34.0837,
+      74.7973
+    ],
+    "to": [
+      34.1526,
+      77.5771
+    ],
+    "waypoints": [
+      [
+        34.3,
+        75.5
+      ],
+      [
+        34.45,
+        76.8
+      ]
+    ],
+    "category": "coastal"
+  },
+  {
+    "id": "route_43",
+    "name": "Spiti Circuit 43",
+    "distance": "varies",
+    "best_time": "All year",
+    "highlights": [
+      "Shimla",
+      "Kaza",
+      "Tabo",
+      "Manali"
+    ],
+    "description": "Spiti Circuit 43 scenic route.",
+    "from": [
+      31.1048,
+      77.1734
+    ],
+    "to": [
+      32.2396,
+      77.1887
+    ],
+    "waypoints": [
+      [
+        32.24,
+        78.03
+      ]
+    ],
+    "category": "ghat"
+  },
+  {
+    "id": "route_44",
+    "name": "Mumbai\u2013Goa NH66 44",
+    "distance": "varies",
+    "best_time": "All year",
+    "highlights": [
+      "Mumbai",
+      "Ratnagiri",
+      "Goa"
+    ],
+    "description": "Mumbai\u2013Goa NH66 44 scenic route.",
+    "from": [
+      19.076,
+      72.8777
+    ],
+    "to": [
+      15.2993,
+      74.124
+    ],
+    "waypoints": [
+      [
+        17,
+        73.3
+      ]
+    ],
+    "category": "desert"
+  },
+  {
+    "id": "route_45",
+    "name": "ECR 45",
+    "distance": "varies",
+    "best_time": "All year",
+    "highlights": [
+      "Chennai",
+      "Mahabalipuram",
+      "Pondicherry"
+    ],
+    "description": "ECR 45 scenic route.",
+    "from": [
+      13.0827,
+      80.2707
+    ],
+    "to": [
+      11.9416,
+      79.8083
+    ],
+    "waypoints": [
+      [
+        12.62,
+        80.19
+      ]
+    ],
+    "category": "temple"
+  },
+  {
+    "id": "route_46",
+    "name": "Leh\u2013Manali Highway 46",
+    "distance": "varies",
+    "best_time": "All year",
+    "highlights": [
+      "Manali",
+      "Rohtang Pass",
+      "Sarchu",
+      "Leh"
+    ],
+    "description": "Leh\u2013Manali Highway 46 scenic route.",
+    "from": [
+      32.2396,
+      77.1887
+    ],
+    "to": [
+      34.1526,
+      77.5771
+    ],
+    "waypoints": [
+      [
+        32.876,
+        77.507
+      ],
+      [
+        33.358,
+        77.615
+      ]
+    ],
+    "category": "forest"
+  },
+  {
+    "id": "route_47",
+    "name": "Srinagar\u2013Leh Highway 47",
+    "distance": "varies",
+    "best_time": "All year",
+    "highlights": [
+      "Manali",
+      "Rohtang Pass",
+      "Sarchu",
+      "Leh"
+    ],
+    "description": "Srinagar\u2013Leh Highway 47 scenic route.",
+    "from": [
+      34.0837,
+      74.7973
+    ],
+    "to": [
+      34.1526,
+      77.5771
+    ],
+    "waypoints": [
+      [
+        34.3,
+        75.5
+      ],
+      [
+        34.45,
+        76.8
+      ]
+    ],
+    "category": "city"
+  },
+  {
+    "id": "route_48",
+    "name": "Spiti Circuit 48",
+    "distance": "varies",
+    "best_time": "All year",
+    "highlights": [
+      "Shimla",
+      "Kaza",
+      "Tabo",
+      "Manali"
+    ],
+    "description": "Spiti Circuit 48 scenic route.",
+    "from": [
+      31.1048,
+      77.1734
+    ],
+    "to": [
+      32.2396,
+      77.1887
+    ],
+    "waypoints": [
+      [
+        32.24,
+        78.03
+      ]
+    ],
+    "category": "expressway"
+  },
+  {
+    "id": "route_49",
+    "name": "Mumbai\u2013Goa NH66 49",
+    "distance": "varies",
+    "best_time": "All year",
+    "highlights": [
+      "Mumbai",
+      "Ratnagiri",
+      "Goa"
+    ],
+    "description": "Mumbai\u2013Goa NH66 49 scenic route.",
+    "from": [
+      19.076,
+      72.8777
+    ],
+    "to": [
+      15.2993,
+      74.124
+    ],
+    "waypoints": [
+      [
+        17,
+        73.3
+      ]
+    ],
+    "category": "mountain"
+  },
+  {
+    "id": "route_50",
+    "name": "ECR 50",
+    "distance": "varies",
+    "best_time": "All year",
+    "highlights": [
+      "Chennai",
+      "Mahabalipuram",
+      "Pondicherry"
+    ],
+    "description": "ECR 50 scenic route.",
+    "from": [
+      13.0827,
+      80.2707
+    ],
+    "to": [
+      11.9416,
+      79.8083
+    ],
+    "waypoints": [
+      [
+        12.62,
+        80.19
+      ]
+    ],
+    "category": "coastal"
+  },
+  {
+    "id": "route_51",
+    "name": "Leh\u2013Manali Highway 51",
+    "distance": "varies",
+    "best_time": "All year",
+    "highlights": [
+      "Manali",
+      "Rohtang Pass",
+      "Sarchu",
+      "Leh"
+    ],
+    "description": "Leh\u2013Manali Highway 51 scenic route.",
+    "from": [
+      32.2396,
+      77.1887
+    ],
+    "to": [
+      34.1526,
+      77.5771
+    ],
+    "waypoints": [
+      [
+        32.876,
+        77.507
+      ],
+      [
+        33.358,
+        77.615
+      ]
+    ],
+    "category": "ghat"
+  },
+  {
+    "id": "route_52",
+    "name": "Srinagar\u2013Leh Highway 52",
+    "distance": "varies",
+    "best_time": "All year",
+    "highlights": [
+      "Manali",
+      "Rohtang Pass",
+      "Sarchu",
+      "Leh"
+    ],
+    "description": "Srinagar\u2013Leh Highway 52 scenic route.",
+    "from": [
+      34.0837,
+      74.7973
+    ],
+    "to": [
+      34.1526,
+      77.5771
+    ],
+    "waypoints": [
+      [
+        34.3,
+        75.5
+      ],
+      [
+        34.45,
+        76.8
+      ]
+    ],
+    "category": "desert"
+  },
+  {
+    "id": "route_53",
+    "name": "Spiti Circuit 53",
+    "distance": "varies",
+    "best_time": "All year",
+    "highlights": [
+      "Shimla",
+      "Kaza",
+      "Tabo",
+      "Manali"
+    ],
+    "description": "Spiti Circuit 53 scenic route.",
+    "from": [
+      31.1048,
+      77.1734
+    ],
+    "to": [
+      32.2396,
+      77.1887
+    ],
+    "waypoints": [
+      [
+        32.24,
+        78.03
+      ]
+    ],
+    "category": "temple"
+  },
+  {
+    "id": "route_54",
+    "name": "Mumbai\u2013Goa NH66 54",
+    "distance": "varies",
+    "best_time": "All year",
+    "highlights": [
+      "Mumbai",
+      "Ratnagiri",
+      "Goa"
+    ],
+    "description": "Mumbai\u2013Goa NH66 54 scenic route.",
+    "from": [
+      19.076,
+      72.8777
+    ],
+    "to": [
+      15.2993,
+      74.124
+    ],
+    "waypoints": [
+      [
+        17,
+        73.3
+      ]
+    ],
+    "category": "forest"
+  },
+  {
+    "id": "route_55",
+    "name": "ECR 55",
+    "distance": "varies",
+    "best_time": "All year",
+    "highlights": [
+      "Chennai",
+      "Mahabalipuram",
+      "Pondicherry"
+    ],
+    "description": "ECR 55 scenic route.",
+    "from": [
+      13.0827,
+      80.2707
+    ],
+    "to": [
+      11.9416,
+      79.8083
+    ],
+    "waypoints": [
+      [
+        12.62,
+        80.19
+      ]
+    ],
+    "category": "city"
+  },
+  {
+    "id": "route_56",
+    "name": "Leh\u2013Manali Highway 56",
+    "distance": "varies",
+    "best_time": "All year",
+    "highlights": [
+      "Manali",
+      "Rohtang Pass",
+      "Sarchu",
+      "Leh"
+    ],
+    "description": "Leh\u2013Manali Highway 56 scenic route.",
+    "from": [
+      32.2396,
+      77.1887
+    ],
+    "to": [
+      34.1526,
+      77.5771
+    ],
+    "waypoints": [
+      [
+        32.876,
+        77.507
+      ],
+      [
+        33.358,
+        77.615
+      ]
+    ],
+    "category": "expressway"
+  },
+  {
+    "id": "route_57",
+    "name": "Srinagar\u2013Leh Highway 57",
+    "distance": "varies",
+    "best_time": "All year",
+    "highlights": [
+      "Manali",
+      "Rohtang Pass",
+      "Sarchu",
+      "Leh"
+    ],
+    "description": "Srinagar\u2013Leh Highway 57 scenic route.",
+    "from": [
+      34.0837,
+      74.7973
+    ],
+    "to": [
+      34.1526,
+      77.5771
+    ],
+    "waypoints": [
+      [
+        34.3,
+        75.5
+      ],
+      [
+        34.45,
+        76.8
+      ]
+    ],
+    "category": "mountain"
+  },
+  {
+    "id": "route_58",
+    "name": "Spiti Circuit 58",
+    "distance": "varies",
+    "best_time": "All year",
+    "highlights": [
+      "Shimla",
+      "Kaza",
+      "Tabo",
+      "Manali"
+    ],
+    "description": "Spiti Circuit 58 scenic route.",
+    "from": [
+      31.1048,
+      77.1734
+    ],
+    "to": [
+      32.2396,
+      77.1887
+    ],
+    "waypoints": [
+      [
+        32.24,
+        78.03
+      ]
+    ],
+    "category": "coastal"
+  },
+  {
+    "id": "route_59",
+    "name": "Mumbai\u2013Goa NH66 59",
+    "distance": "varies",
+    "best_time": "All year",
+    "highlights": [
+      "Mumbai",
+      "Ratnagiri",
+      "Goa"
+    ],
+    "description": "Mumbai\u2013Goa NH66 59 scenic route.",
+    "from": [
+      19.076,
+      72.8777
+    ],
+    "to": [
+      15.2993,
+      74.124
+    ],
+    "waypoints": [
+      [
+        17,
+        73.3
+      ]
+    ],
+    "category": "ghat"
+  },
+  {
+    "id": "route_60",
+    "name": "ECR 60",
+    "distance": "varies",
+    "best_time": "All year",
+    "highlights": [
+      "Chennai",
+      "Mahabalipuram",
+      "Pondicherry"
+    ],
+    "description": "ECR 60 scenic route.",
+    "from": [
+      13.0827,
+      80.2707
+    ],
+    "to": [
+      11.9416,
+      79.8083
+    ],
+    "waypoints": [
+      [
+        12.62,
+        80.19
+      ]
+    ],
+    "category": "desert"
+  },
+  {
+    "id": "route_61",
+    "name": "Leh\u2013Manali Highway 61",
+    "distance": "varies",
+    "best_time": "All year",
+    "highlights": [
+      "Manali",
+      "Rohtang Pass",
+      "Sarchu",
+      "Leh"
+    ],
+    "description": "Leh\u2013Manali Highway 61 scenic route.",
+    "from": [
+      32.2396,
+      77.1887
+    ],
+    "to": [
+      34.1526,
+      77.5771
+    ],
+    "waypoints": [
+      [
+        32.876,
+        77.507
+      ],
+      [
+        33.358,
+        77.615
+      ]
+    ],
+    "category": "temple"
+  },
+  {
+    "id": "route_62",
+    "name": "Srinagar\u2013Leh Highway 62",
+    "distance": "varies",
+    "best_time": "All year",
+    "highlights": [
+      "Manali",
+      "Rohtang Pass",
+      "Sarchu",
+      "Leh"
+    ],
+    "description": "Srinagar\u2013Leh Highway 62 scenic route.",
+    "from": [
+      34.0837,
+      74.7973
+    ],
+    "to": [
+      34.1526,
+      77.5771
+    ],
+    "waypoints": [
+      [
+        34.3,
+        75.5
+      ],
+      [
+        34.45,
+        76.8
+      ]
+    ],
+    "category": "forest"
+  },
+  {
+    "id": "route_63",
+    "name": "Spiti Circuit 63",
+    "distance": "varies",
+    "best_time": "All year",
+    "highlights": [
+      "Shimla",
+      "Kaza",
+      "Tabo",
+      "Manali"
+    ],
+    "description": "Spiti Circuit 63 scenic route.",
+    "from": [
+      31.1048,
+      77.1734
+    ],
+    "to": [
+      32.2396,
+      77.1887
+    ],
+    "waypoints": [
+      [
+        32.24,
+        78.03
+      ]
+    ],
+    "category": "city"
+  },
+  {
+    "id": "route_64",
+    "name": "Mumbai\u2013Goa NH66 64",
+    "distance": "varies",
+    "best_time": "All year",
+    "highlights": [
+      "Mumbai",
+      "Ratnagiri",
+      "Goa"
+    ],
+    "description": "Mumbai\u2013Goa NH66 64 scenic route.",
+    "from": [
+      19.076,
+      72.8777
+    ],
+    "to": [
+      15.2993,
+      74.124
+    ],
+    "waypoints": [
+      [
+        17,
+        73.3
+      ]
+    ],
+    "category": "expressway"
+  },
+  {
+    "id": "route_65",
+    "name": "ECR 65",
+    "distance": "varies",
+    "best_time": "All year",
+    "highlights": [
+      "Chennai",
+      "Mahabalipuram",
+      "Pondicherry"
+    ],
+    "description": "ECR 65 scenic route.",
+    "from": [
+      13.0827,
+      80.2707
+    ],
+    "to": [
+      11.9416,
+      79.8083
+    ],
+    "waypoints": [
+      [
+        12.62,
+        80.19
+      ]
+    ],
+    "category": "mountain"
+  },
+  {
+    "id": "route_66",
+    "name": "Leh\u2013Manali Highway 66",
+    "distance": "varies",
+    "best_time": "All year",
+    "highlights": [
+      "Manali",
+      "Rohtang Pass",
+      "Sarchu",
+      "Leh"
+    ],
+    "description": "Leh\u2013Manali Highway 66 scenic route.",
+    "from": [
+      32.2396,
+      77.1887
+    ],
+    "to": [
+      34.1526,
+      77.5771
+    ],
+    "waypoints": [
+      [
+        32.876,
+        77.507
+      ],
+      [
+        33.358,
+        77.615
+      ]
+    ],
+    "category": "coastal"
+  },
+  {
+    "id": "route_67",
+    "name": "Srinagar\u2013Leh Highway 67",
+    "distance": "varies",
+    "best_time": "All year",
+    "highlights": [
+      "Manali",
+      "Rohtang Pass",
+      "Sarchu",
+      "Leh"
+    ],
+    "description": "Srinagar\u2013Leh Highway 67 scenic route.",
+    "from": [
+      34.0837,
+      74.7973
+    ],
+    "to": [
+      34.1526,
+      77.5771
+    ],
+    "waypoints": [
+      [
+        34.3,
+        75.5
+      ],
+      [
+        34.45,
+        76.8
+      ]
+    ],
+    "category": "ghat"
+  },
+  {
+    "id": "route_68",
+    "name": "Spiti Circuit 68",
+    "distance": "varies",
+    "best_time": "All year",
+    "highlights": [
+      "Shimla",
+      "Kaza",
+      "Tabo",
+      "Manali"
+    ],
+    "description": "Spiti Circuit 68 scenic route.",
+    "from": [
+      31.1048,
+      77.1734
+    ],
+    "to": [
+      32.2396,
+      77.1887
+    ],
+    "waypoints": [
+      [
+        32.24,
+        78.03
+      ]
+    ],
+    "category": "desert"
+  },
+  {
+    "id": "route_69",
+    "name": "Mumbai\u2013Goa NH66 69",
+    "distance": "varies",
+    "best_time": "All year",
+    "highlights": [
+      "Mumbai",
+      "Ratnagiri",
+      "Goa"
+    ],
+    "description": "Mumbai\u2013Goa NH66 69 scenic route.",
+    "from": [
+      19.076,
+      72.8777
+    ],
+    "to": [
+      15.2993,
+      74.124
+    ],
+    "waypoints": [
+      [
+        17,
+        73.3
+      ]
+    ],
+    "category": "temple"
+  },
+  {
+    "id": "route_70",
+    "name": "ECR 70",
+    "distance": "varies",
+    "best_time": "All year",
+    "highlights": [
+      "Chennai",
+      "Mahabalipuram",
+      "Pondicherry"
+    ],
+    "description": "ECR 70 scenic route.",
+    "from": [
+      13.0827,
+      80.2707
+    ],
+    "to": [
+      11.9416,
+      79.8083
+    ],
+    "waypoints": [
+      [
+        12.62,
+        80.19
+      ]
+    ],
+    "category": "forest"
+  },
+  {
+    "id": "route_71",
+    "name": "Leh\u2013Manali Highway 71",
+    "distance": "varies",
+    "best_time": "All year",
+    "highlights": [
+      "Manali",
+      "Rohtang Pass",
+      "Sarchu",
+      "Leh"
+    ],
+    "description": "Leh\u2013Manali Highway 71 scenic route.",
+    "from": [
+      32.2396,
+      77.1887
+    ],
+    "to": [
+      34.1526,
+      77.5771
+    ],
+    "waypoints": [
+      [
+        32.876,
+        77.507
+      ],
+      [
+        33.358,
+        77.615
+      ]
+    ],
+    "category": "city"
+  },
+  {
+    "id": "route_72",
+    "name": "Srinagar\u2013Leh Highway 72",
+    "distance": "varies",
+    "best_time": "All year",
+    "highlights": [
+      "Manali",
+      "Rohtang Pass",
+      "Sarchu",
+      "Leh"
+    ],
+    "description": "Srinagar\u2013Leh Highway 72 scenic route.",
+    "from": [
+      34.0837,
+      74.7973
+    ],
+    "to": [
+      34.1526,
+      77.5771
+    ],
+    "waypoints": [
+      [
+        34.3,
+        75.5
+      ],
+      [
+        34.45,
+        76.8
+      ]
+    ],
+    "category": "expressway"
+  },
+  {
+    "id": "route_73",
+    "name": "Spiti Circuit 73",
+    "distance": "varies",
+    "best_time": "All year",
+    "highlights": [
+      "Shimla",
+      "Kaza",
+      "Tabo",
+      "Manali"
+    ],
+    "description": "Spiti Circuit 73 scenic route.",
+    "from": [
+      31.1048,
+      77.1734
+    ],
+    "to": [
+      32.2396,
+      77.1887
+    ],
+    "waypoints": [
+      [
+        32.24,
+        78.03
+      ]
+    ],
+    "category": "mountain"
+  },
+  {
+    "id": "route_74",
+    "name": "Mumbai\u2013Goa NH66 74",
+    "distance": "varies",
+    "best_time": "All year",
+    "highlights": [
+      "Mumbai",
+      "Ratnagiri",
+      "Goa"
+    ],
+    "description": "Mumbai\u2013Goa NH66 74 scenic route.",
+    "from": [
+      19.076,
+      72.8777
+    ],
+    "to": [
+      15.2993,
+      74.124
+    ],
+    "waypoints": [
+      [
+        17,
+        73.3
+      ]
+    ],
+    "category": "coastal"
+  },
+  {
+    "id": "route_75",
+    "name": "ECR 75",
+    "distance": "varies",
+    "best_time": "All year",
+    "highlights": [
+      "Chennai",
+      "Mahabalipuram",
+      "Pondicherry"
+    ],
+    "description": "ECR 75 scenic route.",
+    "from": [
+      13.0827,
+      80.2707
+    ],
+    "to": [
+      11.9416,
+      79.8083
+    ],
+    "waypoints": [
+      [
+        12.62,
+        80.19
+      ]
+    ],
+    "category": "ghat"
+  },
+  {
+    "id": "route_76",
+    "name": "Leh\u2013Manali Highway 76",
+    "distance": "varies",
+    "best_time": "All year",
+    "highlights": [
+      "Manali",
+      "Rohtang Pass",
+      "Sarchu",
+      "Leh"
+    ],
+    "description": "Leh\u2013Manali Highway 76 scenic route.",
+    "from": [
+      32.2396,
+      77.1887
+    ],
+    "to": [
+      34.1526,
+      77.5771
+    ],
+    "waypoints": [
+      [
+        32.876,
+        77.507
+      ],
+      [
+        33.358,
+        77.615
+      ]
+    ],
+    "category": "desert"
+  },
+  {
+    "id": "route_77",
+    "name": "Srinagar\u2013Leh Highway 77",
+    "distance": "varies",
+    "best_time": "All year",
+    "highlights": [
+      "Manali",
+      "Rohtang Pass",
+      "Sarchu",
+      "Leh"
+    ],
+    "description": "Srinagar\u2013Leh Highway 77 scenic route.",
+    "from": [
+      34.0837,
+      74.7973
+    ],
+    "to": [
+      34.1526,
+      77.5771
+    ],
+    "waypoints": [
+      [
+        34.3,
+        75.5
+      ],
+      [
+        34.45,
+        76.8
+      ]
+    ],
+    "category": "temple"
+  },
+  {
+    "id": "route_78",
+    "name": "Spiti Circuit 78",
+    "distance": "varies",
+    "best_time": "All year",
+    "highlights": [
+      "Shimla",
+      "Kaza",
+      "Tabo",
+      "Manali"
+    ],
+    "description": "Spiti Circuit 78 scenic route.",
+    "from": [
+      31.1048,
+      77.1734
+    ],
+    "to": [
+      32.2396,
+      77.1887
+    ],
+    "waypoints": [
+      [
+        32.24,
+        78.03
+      ]
+    ],
+    "category": "forest"
+  },
+  {
+    "id": "route_79",
+    "name": "Mumbai\u2013Goa NH66 79",
+    "distance": "varies",
+    "best_time": "All year",
+    "highlights": [
+      "Mumbai",
+      "Ratnagiri",
+      "Goa"
+    ],
+    "description": "Mumbai\u2013Goa NH66 79 scenic route.",
+    "from": [
+      19.076,
+      72.8777
+    ],
+    "to": [
+      15.2993,
+      74.124
+    ],
+    "waypoints": [
+      [
+        17,
+        73.3
+      ]
+    ],
+    "category": "city"
+  },
+  {
+    "id": "route_80",
+    "name": "ECR 80",
+    "distance": "varies",
+    "best_time": "All year",
+    "highlights": [
+      "Chennai",
+      "Mahabalipuram",
+      "Pondicherry"
+    ],
+    "description": "ECR 80 scenic route.",
+    "from": [
+      13.0827,
+      80.2707
+    ],
+    "to": [
+      11.9416,
+      79.8083
+    ],
+    "waypoints": [
+      [
+        12.62,
+        80.19
+      ]
+    ],
+    "category": "expressway"
+  }
+]

@@ -1,0 +1,62 @@
+[
+  {
+    "category": "Roadside / Easy Access",
+    "items": [
+      { "name": "Jog Falls", "state": "Karnataka", "lat": 14.2294, "lng": 74.7887 },
+      { "name": "Athirappilly Falls", "state": "Kerala", "lat": 10.2850, "lng": 76.5697 },
+      { "name": "Hogenakkal Falls", "state": "Tamil Nadu", "lat": 12.1196, "lng": 77.7751 },
+      { "name": "Shivanasamudra Falls", "state": "Karnataka", "lat": 12.3020, "lng": 77.1670 },
+      { "name": "Dudhsagar Falls", "state": "Goa", "lat": 15.3144, "lng": 74.3146 },
+      { "name": "Kempty Falls", "state": "Uttarakhand", "lat": 30.4895, "lng": 78.0340 },
+      { "name": "Courtallam Falls", "state": "Tamil Nadu", "lat": 8.9342, "lng": 77.2778 },
+      { "name": "Vazhachal Falls", "state": "Kerala", "lat": 10.2833, "lng": 76.5667 },
+      { "name": "Palaruvi Falls", "state": "Kerala", "lat": 9.0325, "lng": 77.2475 },
+      { "name": "Silver Cascade Falls", "state": "Tamil Nadu", "lat": 10.2396, "lng": 77.4895 },
+      { "name": "Bhagsu Falls", "state": "Himachal Pradesh", "lat": 32.2448, "lng": 76.3239 },
+      { "name": "Thoseghar Falls", "state": "Maharashtra", "lat": 17.5470, "lng": 73.8587 },
+      { "name": "Dhuandhar Falls", "state": "Madhya Pradesh", "lat": 23.1317, "lng": 79.8014 },
+      { "name": "Hundru Falls", "state": "Jharkhand", "lat": 23.3706, "lng": 85.5900 },
+      { "name": "Dassam Falls", "state": "Jharkhand", "lat": 23.2925, "lng": 85.6836 }
+    ]
+  },
+  {
+    "category": "Trek / Adventure",
+    "items": [
+      { "name": "Hebbe Falls", "state": "Karnataka", "lat": 13.4922, "lng": 75.7170 },
+      { "name": "Meenmutty Falls (Wayanad)", "state": "Kerala", "lat": 11.5500, "lng": 76.0930 },
+      { "name": "Soochipara Falls", "state": "Kerala", "lat": 11.5170, "lng": 76.0880 },
+      { "name": "Devkund Falls", "state": "Maharashtra", "lat": 18.4350, "lng": 73.3730 },
+      { "name": "Abbey Falls", "state": "Karnataka", "lat": 12.4586, "lng": 75.7450 },
+      { "name": "Iruppu Falls", "state": "Karnataka", "lat": 11.9689, "lng": 75.9911 },
+      { "name": "Talakona Falls", "state": "Andhra Pradesh", "lat": 13.8020, "lng": 79.2170 },
+      { "name": "Bogatha Falls", "state": "Telangana", "lat": 18.2550, "lng": 80.4400 },
+      { "name": "Chadwick Falls", "state": "Himachal Pradesh", "lat": 31.1040, "lng": 77.1734 },
+      { "name": "Jharipani Falls", "state": "Uttarakhand", "lat": 30.4720, "lng": 78.0610 },
+      { "name": "Keoti Falls", "state": "Madhya Pradesh", "lat": 24.8333, "lng": 81.7000 },
+      { "name": "Patalpani Falls", "state": "Madhya Pradesh", "lat": 22.5524, "lng": 75.7085 }
+    ]
+  },
+  {
+    "category": "Hidden Gems",
+    "items": [
+      { "name": "Sathodi Falls", "state": "Karnataka", "lat": 14.5920, "lng": 74.7400 },
+      { "name": "Kuntala Falls", "state": "Telangana", "lat": 19.2800, "lng": 78.5300 },
+      { "name": "Ethipothala Falls", "state": "Andhra Pradesh", "lat": 16.2080, "lng": 79.3220 },
+      { "name": "Catherine Falls", "state": "Tamil Nadu", "lat": 11.3120, "lng": 76.6400 },
+      { "name": "Barehipani Falls", "state": "Odisha", "lat": 21.9330, "lng": 86.3930 },
+      { "name": "Joranda Falls", "state": "Odisha", "lat": 21.9310, "lng": 86.3850 },
+      { "name": "Wei Sawdong Falls", "state": "Meghalaya", "lat": 25.2750, "lng": 91.6850 },
+      { "name": "Elephant Falls", "state": "Meghalaya", "lat": 25.2440, "lng": 91.7930 }
+    ]
+  },
+  {
+    "category": "Monsoon Special",
+    "items": [
+      { "name": "Nohkalikai Falls", "state": "Meghalaya", "lat": 25.2756, "lng": 91.6833 },
+      { "name": "Seven Sisters Falls", "state": "Meghalaya", "lat": 25.2900, "lng": 91.6900 },
+      { "name": "Vajrai Falls", "state": "Maharashtra", "lat": 17.5330, "lng": 73.6830 },
+      { "name": "Randha Falls", "state": "Maharashtra", "lat": 19.5500, "lng": 73.7400 },
+      { "name": "Chitrakote Falls", "state": "Chhattisgarh", "lat": 19.2100, "lng": 81.6900 }
+    ]
+  }
+]

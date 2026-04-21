@@ -1,0 +1,73 @@
+[
+  {
+    "category": "Chill",
+    "items": [
+      { "name": "Agonda Beach", "state": "Goa", "lat": 15.0415, "lng": 73.9856 },
+      { "name": "Palolem Beach", "state": "Goa", "lat": 15.0090, "lng": 74.0232 },
+      { "name": "Kudle Beach", "state": "Karnataka", "lat": 14.5260, "lng": 74.3135 },
+      { "name": "Half Moon Beach", "state": "Karnataka", "lat": 14.5145, "lng": 74.3080 },
+      { "name": "Marari Beach", "state": "Kerala", "lat": 9.6026, "lng": 76.2977 },
+      { "name": "Bekal Beach", "state": "Kerala", "lat": 12.3930, "lng": 75.0344 },
+      { "name": "Mandvi Beach", "state": "Gujarat", "lat": 22.8320, "lng": 69.3520 },
+      { "name": "Gopalpur Beach", "state": "Odisha", "lat": 19.2587, "lng": 84.9130 },
+      { "name": "Bakkhali Beach", "state": "West Bengal", "lat": 21.5640, "lng": 88.2580 },
+      { "name": "Kalapathar Beach", "state": "Andaman", "lat": 11.9985, "lng": 93.0103 }
+    ]
+  },
+  {
+    "category": "Party",
+    "items": [
+      { "name": "Baga Beach", "state": "Goa", "lat": 15.5553, "lng": 73.7517 },
+      { "name": "Calangute Beach", "state": "Goa", "lat": 15.5439, "lng": 73.7553 },
+      { "name": "Anjuna Beach", "state": "Goa", "lat": 15.5736, "lng": 73.7390 },
+      { "name": "Vagator Beach", "state": "Goa", "lat": 15.5977, "lng": 73.7343 },
+      { "name": "Candolim Beach", "state": "Goa", "lat": 15.5186, "lng": 73.7620 },
+      { "name": "Colva Beach", "state": "Goa", "lat": 15.2797, "lng": 73.9220 },
+      { "name": "Morjim Beach", "state": "Goa", "lat": 15.6300, "lng": 73.7330 },
+      { "name": "Arambol Beach", "state": "Goa", "lat": 15.6868, "lng": 73.7045 }
+    ]
+  },
+  {
+    "category": "Nightlife",
+    "items": [
+      { "name": "Baga Beach", "state": "Goa", "lat": 15.5553, "lng": 73.7517 },
+      { "name": "Anjuna Beach", "state": "Goa", "lat": 15.5736, "lng": 73.7390 },
+      { "name": "Vagator Beach", "state": "Goa", "lat": 15.5977, "lng": 73.7343 },
+      { "name": "Calangute Beach", "state": "Goa", "lat": 15.5439, "lng": 73.7553 },
+      { "name": "Candolim Beach", "state": "Goa", "lat": 15.5186, "lng": 73.7620 }
+    ]
+  },
+  {
+    "category": "Scenic",
+    "items": [
+      { "name": "Varkala Beach", "state": "Kerala", "lat": 8.7379, "lng": 76.7163 },
+      { "name": "Om Beach", "state": "Karnataka", "lat": 14.5195, "lng": 74.3185 },
+      { "name": "Radhanagar Beach", "state": "Andaman", "lat": 11.9846, "lng": 92.9496 },
+      { "name": "Dhanushkodi Beach", "state": "Tamil Nadu", "lat": 9.1750, "lng": 79.4333 },
+      { "name": "Mahabalipuram Beach", "state": "Tamil Nadu", "lat": 12.6208, "lng": 80.1937 },
+      { "name": "Karwar Beach", "state": "Karnataka", "lat": 14.8136, "lng": 74.1297 },
+      { "name": "Cherai Beach", "state": "Kerala", "lat": 10.1416, "lng": 76.1784 }
+    ]
+  },
+  {
+    "category": "Adventure",
+    "items": [
+      { "name": "Tarkarli Beach", "state": "Maharashtra", "lat": 16.0337, "lng": 73.4886 },
+      { "name": "Elephant Beach", "state": "Andaman", "lat": 12.0165, "lng": 92.9710 },
+      { "name": "Malpe Beach", "state": "Karnataka", "lat": 13.3496, "lng": 74.7045 },
+      { "name": "Colva Beach", "state": "Goa", "lat": 15.2797, "lng": 73.9220 },
+      { "name": "Alibaug Beach", "state": "Maharashtra", "lat": 18.6414, "lng": 72.8722 }
+    ]
+  },
+  {
+    "category": "Family",
+    "items": [
+      { "name": "Kovalam Beach", "state": "Kerala", "lat": 8.4006, "lng": 76.9784 },
+      { "name": "Juhu Beach", "state": "Maharashtra", "lat": 19.0988, "lng": 72.8267 },
+      { "name": "Marina Beach", "state": "Tamil Nadu", "lat": 13.0500, "lng": 80.2824 },
+      { "name": "Puri Beach", "state": "Odisha", "lat": 19.7983, "lng": 85.8245 },
+      { "name": "Digha Beach", "state": "West Bengal", "lat": 21.6270, "lng": 87.5080 },
+      { "name": "Somnath Beach", "state": "Gujarat", "lat": 20.8880, "lng": 70.4010 }
+    ]
+  }
+]

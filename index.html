@@ -13,7 +13,7 @@ body { overflow:hidden; height:100vh; background:#0f172a; color:white; }
     position:absolute;
     inset:0;
     z-index:2000;
-    display:block;   /* ✅ SHOW GLOBE */
+    display:block;
     background:#000;
 }
 #map { position:fixed; top:0; left:0; width:100%; height:100%; z-index:5; background:#0f172a; display:none; }
@@ -21,7 +21,7 @@ body { overflow:hidden; height:100vh; background:#0f172a; color:white; }
 /* ── Side Panel ── */
 #panel {
   position:fixed; top:0; right:0; width:min(520px,92vw); height:100%;
-  display:none; flex-direction:column; z-index:2000; overflow:hidden;
+  display:none; flex-direction:column; z-index:10001; overflow:hidden;
   transform:translateX(100%); transition:transform 0.45s cubic-bezier(0.25,0.46,0.45,0.94);
   backdrop-filter:blur(24px); background:rgba(10,18,35,0.85);
   border-left:1px solid rgba(255,255,255,0.08); box-shadow:-20px 0 60px rgba(0,0,0,0.7);
@@ -95,7 +95,7 @@ body { overflow:hidden; height:100vh; background:#0f172a; color:white; }
 #panel-title {
   font-size: 26px;
   font-weight: 900;
-  color: white;   /* 🔥 remove gradient for readability */
+  color: white;
   text-shadow: 0 2px 10px rgba(0,0,0,0.8);
   -webkit-text-fill-color: white;
   background: none;
@@ -168,7 +168,7 @@ body { overflow:hidden; height:100vh; background:#0f172a; color:white; }
 
   border-radius: 10px;
 
-  background: transparent;   /* 🔥 KEY CHANGE */
+  background: transparent;
   border: 1px solid rgba(255,255,255,0.08);
 
   color: #e2e8f0;
@@ -176,7 +176,7 @@ body { overflow:hidden; height:100vh; background:#0f172a; color:white; }
   font-weight: 600;
   font-size: 13px;
 
-  box-shadow: none;          /* 🔥 remove floating feel */
+  box-shadow: none;
   transition: all 0.2s;
 }
 
@@ -231,7 +231,7 @@ body { overflow:hidden; height:100vh; background:#0f172a; color:white; }
 }
 .island-tabs {
   display: flex;
-  flex-direction: column;   /* 🔥 stack like others */
+  flex-direction: column;
   gap: 10px;
   margin-top: 10px;
   padding: 0;
@@ -792,6 +792,427 @@ body::before{
     }
 }
 
+.route-panel-item{
+  padding:12px;
+  margin-bottom:10px;
+
+  border-radius:12px;
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.08);
+
+  cursor:pointer;
+  transition:0.2s;
+}
+
+.route-panel-item:hover{
+  background:rgba(255,255,255,0.08);
+}
+
+.route-name{
+  font-weight:600;
+  font-size:14px;
+}
+
+.route-sub{
+  font-size:12px;
+  color:#94a3b8;
+  margin-top:4px;
+}
+/* waterfalls theme */
+.profile-top{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin-bottom:16px;
+}
+
+.profile-img{
+  width:45px;
+  height:45px;
+  border-radius:50%;
+}
+
+.profile-name{
+  font-weight:700;
+}
+
+.profile-email{
+  font-size:12px;
+  color:#94a3b8;
+}
+
+.achievement-page{
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+}
+
+.achievement-summary{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:8px;
+}
+
+.achievement-stat{
+  min-width:0;
+  padding:12px;
+  border-radius:8px;
+  background:rgba(255,255,255,0.07);
+  border:1px solid rgba(255,255,255,0.08);
+}
+
+.achievement-stat strong{
+  display:block;
+  font-size:22px;
+  line-height:1;
+}
+
+.achievement-stat span{
+  display:block;
+  margin-top:6px;
+  color:#94a3b8;
+  font-size:11px;
+  text-transform:uppercase;
+  letter-spacing:0.08em;
+}
+
+.achievement-list{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+
+.leader-row{
+  display:grid;
+  grid-template-columns:44px 38px minmax(0,1fr) auto;
+  align-items:center;
+  gap:10px;
+  padding:10px;
+  border-radius:8px;
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.08);
+}
+
+.leader-row.me{
+  border-color:rgba(56,189,248,0.55);
+  background:rgba(56,189,248,0.1);
+}
+
+.leader-rank{
+  color:#fcd34d;
+  font-weight:800;
+  text-align:center;
+}
+
+.leader-avatar{
+  width:38px;
+  height:38px;
+  border-radius:50%;
+  object-fit:cover;
+  background:#1e293b;
+}
+
+.leader-name{
+  font-weight:700;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+
+.leader-sub{
+  margin-top:3px;
+  color:#94a3b8;
+  font-size:12px;
+}
+
+.leader-score{
+  font-weight:800;
+  color:#38bdf8;
+  text-align:right;
+}
+
+.leader-score span{
+  display:block;
+  margin-top:2px;
+  color:#64748b;
+  font-size:10px;
+  text-transform:uppercase;
+}
+
+.achievement-empty{
+  padding:18px;
+  border-radius:8px;
+  background:rgba(255,255,255,0.05);
+  color:#94a3b8;
+  border:1px solid rgba(255,255,255,0.08);
+}
+
+.badge{
+  margin-left:auto;
+  font-size:20px;
+}
+
+.progress-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:16px;
+  position: relative;
+}
+
+.filter{
+  background:rgba(255,255,255,0.1);
+  padding:4px 10px;
+  border-radius:10px;
+  font-size:12px;
+}
+
+.task{
+  margin-bottom:12px;
+}
+
+.task-title{
+  font-size:12px;
+  margin-bottom:4px;
+}
+
+.bar{
+  height:8px;
+  background:#1e293b;
+  border-radius:10px;
+  overflow:hidden;
+}
+
+.fill{
+  height:100%;
+  background:linear-gradient(90deg,#3b82f6,#60a5fa);
+}
+.info-card{
+  background: rgba(255,255,255,0.08);
+  padding: 22px;
+  border-radius: 28px;
+  margin-bottom: 20px;
+
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+
+  box-shadow:
+    inset 0 20px 40px rgba(0,0,0,0.5),
+    0 10px 30px rgba(0,0,0,0.6);
+}
+
+.progress-card{
+  background: rgba(255,255,255,0.06);
+  padding: 20px;
+  border-radius: 24px;
+
+  box-shadow:
+    0 20px 40px rgba(0,0,0,0.6);
+}
+
+.circle{
+  width:70px;
+  height:70px;
+  border-radius:50%;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.circle .inner{
+  font-size:13px;
+}
+
+.share{
+  text-align:right;
+  font-size:12px;
+  margin-top:10px;
+  opacity:0.7;
+}
+.filter-options{
+  display:none;
+  position:absolute;
+  background:#0f172a;
+  border-radius:10px;
+  padding:6px;
+  margin-top:6px;
+}
+
+.filter-options div{
+  padding:6px 10px;
+  cursor:pointer;
+}
+
+.filter-options div:hover{
+  background:rgba(255,255,255,0.1);
+}
+.toast{
+  position: fixed;
+  top: 20px;
+  right: 20px;
+
+  padding: 12px 18px;
+  border-radius: 12px;
+
+  background: rgba(15,23,42,0.95);
+  color: white;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+  border: 1px solid rgba(255,255,255,0.1);
+
+  opacity: 0;
+  transform: translateY(-20px);
+  pointer-events: none;
+
+  transition: all 0.3s ease;
+  z-index: 99999;
+}
+
+/* show */
+.toast.show{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* success */
+.toast.success{
+  border-left: 4px solid #22c55e;
+}
+
+/* error */
+.toast.error{
+  border-left: 4px solid #ef4444;
+}
+.island-nav{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  padding:10px 12px;
+  margin-bottom:10px;
+
+  border-bottom:1px solid rgba(255,255,255,0.08);
+}
+
+.nav-btn{
+  width:32px;
+  height:32px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border-radius:8px;
+  cursor:pointer;
+
+  background:rgba(255,255,255,0.05);
+}
+
+.nav-btn:hover{
+  background:rgba(255,255,255,0.1);
+}
+
+#navTitle{
+  font-size:13px;
+  font-weight:600;
+  color:#e2e8f0;
+}
+/* HEADER FIXED */
+.island-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  padding:12px;
+  border-bottom:1px solid rgba(255,255,255,0.08);
+
+  position:sticky;
+  top:0;
+  background:rgba(10,18,35,0.95);
+  z-index:10;
+}
+
+/* BODY SCROLL */
+.island-body{
+  flex:1;
+  overflow-y:auto;
+  padding:10px;
+}
+
+/* NAV BUTTONS */
+.nav-btn{
+  width:32px;
+  height:32px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border-radius:8px;
+  cursor:pointer;
+  background:rgba(255,255,255,0.05);
+}
+
+.nav-btn:hover{
+  background:rgba(255,255,255,0.1);
+}
+
+#navTitle{
+  font-size:13px;
+  font-weight:600;
+}
+.main-btn{
+  width:100%;
+  padding:14px 16px;
+
+  border-radius:14px;
+  border:1px solid rgba(255,255,255,0.08);
+
+  background:rgba(255,255,255,0.04);
+
+  color:#e2e8f0;
+  font-size:14px;
+  font-weight:600;
+  letter-spacing:0.3px;
+
+  text-align:left;
+
+  transition:all 0.25s ease;
+}
+
+/* hover */
+.main-btn:hover{
+  background:rgba(255,255,255,0.08);
+  transform:translateY(-2px);
+}
+
+/* click feel */
+.main-btn:active{
+  transform:scale(0.98);
+}
+
+/* spacing between buttons */
+.island-tabs{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+#panelBackBtn {
+  color: white;
+  font-size: 18px;
+}
+#header-img {
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+#header-img.show {
+  opacity: 1;
+}
 </style>
 </head>
 <body>
@@ -822,7 +1243,9 @@ import {
   getFirestore, 
   doc, 
   setDoc, 
-  getDoc 
+  getDoc,
+  collection,
+  getDocs
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
 const firebaseConfig = {
@@ -838,15 +1261,29 @@ const auth = getAuth(app);
 window.firebaseAuth = auth;
 const db = getFirestore(app);
 window.db = db;
+window.doc = doc;
+window.setDoc = setDoc;
+window.getDoc = getDoc;
+window.collection = collection;
+window.getDocs = getDocs;
+window.firebaseTools = { doc, setDoc, getDoc, collection, getDocs };
 const provider = new GoogleAuthProvider();
+const DEFAULT_PROFILE_IMAGE = "./assets/profile.svg";
 
 
 // 🔐 LOGIN
 window.googleLogin = () => {
   signInWithPopup(auth, provider)
-    .then(res => {
+    .then(async res => {
       const user = res.user;
-      document.getElementById("loginBtn").innerText = user.displayName;
+      const profileName = document.getElementById("profileName");
+      if (profileName) profileName.innerText = user.displayName || "User";
+      await setDoc(doc(db, "users", user.uid), {
+        name: user.displayName || "User",
+        email: user.email || "",
+        photoURL: user.photoURL || DEFAULT_PROFILE_IMAGE,
+        updatedAt: new Date().toISOString()
+      }, { merge: true });
       closeLogin();
     })
     .catch(err => alert(err.message));
@@ -862,8 +1299,10 @@ window.loadDashboard = async () => {
     return;
   }
 
-  document.getElementById("userName").innerText = user.displayName || "User";
-  document.getElementById("userEmail").innerText = user.email;
+  const userName = document.getElementById("userName");
+  const userEmail = document.getElementById("userEmail");
+  if (userName) userName.innerText = user.displayName || "User";
+  if (userEmail) userEmail.innerText = user.email;
 
   const ref = doc(window.db, "users", user.uid);
   const snap = await getDoc(ref);
@@ -874,9 +1313,11 @@ window.loadDashboard = async () => {
     achievements = snap.data().achievements || [];
   }
 
-  document.getElementById("completedCount").innerText = achievements.length;
+  const completedCount = document.getElementById("completedCount");
+  if (completedCount) completedCount.innerText = achievements.length;
 
   const list = document.getElementById("achievementsList");
+  if (!list) return;
   list.innerHTML = "";
 
   achievements.forEach(a => {
@@ -901,10 +1342,13 @@ window.addAchievement = async (name) => {
     data.push(name);
 
     await setDoc(ref, {
-      name: user.displayName,
-      email: user.email,
-      achievements: data
-    });
+      name: user.displayName || "User",
+      email: user.email || "",
+      photoURL: user.photoURL || DEFAULT_PROFILE_IMAGE,
+      achievements: data,
+      score: data.length * 100,
+      updatedAt: new Date().toISOString()
+    }, { merge: true });
   }
 };
 
@@ -916,16 +1360,16 @@ onAuthStateChanged(auth, user => {
 
   if (user) {
     name.innerText = user.displayName || "User";
-    pic.src = user.photoURL || "https://i.imgur.com/6VBx3io.png";
+    pic.src = user.photoURL || DEFAULT_PROFILE_IMAGE;
   } else {
     name.innerText = "Sign in";
-    pic.src = "https://i.imgur.com/6VBx3io.png";
+    pic.src = DEFAULT_PROFILE_IMAGE;
   }
 });
 </script>
 
   <button id="loginBtn" class="profile-btn">
-  <img id="profilePic" src="https://i.imgur.com/6VBx3io.png">
+  <img id="profilePic" src="./assets/profile.svg">
   <span id="profileName">Sign in</span>
   </button>
  
@@ -943,29 +1387,49 @@ onAuthStateChanged(auth, user => {
 
 <div id="islandPanel" class="closed">
 
-  <div id="islandHandle">⮟</div>
-<div class="island-content active" id="mainCategories">
-  <div class="island-title">Explore</div>
+  <!-- 🔥 FIXED HEADER -->
+  <div class="island-header">
+    <div id="backBtn" class="nav-btn">←</div>
+    <div id="navTitle">Explore</div>
+    <div id="closeBtn" class="nav-btn">✕</div>
+  </div>
 
-  <div class="dock-btn">Waterfalls</div>
-  <div class="dock-btn">Treks</div>
-  <div class="dock-btn">Monuments</div>
-  <div class="dock-btn">Beaches</div>
-</div>
-  <!-- TOP BUTTONS -->
-<div class="island-tabs">
-  <button class="tab-btn2" id="routeBtn">Routes</button>
-  <button class="tab-btn2" id="templeBtn">Temples</button>
-</div>
+  <!-- 🔥 SCROLL CONTENT -->
+  <div class="island-body">
 
-  <!-- CONTENT -->
-  <div id="routeList" class="island-content"></div>
-  <div id="templeFilterList" class="island-content"></div>
+    <!-- HOME -->
+    <div class="island-content active" id="mainCategories">
+
+      <div class="island-tabs">
+        <button id="routeBtn" class="main-btn">Routes</button>
+        <button id="templeBtn" class="main-btn">Temples</button>
+        <button id="waterfallBtn" class="main-btn">Waterfalls</button>
+        <button id="trekBtn" class="main-btn">Treks</button>
+        <button id="monumentBtn" class="main-btn">Monuments</button>
+        <button id="beachBtn" class="main-btn">Beaches</button>
+        <button id="lakeBtn" class="main-btn">Lakes</button>
+        <button id="achievementBtn" class="main-btn">Achievements</button>
+      </div>
+    </div>
+
+    <!-- DYNAMIC SCREENS -->
+    <div id="routeList" class="island-content"></div>
+    <div id="templeFilterList" class="island-content"></div>
+    <div id="waterfallFilterList" class="island-content"></div>
+    <div id="trekFilterList" class="island-content"></div>
+    <div id="monumentFilterList" class="island-content"></div>
+    <div id="beachFilterList" class="island-content"></div>
+    <div id="lakeFilterList" class="island-content"></div>
+
+  </div>
 </div>
 
 <!-- Side panel -->
 <div id="panel">
-  <div class="close-btn" onclick="closePanel()">&#x2715;</div>
+  <div style="position:absolute; top:20px; left:20px; z-index:10; display:flex; gap:10px;">
+  <div id="panelBackBtn" class="nav-btn">←</div>
+  <div class="nav-btn" onclick="closePanel()">✕</div>
+</div>
   <div class="panel-header hero-header">
   <img id="header-img" src="" alt="">
   <div class="header-overlay"></div>
@@ -983,19 +1447,639 @@ onAuthStateChanged(auth, user => {
   <div class="meta-row" id="panelMeta" style="display:none;"></div>
   <div class="hl-section" id="panelHl" style="display:none;"></div>
   <div class="panel-content"><p id="desc">Click a state to explore.</p></div>
-  <input type="file" id="profileUpload" accept="image/*" style="margin-top:10px;">
+  <div id="toast" class="toast"></div>
+</div>
 <script src="https://unpkg.com/three@0.152.2/build/three.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/globe.gl@2.32.1/dist/globe.gl.min.js"></script>
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 <script>
+
+let panelHistory = [];
+let lastPanelOpenedAt = 0;
+
+function bindClick(id, handler) {
+  const el = document.getElementById(id);
+  if (el) el.onclick = handler;
+}
+
+bindClick('backBtn', () => {
+
+  document.getElementById('mainCategories').classList.add('active');
+
+  document.querySelectorAll('.island-content').forEach(el=>{
+    if(el.id !== "mainCategories"){
+      el.classList.remove('active');
+    }
+  });
+
+  document.getElementById("navTitle").innerText = "Explore";
+
+  if(activeMode){
+    deactivateMode(activeMode);
+    activeMode = null;
+  }
+
+  updateNav();
+});
+
+bindClick('closeBtn', () => {
+
+  document.getElementById('islandPanel').classList.add('closed');
+
+  // 🔥 reset to home
+  document.getElementById('mainCategories').classList.add('active');
+
+  document.querySelectorAll('.island-content').forEach(el=>{
+    if(el.id !== "mainCategories"){
+      el.classList.remove('active');
+    }
+  });
+
+  document.getElementById("navTitle").innerText = "Explore";
+
+  if(activeMode){
+    deactivateMode(activeMode);
+    activeMode = null;
+  }
+
+  updateNav(); // 🔥 important
+});
+
+function updateNav(){
+  const isHome = document.getElementById('mainCategories').classList.contains('active');
+  document.getElementById("backBtn").style.visibility = isHome ? "hidden" : "visible";
+}
+function showToast(message, type="success"){
+  const toast = document.getElementById("toast");
+
+  toast.innerText = message;
+  toast.className = "toast show " + type;
+
+  setTimeout(() => {
+    toast.classList.remove("show");
+  }, 2500);
+}
+let TREKS = [];
+let trekMarkers = [];
+
+async function loadTreks() {
+  const res = await fetch('./treks.json');
+  TREKS = await res.json();
+}
+function buildTrekPicker() {
+  const list = document.getElementById('routeList');
+  list.innerHTML = '<div class="island-title">TREK DIFFICULTY</div>';
+
+  TREKS.forEach(cat => {
+    const pill = document.createElement('div');
+    pill.className = 'route-pill';
+    pill.innerText = cat.category.toUpperCase();
+
+    pill.onclick = () => openTrekCategory(cat);
+
+    list.appendChild(pill);
+  });
+}
+function openTrekCategory(categoryObj) {
+
+  document.getElementById('panel-mode-label').innerText = 'TREKS';
+  document.getElementById('panel-title').innerText = categoryObj.category;
+
+  document.getElementById('desc').innerHTML =
+    `<div id="trekList"></div>`;
+
+  const container = document.getElementById('trekList');
+
+  categoryObj.items.forEach(t => {
+    const div = document.createElement('div');
+    div.className = 'route-panel-item';
+
+    div.innerHTML = `
+      <div class="route-name">${t.name}</div>
+      <div class="route-sub">${t.state}</div>
+    `;
+
+    div.onclick = () => showTrekOnMap(t);
+
+    container.appendChild(div);
+  });
+
+  renderAllTreks(categoryObj);
+  showPanelSections('route');
+  openPanel();
+}
+function clearTreks() {
+  trekMarkers.forEach(m => map.removeLayer(m));
+  trekMarkers = [];
+}
+
+function showTrekOnMap(t) {
+  clearTreks();
+
+  const marker = L.marker([t.lat, t.lng]).addTo(map);
+
+  marker.bindTooltip(t.name, { className: 'tt' });
+
+  marker.on('click', () => {
+    showTrekPanel(t);
+  });
+
+  trekMarkers.push(marker);
+
+  map.setView([t.lat, t.lng], 10);
+}
+async function showTrekPanel(t) {
+
+  showPanelSections('temple'); // reuse layout
+  openPanel();
+
+  document.getElementById('stateTabs').style.display = 'none';
+
+  document.getElementById('panel-mode-label').innerHTML = "🥾 TREK";
+  document.getElementById('panel-title').innerText = t.name;
+
+  const wiki = await fetchWikiData(t.name);
+
+  document.getElementById('desc').innerHTML = `
+    <h4 style="color:#38bdf8;margin-bottom:8px;">Overview</h4>
+    ${wiki?.text || "Famous trekking destination in India"}
+
+    <h4 style="color:#38bdf8;margin-top:16px;">Details</h4>
+    📍 ${t.state}<br>
+  `;
+
+  const headerImg = document.getElementById('header-img');
+
+  const imageUrl = await getBestImage(t.name, wiki);
+
+  if (imageUrl) {
+    headerImg.src = imageUrl;
+    headerImg.style.display = 'block';
+  } else {
+    headerImg.style.display = 'none';
+  }
+}
+bindClick('trekBtn', async () => {
+
+  transitionToMap();
+
+  if (TREKS.length === 0) {
+    await loadTreks();
+  }
+
+  setMode('trek');
+});
+
+let WATERFALLS = [];
+let waterfallMarkers = [];
+
+async function loadWaterfalls() {
+  const res = await fetch('./waterfalls.json');
+  WATERFALLS = await res.json();
+}
+
+function buildWaterfallPicker() {
+  const list = document.getElementById('routeList');
+  list.innerHTML = '<div class="island-title">WATERFALL TYPES</div>';
+
+  WATERFALLS.forEach(cat => {
+    const pill = document.createElement('div');
+    pill.className = 'route-pill';
+    pill.innerText = cat.category.toUpperCase();
+
+    pill.onclick = () => openWaterfallCategory(cat);
+
+    list.appendChild(pill);
+  });
+}
+
+function openWaterfallCategory(categoryObj) {
+  renderAllWaterfalls(categoryObj);
+  document.getElementById('panel-mode-label').innerText = 'WATERFALLS';
+  document.getElementById('panel-title').innerText = categoryObj.category;
+
+  document.getElementById('desc').innerHTML =
+    `<div id="waterfallList"></div>`;
+
+  const container = document.getElementById('waterfallList');
+
+  categoryObj.items.forEach(w => {
+    const div = document.createElement('div');
+    div.className = 'route-panel-item';
+
+    div.innerHTML = `
+      <div class="route-name">${w.name}</div>
+      <div class="route-sub">${w.state}</div>
+    `;
+
+    div.onclick = () => showWaterfallOnMap(w);
+
+    container.appendChild(div);
+  });
+
+  showPanelSections('route');
+  openPanel();
+}
+
+function clearWaterfalls() {
+  waterfallMarkers.forEach(m => map.removeLayer(m));
+  waterfallMarkers = [];
+}
+
+function showWaterfallOnMap(w) {
+  clearWaterfalls();
+
+  const marker = L.marker([w.lat, w.lng]).addTo(map);
+
+  marker.bindTooltip(w.name, { className: 'tt' });
+
+  marker.on('click', () => {
+    showWaterfallPanel(w);
+  });
+
+  waterfallMarkers.push(marker);
+
+  map.setView([w.lat, w.lng], 10);
+}
+
+async function showWaterfallPanel(w) {
+
+  showPanelSections('temple');
+  openPanel();
+
+  document.getElementById('stateTabs').style.display = 'none';
+
+  document.getElementById('panel-mode-label').innerHTML = "🌊 WATERFALL";
+  document.getElementById('panel-title').innerText = w.name;
+
+  const wiki = await fetchWikiData(w.name);
+
+  document.getElementById('desc').innerHTML = `
+    <h4 style="color:#38bdf8;margin-bottom:8px;">Overview</h4>
+    ${wiki?.text || "Famous waterfall in India"}
+
+    <h4 style="color:#38bdf8;margin-top:16px;">Details</h4>
+    📍 ${w.state}
+  `;
+
+  const headerImg = document.getElementById('header-img');
+
+  const imageUrl = await getBestImage(w.name, wiki);
+
+  if (imageUrl) {
+    headerImg.src = imageUrl;
+    headerImg.style.display = 'block';
+  } else {
+    headerImg.style.display = 'none';
+  }
+}
+
+let BEACHES = [];
+let beachMarkers = [];
+
+async function loadBeaches() {
+  const res = await fetch('./beaches.json');
+  BEACHES = await res.json();
+}
+function buildBeachPicker() {
+  const list = document.getElementById('routeList');
+  list.innerHTML = '<div class="island-title">BEACH STATES</div>';
+
+  BEACHES.forEach(cat => {
+    const pill = document.createElement('div');
+    pill.className = 'route-pill';
+    pill.innerText = cat.category.toUpperCase();
+
+    pill.onclick = () => openBeachCategory(cat);
+
+    list.appendChild(pill);
+  });
+}
+function openBeachCategory(categoryObj) {
+
+  document.getElementById('panel-mode-label').innerText = 'BEACHES';
+  document.getElementById('panel-title').innerText = categoryObj.category;
+
+  document.getElementById('desc').innerHTML =
+    `<div id="beachList"></div>`;
+
+  const container = document.getElementById('beachList');
+
+  categoryObj.items.forEach(b => {
+    const div = document.createElement('div');
+    div.className = 'route-panel-item';
+
+    div.innerHTML = `
+      <div class="route-name">${b.name}</div>
+      <div class="route-sub">${b.state}</div>
+    `;
+
+    div.onclick = () => showBeachOnMap(b);
+
+    container.appendChild(div);
+  });
+
+  renderAllBeaches(categoryObj);
+  showPanelSections('route');
+  openPanel();
+}
+function clearBeaches() {
+  beachMarkers.forEach(m => map.removeLayer(m));
+  beachMarkers = [];
+}
+
+function showBeachOnMap(b) {
+  clearBeaches();
+
+  const marker = L.marker([b.lat, b.lng]).addTo(map);
+
+  marker.bindTooltip(b.name, { className: 'tt' });
+
+  marker.on('click', () => {
+    showBeachPanel(b);
+  });
+
+  beachMarkers.push(marker);
+
+  map.setView([b.lat, b.lng], 10);
+}
+async function showBeachPanel(b) {
+
+  showPanelSections('temple'); // reuse layout
+  openPanel();
+
+  document.getElementById('stateTabs').style.display = 'none';
+
+  document.getElementById('panel-mode-label').innerHTML = "🏖 BEACH";
+  document.getElementById('panel-title').innerText = b.name;
+
+  const wiki = await fetchWikiData(b.name);
+
+  document.getElementById('desc').innerHTML = `
+  <h4 style="color:#38bdf8;margin-bottom:8px;">Overview</h4>
+  ${wiki?.text || "Famous beach in India"}
+
+  <h4 style="color:#38bdf8;margin-top:16px;">Details</h4>
+  📍 ${b.state}
+`;
+
+  const headerImg = document.getElementById('header-img');
+
+  const imageUrl = await getBestImage(b.name, wiki);
+
+  if (imageUrl) {
+    headerImg.src = imageUrl;
+    headerImg.style.display = 'block';
+  } else {
+    headerImg.style.display = 'none';
+  }
+}
+bindClick('beachBtn', async () => {
+
+  transitionToMap();
+
+  if (BEACHES.length === 0) {
+    await loadBeaches();
+  }
+
+  setMode('beach');
+});
+bindClick('waterfallBtn', async () => {
+
+  transitionToMap();
+
+  if (WATERFALLS.length === 0) {
+    await loadWaterfalls();
+  }
+
+  setMode('waterfall');
+});
+
+let LAKES = [];
+let lakeMarkers = [];
+async function loadLakes() {
+  const res = await fetch('./lakes.json');
+  LAKES = await res.json();
+}
+function buildLakePicker() {
+  const list = document.getElementById('routeList');
+  list.innerHTML = '<div class="island-title">LAKE REGIONS</div>';
+
+  LAKES.forEach(cat => {
+    const pill = document.createElement('div');
+    pill.className = 'route-pill';
+    pill.innerText = cat.category.toUpperCase();
+
+    pill.onclick = () => openLakeCategory(cat);
+
+    list.appendChild(pill);
+  });
+}
+function openLakeCategory(categoryObj) {
+
+  document.getElementById('panel-mode-label').innerText = 'LAKES';
+  document.getElementById('panel-title').innerText = categoryObj.category;
+  document.getElementById('stateTabs').style.display = 'none';
+  document.getElementById('desc').innerHTML =
+    `<div id="lakeList"></div>`;
+
+  const container = document.getElementById('lakeList');
+
+  categoryObj.items.forEach(l => {
+    const div = document.createElement('div');
+    div.className = 'route-panel-item';
+
+    div.innerHTML = `
+      <div class="route-name">${l.name}</div>
+      <div class="route-sub">${l.state}</div>
+    `;
+
+    div.onclick = () => showLakeOnMap(l);
+
+    container.appendChild(div);
+  });
+
+  renderAllLakes(categoryObj);
+  showPanelSections('route');
+  openPanel();
+}
+function clearLakes() {
+  lakeMarkers.forEach(m => map.removeLayer(m));
+  lakeMarkers = [];
+}
+
+function showLakeOnMap(l) {
+  clearLakes();
+
+  const marker = L.marker([l.lat, l.lng]).addTo(map);
+
+  marker.bindTooltip(l.name, { className: 'tt' });
+
+  marker.on('click', () => {
+    showLakePanel(l);
+  });
+
+  lakeMarkers.push(marker);
+
+  map.setView([l.lat, l.lng], 10);
+}
+async function showLakePanel(l) {
+
+  showPanelSections('temple');
+  openPanel();
+
+  document.getElementById('stateTabs').style.display = 'none';
+
+  document.getElementById('panel-mode-label').innerHTML = "🌊 LAKE";
+  document.getElementById('panel-title').innerText = l.name;
+
+  document.getElementById('desc').innerHTML = `
+    📍 ${l.state}
+  `;
+}
+bindClick('lakeBtn', async () => {
+
+  transitionToMap();
+
+  document.getElementById('islandPanel').classList.remove('closed');
+
+  if (LAKES.length === 0) {
+    await loadLakes();
+  }
+
+  setMode('lake');
+});
+
+let MONUMENTS = [];
+let monumentMarkers = [];
+async function loadMonuments() {
+  const res = await fetch('./monuments.json');
+  MONUMENTS = await res.json();
+}
+function buildMonumentPicker() {
+  const list = document.getElementById('routeList'); // reuse container
+  list.innerHTML = '<div class="island-title">MONUMENT TYPES</div>';
+
+  MONUMENTS.forEach(cat => {
+    const pill = document.createElement('div');
+    pill.className = 'route-pill';
+    pill.innerText = cat.category.replaceAll('_',' ').toUpperCase();
+
+    pill.onclick = () => openMonumentCategory(cat);
+
+    list.appendChild(pill);
+  });
+}
+function openMonumentCategory(categoryObj) {
+
+  document.getElementById('panel-mode-label').innerText = 'MONUMENTS';
+  document.getElementById('panel-title').innerText =
+    categoryObj.category.replaceAll('_',' ').toUpperCase();
+
+  document.getElementById('desc').innerHTML =
+    `<div id="monumentList"></div>`;
+
+  const container = document.getElementById('monumentList');
+
+  categoryObj.items.forEach(m => {
+    const div = document.createElement('div');
+    div.className = 'route-panel-item';
+
+    div.innerHTML = `
+      <div class="route-name">${m.name}</div>
+      <div class="route-sub">${m.state} • ${m.type}</div>
+    `;
+
+    div.onclick = () => showMonumentOnMap(m);
+
+    container.appendChild(div);
+  });
+
+  showPanelSections('route'); // reuse style
+  openPanel();
+}
+function clearMonuments() {
+  monumentMarkers.forEach(m => map.removeLayer(m));
+  monumentMarkers = [];
+}
+
+function showMonumentOnMap(m) {
+  clearMonuments();
+
+  const marker = L.marker([m.lat, m.lng]).addTo(map);
+
+  marker.bindTooltip(m.name, { className: 'tt' });
+
+  // ✅ when marker clicked → open panel
+  marker.on('click', () => {
+    showMonumentPanel(m);
+  });
+
+  monumentMarkers.push(marker);
+
+  map.setView([m.lat, m.lng], 10);
+}
+
+async function showMonumentPanel(m) {
+
+  showPanelSections('temple'); // reuse same UI
+  openPanel();
+
+  document.getElementById('stateTabs').style.display = 'none';
+
+  document.getElementById('panel-mode-label').innerHTML = "🏛 MONUMENT";
+  document.getElementById('panel-title').innerText = m.name;
+
+  document.getElementById('desc').innerHTML = "Loading...";
+
+  const wiki = await fetchWikiData(m.name);
+
+  document.getElementById('desc').innerHTML = `
+    <h4 style="color:#38bdf8;margin-bottom:8px;">Overview</h4>
+    ${wiki?.text || "No info available"}
+
+    <h4 style="color:#38bdf8;margin-top:16px;">Details</h4>
+    📍 ${m.state}<br>
+    🏛 ${m.type}<br>
+  `;
+
+  const headerImg = document.getElementById('header-img');
+
+  const imageUrl = await getBestImage(m.name, wiki);
+
+  if (imageUrl) {
+  headerImg.src = imageUrl;
+  headerImg.style.display = 'block';
+  headerImg.classList.add('show'); // 🔥 THIS WAS MISSING
+} else {
+  headerImg.style.display = 'none';
+  headerImg.classList.remove('show');
+}
+}
+bindClick('monumentBtn', async () => {
+
+  transitionToMap();
+
+  if (MONUMENTS.length === 0) {
+    await loadMonuments();
+  }
+
+  setMode('monument');
+});
+
 document.addEventListener("click", (e) => {
     const panel = document.getElementById("panel");
-    const toggle = document.querySelector(".toggle");
+    const toggle = document.querySelector(".toggle") || document.getElementById("dockToggle");
+    const islandPanel = document.getElementById("islandPanel");
+
+    if (Date.now() - lastPanelOpenedAt < 150) return;
 
     if(
+        panel &&
         panel.classList.contains("active") &&
         !panel.contains(e.target) &&
-        !toggle.contains(e.target)
+        (!toggle || !toggle.contains(e.target)) &&
+        (!islandPanel || !islandPanel.contains(e.target))
     ){
         panel.classList.remove("active");
     }
@@ -1034,10 +2118,10 @@ async function loadUserAchievements(){
   const snap = await getDoc(ref);
 
   const list = document.getElementById("panelAchievements");
+  if (!list) return;
   list.innerHTML = "";
 
   let data = snap.exists() ? (snap.data().achievements || []) : [];
-  console.log("Achievements:", data);
   if (data.length === 0) {
     list.innerHTML = "<span style='color:#64748b'>No achievements yet</span>";
     return;
@@ -1050,8 +2134,6 @@ async function loadUserAchievements(){
   });
 }
 function loadYatraStats() {
-  const container = document.getElementById("yatraStats");
-  container.innerHTML = "";
 
   const yatras = [...new Set(TEMPLES.map(t => t.subcategory))];
 
@@ -1103,54 +2185,201 @@ function getUserLocation() {
 function closeLogin(){
   document.getElementById("loginPopup").classList.remove("active");
 }
+
+const ACHIEVEMENT_SCORE_VALUE = 100;
+
+function escapeHtml(value) {
+  return String(value ?? "")
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+}
+
+function getAchievementScore(data) {
+  const achievements = Array.isArray(data?.achievements) ? data.achievements : [];
+  const savedScore = Number(data?.score);
+  const achievementScore = achievements.length * ACHIEVEMENT_SCORE_VALUE;
+
+  return Number.isFinite(savedScore)
+    ? Math.max(savedScore, achievementScore)
+    : achievementScore;
+}
+
+function getExplorerLevel(score) {
+  if (score >= 2000) return "Legend";
+  if (score >= 1200) return "Master";
+  if (score >= 600) return "Trailblazer";
+  if (score >= 200) return "Explorer";
+  return "Beginner";
+}
+
+function getAchievementCountLabel(count) {
+  return `${count} achievement${count === 1 ? "" : "s"}`;
+}
+
+async function loadAchievementRows() {
+  const tools = window.firebaseTools;
+
+  if (!window.db || !tools?.collection || !tools?.getDocs) {
+    throw new Error("Leaderboard is still loading. Please try again.");
+  }
+
+  const currentUser = window.firebaseAuth?.currentUser || null;
+  const snapshot = await tools.getDocs(tools.collection(window.db, "users"));
+  const rows = snapshot.docs.map(docSnap => {
+    const data = docSnap.data() || {};
+    const achievements = Array.isArray(data.achievements) ? data.achievements : [];
+    const score = getAchievementScore(data);
+
+    return {
+      id: docSnap.id,
+      name: data.name || data.displayName || "Explorer",
+      email: data.email || "",
+      photoURL: data.photoURL || "./assets/profile.svg",
+      achievements,
+      achievementCount: achievements.length,
+      score
+    };
+  });
+
+  if (currentUser && !rows.some(row => row.id === currentUser.uid)) {
+    rows.push({
+      id: currentUser.uid,
+      name: currentUser.displayName || "User",
+      email: currentUser.email || "",
+      photoURL: currentUser.photoURL || "./assets/profile.svg",
+      achievements: [],
+      achievementCount: 0,
+      score: 0
+    });
+  }
+
+  rows.sort((a, b) => {
+    if (b.score !== a.score) return b.score - a.score;
+    if (b.achievementCount !== a.achievementCount) return b.achievementCount - a.achievementCount;
+    return a.name.localeCompare(b.name);
+  });
+
+  return rows.map((row, index) => ({ ...row, rank: index + 1 }));
+}
+
+function renderAchievementBoard(rows) {
+  const currentUser = window.firebaseAuth?.currentUser || null;
+  const currentRow = currentUser
+    ? rows.find(row => row.id === currentUser.uid)
+    : null;
+
+  if (!rows.length) {
+    return `
+      <div class="achievement-page">
+        <div class="achievement-empty">No users have unlocked achievements yet.</div>
+      </div>
+    `;
+  }
+
+  const leaderRows = rows.map(row => {
+    const isMe = currentUser?.uid === row.id;
+    return `
+      <div class="leader-row${isMe ? " me" : ""}">
+        <div class="leader-rank">#${row.rank}</div>
+        <img class="leader-avatar" src="${escapeHtml(row.photoURL)}" alt="">
+        <div>
+          <div class="leader-name">${escapeHtml(row.name)}${isMe ? " (You)" : ""}</div>
+          <div class="leader-sub">${escapeHtml(getAchievementCountLabel(row.achievementCount))} - ${escapeHtml(getExplorerLevel(row.score))}</div>
+        </div>
+        <div class="leader-score">${row.score}<span>score</span></div>
+      </div>
+    `;
+  }).join("");
+
+  return `
+    <div class="achievement-page">
+      <div class="achievement-summary">
+        <div class="achievement-stat">
+          <strong>${currentRow ? `#${currentRow.rank}` : "--"}</strong>
+          <span>Your rank</span>
+        </div>
+        <div class="achievement-stat">
+          <strong>${currentRow ? currentRow.score : "--"}</strong>
+          <span>Your score</span>
+        </div>
+        <div class="achievement-stat">
+          <strong>${rows.length}</strong>
+          <span>Users</span>
+        </div>
+      </div>
+      <div class="achievement-list">${leaderRows}</div>
+    </div>
+  `;
+}
+
+async function showAchievementPage() {
+  panelHistory = [];
+  openPanel();
+  showPanelSections("achievement");
+  document.getElementById("panel-mode-label").innerText = "ACHIEVEMENTS";
+  document.getElementById("panel-title").innerText = "USER RANKS";
+  document.getElementById("header-img").style.display = "none";
+  document.getElementById("panelBackBtn").style.visibility = "hidden";
+  document.getElementById("desc").innerHTML = `
+    <div class="achievement-page">
+      <div class="achievement-empty">Loading ranks and scores...</div>
+    </div>
+  `;
+
+  if (typeof transitionToMap === "function") {
+    try {
+      transitionToMap();
+    } catch (error) {
+      console.warn("Map transition skipped for achievement page:", error);
+    }
+  }
+
+  try {
+    const rows = await loadAchievementRows();
+    document.getElementById("desc").innerHTML = renderAchievementBoard(rows);
+  } catch (error) {
+    console.error("Achievement leaderboard error:", error);
+    const canLogin = !window.firebaseAuth?.currentUser;
+    document.getElementById("desc").innerHTML = `
+      <div class="achievement-page">
+        <div class="achievement-empty">
+          Unable to load user ranks right now.${canLogin ? " Sign in and try again." : ""}
+        </div>
+        ${canLogin ? `<button class="action-btn btn-primary" onclick="googleLogin()">Continue with Google</button>` : ""}
+      </div>
+    `;
+  }
+}
+
+window.showAchievementPage = showAchievementPage;
 /* ═══════════════════════════════════
    ROUTE DATA
 ═══════════════════════════════════ */
-const ROUTES = [
-  {
-    id:"ecr", name:"East Coast Road", distance:"690 km", best_time:"Oct–Mar",
-    highlights:["Chennai","Mahabalipuram","Pondicherry"],
-    description:"Scenic coastal highway along the Bay of Bengal with beaches, temples, and sunrise views.",
-    from:[13.0827,80.2707], to:[11.9416,79.8083],
-    waypoints:[[12.6208,80.1961],[12.2253,79.9994]]
-  },
-  {
-    id:"leh_manali", name:"Leh–Manali Highway", distance:"474 km", best_time:"Jun–Sep",
-    highlights:["Rohtang Pass","Baralacha La","Tanglang La"],
-    description:"One of the highest motorable roads in the world, crossing multiple high-altitude passes.",
-    from:[32.2396,77.1887], to:[34.1526,77.5771],
-    waypoints:[[32.876,77.507],[33.358,77.615]]
-  },
-  {
-    id:"mumbai_pune", name:"Mumbai–Pune Expressway", distance:"94 km", best_time:"All year",
-    highlights:["Lonavala","Khandala","Khopoli"],
-    description:"India's first expressway — fast, tunnel-studded, with dramatic Western Ghats scenery.",
-    from:[19.076,72.8777], to:[18.5204,73.8567],
-    waypoints:[[19.0397,73.0787],[18.7557,73.409]]
-  },
-  {
-    id:"nh66", name:"NH66 Coastal Highway", distance:"1600 km", best_time:"Nov–Feb",
-    highlights:["Mumbai","Goa","Mangalore","Kochi"],
-    description:"Long coastal highway offering beaches, backwaters, and lush greenery down India's west coast.",
-    from:[19.076,72.8777], to:[9.9312,76.2673],
-    waypoints:[[15.2993,74.124],[12.9141,74.856]]
-  },
-  {
-    id:"srinagar_leh", name:"Srinagar–Leh Highway", distance:"434 km", best_time:"May–Oct",
-    highlights:["Zoji La","Kargil","Magnetic Hill"],
-    description:"Historic Himalayan route connecting the Kashmir Valley to Ladakh via dramatic passes.",
-    from:[34.0837,74.7973], to:[34.1526,77.5771],
-    waypoints:[[34.489,75.757],[34.5553,76.1345]]
-  }
-];
 
 const ROUTE_COLORS = {
   ecr:'#3B82F6',        // blue
   leh_manali:'#CBD5F5', // air
   mumbai_pune:'#22C55E',
   nh66:'#EAB308',
-  srinagar_leh:'#EF4444'
+  srinagar_leh:'#EF4444',
+  mountain:'#CBD5F5',
+  coastal:'#38BDF8',
+  ghat:'#22C55E',
+  desert:'#F59E0B',
+  temple:'#F97316',
+  forest:'#10B981',
+  city:'#A78BFA',
+  expressway:'#EF4444',
+  default:'#3B82F6'
 };
+
+function getRouteColor(route) {
+  return ROUTE_COLORS[route?.id] || ROUTE_COLORS[route?.category] || ROUTE_COLORS.default;
+}
+
 async function verifyTempleVisit(temple) {
   try {
     const user = await getUserLocation();
@@ -1162,13 +2391,13 @@ async function verifyTempleVisit(temple) {
 
     if (dist < 0.5) { // ✅ 500 meters radius
       markTempleComplete(temple);
-      alert("Temple verified ✅");
+      showToast("Temple verified ", "success");
     } else {
-      alert("You are too far from temple ❌");
+      showToast("You are too far from temple ", "error");
     }
 
   } catch (e) {
-    alert("Location permission denied ❌");
+    showToast("Location permission denied ", "error");
   }
 }
 function markTempleComplete(temple) {
@@ -1178,7 +2407,6 @@ function markTempleComplete(temple) {
 
   saveProgress(progress);
 
-  // 🔥 ADD THIS
   checkYatraCompletion(temple.subcategory);
 }
 function checkYatraCompletion(yatraName) {
@@ -1238,7 +2466,6 @@ async function loadTemples() {
   name: t.name || "Unknown Temple",
   state: t.state || "India",
 
-  // 🔥 FIX HERE
   lat: Number(t.lat || t.latitude),
   lng: Number(t.lng || t.longitude),
 
@@ -1249,13 +2476,12 @@ async function loadTemples() {
   description: t.description || "No description available"
 }));
 
-    console.log("All temple sets loaded:", TEMPLES.length);
-
   } catch (e) {
     console.error("Temple load error:", e);
   }
 }
-document.getElementById("loginBtn").onclick = async () => {
+bindClick("loginBtn", async () => {
+
   const user = window.firebaseAuth?.currentUser;
 
   if (!user) {
@@ -1263,89 +2489,118 @@ document.getElementById("loginBtn").onclick = async () => {
     return;
   }
 
+  transitionToMap();
+
+  if (TEMPLES.length === 0) {
+    await loadTemples();
+  }
+
   openPanel();
-  showPanelSections('profile'); // just reuse layout
-
+  showPanelSections('profile');
   document.getElementById('panel-mode-label').innerText = "PROFILE";
-  document.getElementById('panel-title').innerText = "My Profile";
+  document.getElementById('panel-title').innerText = "MY DASHBOARD";
 
+  document.getElementById('header-img').style.display = 'none';
   const name = user.displayName || "User";
   const email = user.email || "";
-  const photo = user.photoURL || "https://cdn-icons-png.flaticon.com/512/149/149071.png";
+  const photo = user.photoURL || "./assets/profile.svg";
 
   const progress = getProgress();
-const totalVisited = Object.keys(progress).length;
+  const totalVisited = Object.keys(progress).length;
 
-const yatras = [...new Set(TEMPLES.map(t => t.subcategory))];
+  const yatras = [...new Set(TEMPLES.map(t => t.subcategory))];
 
-document.getElementById('desc').innerHTML = `
-<!-- PROFILE HEADER -->
-<div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
-  <img src="${photo}" style="width:50px;height:50px;border-radius:50%;">
+  document.getElementById('desc').innerHTML = `
+
+<!-- TOP -->
+<div class="profile-top">
+  <img src="${photo}" class="profile-img">
   <div>
-    <div style="font-size:12px;color:#94a3b8;">Hello!</div>
-    <div style="font-size:18px;font-weight:700;">${name}</div>
+    <div class="profile-name">${name}</div>
+    <div class="profile-email">${email}</div>
   </div>
+  <div class="badge">🏆</div>
 </div>
 
-<!-- MAIN CARD -->
-<div style="
-  background: linear-gradient(135deg,#6d28d9,#4f46e5);
-  border-radius:16px;
-  padding:16px;
-  margin-bottom:16px;
-">
-  <div style="font-size:13px;opacity:0.8;">Your progress</div>
-  <div style="margin-top:8px;font-size:22px;font-weight:700;">
-    ${totalVisited} Places Visited
-  </div>
+<!-- 🔥 INFO CARD (THIS WAS MISSING) -->
+<div class="info-card">
+  <div>Rank: Beginner</div>
+  <div>Plan: Free</div>
+  <div>Badge: Explorer</div>
+  <div>History: ${totalVisited} visits</div>
 </div>
 
-<!-- IN PROGRESS -->
-<div style="margin-bottom:10px;font-weight:600;">In Progress</div>
-<div id="yatraCards"></div>
+<!-- 🔥 MAIN PROGRESS CARD -->
+<div class="progress-card">
 
-<!-- ACTION -->
-<div style="margin-top:16px;">
-  <button class="action-btn btn-primary" onclick="updateName()">✏️ Update Name</button>
+  <div class="progress-header">
+    <div class="filter" id="filterBtn">Filter ⏷</div>
+<div id="filterOptions" class="filter-options">
+  <div data-type="all">All</div>
+  <div data-type="yatra">Yatra</div>
+  <div data-type="state">State</div>
+</div>
+
+    <div class="circle">
+      <div class="inner">${totalVisited}%</div>
+    </div>
+  </div>
+
+  <div id="taskList"></div>
+
+  <div class="share">Share achievement</div>
+
 </div>
 `;
-const container = document.getElementById("yatraCards");
-container.innerHTML = "";
+const filterBtn = document.getElementById("filterBtn");
+const filterOptions = document.getElementById("filterOptions");
 
-yatras.forEach(y => {
-  const total = TEMPLES.filter(t => t.subcategory === y).length;
-  const done = TEMPLES.filter(t =>
-    t.subcategory === y && progress[t.name]
-  ).length;
-
-  const percent = total ? Math.round((done / total) * 100) : 0;
-
-  const div = document.createElement("div");
-  div.className = "yatra-card";
-
-  div.innerHTML = `
-    <div class="yatra-title">${y}</div>
-    <div style="font-size:12px;color:#94a3b8;">
-      ${done} / ${total}
-    </div>
-    <div class="progress-bar">
-      <div class="progress-fill" style="width:${percent}%"></div>
-    </div>
-  `;
-
-  container.appendChild(div);
-});
+filterBtn.onclick = () => {
+  filterOptions.style.display =
+    filterOptions.style.display === "block" ? "none" : "block";
 };
+let currentFilter = "all";
+
+document.querySelectorAll("#filterOptions div").forEach(opt => {
+  opt.onclick = () => {
+    currentFilter = opt.dataset.type;
+    filterOptions.style.display = "none";
+    renderTasks();
+  };
+});
+ renderTasks();
+  const taskContainer = document.getElementById("taskList");
+  taskContainer.innerHTML = "";
+
+  yatras.forEach(y => {
+    const total = TEMPLES.filter(t => t.subcategory === y).length;
+    const done = TEMPLES.filter(t =>
+      t.subcategory === y && progress[t.name]
+    ).length;
+
+    const percent = total ? Math.round((done / total) * 100) : 0;
+
+    const div = document.createElement("div");
+    div.className = "task";
+
+    div.innerHTML = `
+      <div class="task-title">${y}</div>
+      <div class="bar">
+        <div class="fill" style="width:${percent}%"></div>
+      </div>
+    `;
+
+    taskContainer.appendChild(div);
+  });
+});
 /* ═══════════════════════════════════
    APP STATE
 ═══════════════════════════════════ */
 let map = null, geoLayer = null, selectedStateLayer = null, globeInstance = null;
-let activeMode = null;          // null | 'route' | 'temple'
-let activeRouteLayers = {};     // id → {line, markers[]}
+let activeMode = null;
+let activeRouteLayers = {};
 let selectedRouteId = null;
 let templeMarkers = [];
-let activeTempleFilter = "All";
 let isMapActive = false;
 /* ═══════════════════════════════════
    MODE MANAGER — mutual exclusion
@@ -1388,6 +2643,28 @@ function activateMode(mode) {
     buildTemplePicker();
     renderTemples("All");
   }
+  else if (mode === 'monument') {
+  document.getElementById('routeList').classList.add('active');
+  buildMonumentPicker();
+  }
+  else if (mode === 'lake') {
+  document.getElementById('routeList').classList.add('active');
+  document.getElementById('templeFilterList').classList.remove('active');
+  buildLakePicker();
+  }
+  else if (mode === 'beach') {
+  document.getElementById('routeList').classList.add('active');
+  buildBeachPicker();
+  }
+  else if (mode === 'waterfall') {
+  document.getElementById('routeList').classList.add('active');
+  buildWaterfallPicker();
+  }
+  else if (mode === 'trek') {
+  document.getElementById('routeList').classList.add('active');
+  buildTrekPicker();
+  }
+  updateNav();
 }
 
 function deactivateMode(mode) {
@@ -1399,6 +2676,21 @@ function deactivateMode(mode) {
   else if (mode === 'temple') {
     document.getElementById('templeBtn').classList.remove('active');
     clearTemples();
+  }
+  else if (mode === 'monument') {
+  clearMonuments();
+  }
+  else if (mode === 'lake') {
+  clearLakes();
+  }
+  else if (mode === 'beach') {
+  clearBeaches();
+  }
+  else if (mode === 'waterfall') {
+  clearWaterfalls();
+  }
+  else if (mode === 'trek') {
+  clearTreks();
   }
 
   // 🔥 just hide content, not island
@@ -1424,9 +2716,7 @@ async function showLiveLocation() {
 
     map.setView([pos.lat, pos.lng], 13);
 
-  } catch (e) {
-    console.log("Location error");
-  }
+  } catch (e) {}
 }
 /* ═══════════════════════════════════
    GLOBE
@@ -1674,21 +2964,72 @@ function displayStateCat(cat) {
     extractSection(window.currentStateHTML, cat);
 }
 
+let ROUTES = [];
+
+async function loadRoutes() {
+  if (ROUTES.length > 0) return;
+
+  const res = await fetch('./routes_80.json');
+  ROUTES = await res.json();
+}
+
 /* ═══════════════════════════════════
    ROUTE MODE — OSRM real roads
 ═══════════════════════════════════ */
 function buildRoutePicker() {
-  const list=document.getElementById('routeList');
-  list.innerHTML='';
-  ROUTES.forEach(r=>{
-    const pill=document.createElement('div');
-    pill.className='route-pill';
-    pill.id='rpill-'+r.id;
-    pill.style.borderColor=ROUTE_COLORS[r.id]+'55';
-    pill.innerHTML=`<span style="color:${ROUTE_COLORS[r.id]};margin-right:5px;">●</span>${r.name}`;
-    pill.onclick=()=>selectRoute(r.id);
+  const list = document.getElementById('routeList');
+  list.innerHTML = '<div class="island-title">ROUTE TYPES</div>';
+
+  const categories = [...new Set(ROUTES.map(r => r.category))];
+
+  categories.forEach(cat => {
+    const pill = document.createElement('div');
+    pill.className = 'route-pill';
+    pill.innerText = cat.toUpperCase();
+
+    pill.onclick = () => openRouteCategory(cat);
+
     list.appendChild(pill);
   });
+}
+function openRouteCategory(category) {
+
+  const filtered = ROUTES.filter(r => r.category === category);
+
+  document.getElementById('panel-mode-label').innerText = 'ROUTES';
+  document.getElementById('panel-title').innerText = category.toUpperCase();
+
+  document.getElementById('panelMeta').innerHTML = '';
+  document.getElementById('panelHl').innerHTML = '';
+
+  // 🔥 ROUTE LIST UI (RIGHT PANEL)
+  document.getElementById('desc').innerHTML = `
+    <div id="routePanelList"></div>
+  `;
+
+  const container = document.getElementById('routePanelList');
+
+  filtered.forEach(r => {
+    const div = document.createElement('div');
+    div.className = 'route-panel-item';
+
+    div.innerHTML = `
+      <div class="route-name">${r.name}</div>
+      <div class="route-sub">${r.highlights.join(' • ')}</div>
+    `;
+
+    div.onclick = () => selectRoute(r.id);
+
+    container.appendChild(div);
+  });
+
+  panelHistory.push({
+  title: document.getElementById('panel-title').innerText,
+  desc: document.getElementById('desc').innerHTML,
+  mode: 'route'
+});
+  showPanelSections('route');
+  openPanel();
 }
 
 async function selectRoute(id) {
@@ -1703,16 +3044,16 @@ async function selectRoute(id) {
   clearRoutes();
   document.querySelectorAll('.route-pill').forEach(p=>p.classList.remove('on'));
   selectedRouteId=id;
-  document.getElementById('rpill-'+id)?.classList.add('on');
-
   const route=ROUTES.find(r=>r.id===id);
-  const color=ROUTE_COLORS[id];
+  if (!route) return;
+
+  const color=getRouteColor(route);
 
   // show panel immediately with loading state
   showRoutePanel(route, color, true);
 
   // Build OSRM coordinate string: from → waypoints → to
-  const pts = [route.from, ...route.waypoints, route.to];
+  const pts = [route.from, ...(route.waypoints || []), route.to];
   const coordStr = pts.map(c=>c[1]+','+c[0]).join(';');
   const url = `https://router.project-osrm.org/route/v1/driving/${coordStr}?overview=full&geometries=geojson`;
 
@@ -1752,8 +3093,14 @@ async function selectRoute(id) {
   } catch(e) {
     console.error('OSRM error, falling back to straight line:', e);
     // fallback: straight polyline
-    const pts2 = [route.from, ...route.waypoints, route.to];
-    const line = L.polyline(pts2, {color,weight:4,opacity:0.85,dashArray:'10 6'}).addTo(map);
+    const pts2 = [route.from, ...(route.waypoints || []), route.to];
+    const line = L.polyline(pts2, {
+      color,
+      weight: 4,
+      opacity: 0.85,
+      dashArray: '10 6'
+    }).addTo(map);
+
     activeRouteLayers[id]={line,markers:[]};
     map.fitBounds(line.getBounds(),{padding:[60,60]});
     showRoutePanel(route, color, false);
@@ -1808,7 +3155,8 @@ function showRoutePanel(route, color, loading) {
   document.getElementById('header-img').style.display='none';
   showPanelSections('route');
   openPanel();
-}
+} 
+ 
 
 /* ═══════════════════════════════════
    TEMPLE MODE
@@ -1866,8 +3214,6 @@ function clearTemples() {
 
 function renderTemples(filter) {
   clearTemples();
-  console.log("TEMPLES:", TEMPLES);
-  console.log("FILTER:", filter);
   const filtered = (filter === 'All'
   ? TEMPLES
   : TEMPLES.filter(t =>
@@ -1896,22 +3242,11 @@ function renderTemples(filter) {
     templeMarkers.push(m);
   });
 
-  // 🔥 MOVE THIS OUTSIDE LOOP
   if (templeMarkers.length > 0) {
     const group = L.featureGroup(templeMarkers);
     map.fitBounds(group.getBounds(), { padding: [50,50] });
   }
 }
-const TEMPLE_CATS = [
-  "All",
-  "Ashta Vinayak",
-  "Bhootha Lingas",
-  "Char Dham",
-  "Chota Char Dham",
-  "Jyotirlinga",
-  "Panch Kedar"
-];
-
 const TEMPLE_STRUCTURE = {
   "All": [],
   "Yatra": [
@@ -1921,23 +3256,12 @@ const TEMPLE_STRUCTURE = {
     "Ashta Vinayak",
     "Panch Kedar",
     "Bhootha Lingas",
-    "Divya Desams"   // 🔥 ADD THIS
+    "Divya Desams"
   ],
   "Famous": [],
   "Treks": [],
   "Events": [],
   "Circuits": []
-};
-
-const TEMPLE_COLORS = {
-  "Ashta Vinayak": "#f59e0b",
-  "Bhootha Lingas": "#60a5fa",
-  "Char Dham": "#34d399",
-  "Chota Char Dham": "#f472b6",
-  "Jyotirlinga": "#818cf8",
-  "Panch Kedar": "#fbbf24",
-  "Divya Desams": "#22c55e",
-  "All": "#fbbf24"
 };
 
 async function fetchWikiData(name) {
@@ -1972,9 +3296,69 @@ async function fetchWikiData(name) {
   }
 }
 
+const UNSPLASH_ACCESS_KEY = "YOUR_KEY";
+const IMAGE_CACHE_KEY = "best_image_cache_v1";
+
+function getImageCache() {
+  try {
+    return JSON.parse(localStorage.getItem(IMAGE_CACHE_KEY) || "{}");
+  } catch (e) {
+    console.warn("Image cache read error:", e);
+    return {};
+  }
+}
+
+function getCachedImage(name) {
+  const key = String(name || "").trim().toLowerCase();
+  if (!key) return null;
+
+  return getImageCache()[key] || null;
+}
+
+function saveImageToCache(name, url) {
+  const key = String(name || "").trim().toLowerCase();
+  if (!key || !url) return;
+
+  const cache = getImageCache();
+  cache[key] = url;
+  localStorage.setItem(IMAGE_CACHE_KEY, JSON.stringify(cache));
+}
+
+async function getBestImage(name, existingWiki = null) {
+
+  // 1️⃣ check cache
+  const cached = getCachedImage(name);
+  if (cached) return cached;
+
+  // 2️⃣ try unsplash (if key added)
+  if (UNSPLASH_ACCESS_KEY && UNSPLASH_ACCESS_KEY !== "YOUR_KEY") {
+    try {
+      const res = await fetch(
+        `https://api.unsplash.com/search/photos?query=${encodeURIComponent(name)}&client_id=${UNSPLASH_ACCESS_KEY}`
+      );
+      const data = await res.json();
+
+      if (data.results?.length > 0) {
+        const url = data.results[0].urls.regular;
+        saveImageToCache(name, url);
+        return url;
+      }
+    } catch(e){}
+  }
+
+  // 3️⃣ fallback wiki
+  const wiki = existingWiki || await fetchWikiData(name);
+
+  if (wiki?.image) {
+    saveImageToCache(name, wiki.image);
+    return wiki.image;
+  }
+
+  return null;
+}
+
 async function showTemplePanel(t) {
   showPanelSections('temple');
-  const color = TEMPLE_COLORS[t.category] || '#fbbf24';
   window.currentTemple = t;
 
   // 🔥 HIDE STATE TABS
@@ -2002,17 +3386,94 @@ async function showTemplePanel(t) {
     📊 Progress: ${getYatraProgress(t.subcategory)}
   </div>
 `;
-
+  panelHistory.push({
+  title: t.name,
+  desc: document.getElementById('desc').innerHTML,
+  mode: 'temple'
+});
   const headerImg = document.getElementById('header-img');
 
-if (wiki?.image) {
-  headerImg.src = wiki.image;
+const imageUrl = await getBestImage(t.name, wiki);
+
+if (imageUrl) {
+  headerImg.src = imageUrl;
   headerImg.style.display = 'block';
 } else {
   headerImg.style.display = 'none';
 }
 }
+function renderAllWaterfalls(categoryObj) {
+  clearWaterfalls();
 
+  categoryObj.items.forEach(w => {
+    const m = L.marker([w.lat, w.lng]).addTo(map);
+
+    m.bindTooltip(w.name, { className: 'tt' });
+
+    m.on('click', () => showWaterfallPanel(w));
+
+    waterfallMarkers.push(m);
+  });
+
+  if (waterfallMarkers.length > 0) {
+    const group = L.featureGroup(waterfallMarkers);
+    map.fitBounds(group.getBounds(), { padding: [50,50] });
+  }
+}
+function renderAllTreks(categoryObj) {
+  clearTreks();
+
+  categoryObj.items.forEach(t => {
+    const m = L.marker([t.lat, t.lng]).addTo(map);
+
+    m.bindTooltip(t.name, { className: 'tt' });
+
+    m.on('click', () => showTrekPanel(t));
+
+    trekMarkers.push(m);
+  });
+
+  if (trekMarkers.length > 0) {
+    const group = L.featureGroup(trekMarkers);
+    map.fitBounds(group.getBounds(), { padding: [50,50] });
+  }
+}
+function renderAllBeaches(categoryObj) {
+  clearBeaches();
+
+  categoryObj.items.forEach(b => {
+    const m = L.marker([b.lat, b.lng]).addTo(map);
+
+    m.bindTooltip(b.name, { className: 'tt' });
+
+    m.on('click', () => showBeachPanel(b));
+
+    beachMarkers.push(m);
+  });
+
+  if (beachMarkers.length > 0) {
+    const group = L.featureGroup(beachMarkers);
+    map.fitBounds(group.getBounds(), { padding: [50,50] });
+  }
+}
+function renderAllMonuments(categoryObj) {
+  clearMonuments();
+
+  categoryObj.items.forEach(mn => {
+    const m = L.marker([mn.lat, mn.lng]).addTo(map);
+
+    m.bindTooltip(mn.name, { className: 'tt' });
+
+    m.on('click', () => showMonumentPanel(mn));
+
+    monumentMarkers.push(m);
+  });
+
+  if (monumentMarkers.length > 0) {
+    const group = L.featureGroup(monumentMarkers);
+    map.fitBounds(group.getBounds(), { padding: [50,50] });
+  }
+}
 /* ═══════════════════════════════════
    PANEL HELPERS
 ═══════════════════════════════════ */
@@ -2042,11 +3503,44 @@ function showPanelSections(mode) {
       .forEach((b,i)=>b.classList.toggle('active',i===0));
   }
 }
+bindClick("panelBackBtn", () => {
 
-function openPanel()  { const p=document.getElementById('panel'); p.style.display='flex'; p.classList.add('active'); }
+  if (panelHistory.length <= 1) {
+    // nothing to go back to
+    panelHistory = [];
+    document.getElementById("panelBackBtn").style.visibility = "hidden";
+    return;
+  }
+  // ❌ remove current
+  panelHistory.pop();
+  // ✅ get previous
+  const prev = panelHistory[panelHistory.length - 1];
+
+  document.getElementById('panel-title').innerText = prev.title;
+  document.getElementById('desc').innerHTML = prev.desc;
+
+  showPanelSections(prev.mode);
+
+  // hide if only 1 left
+  document.getElementById("panelBackBtn").style.visibility =
+    panelHistory.length <= 1 ? "hidden" : "visible";
+});
+
+
+function openPanel()  {
+  const p = document.getElementById('panel');
+  if (!p) return;
+  lastPanelOpenedAt = Date.now();
+  p.style.display = 'flex';
+  p.classList.add('active');
+}
 function closePanel() {
   const panel = document.getElementById('panel');
   panel.classList.remove('active');
+
+  panelHistory = []; // 🔥 reset stack
+
+  document.getElementById("panelBackBtn").style.visibility = "hidden";
 
   // 🔥 CLEAR HEADER + CONTENT
   document.getElementById('panel-mode-label').innerText = '';
@@ -2062,25 +3556,24 @@ function closePanel() {
    BUTTON WIRING
 ═══════════════════════════════════ */
 // 🗺 ROUTE BUTTON (FAST)
-document.getElementById('routeBtn').addEventListener('click', () => {
+bindClick('routeBtn', async () => {
   transitionToMap();
 
-  // ensure map is ready, then run instantly
   if (!map) {
-    initLeaflet(); // force init immediately
+    initLeaflet();
   }
 
-  setMode('route'); // no delay
+  await loadRoutes();   // ✅ now works
+  setMode('route');
 });
 
 
 // 🛕 TEMPLE BUTTON (FAST)
-document.getElementById('templeBtn').addEventListener('click', async () => {
+bindClick('templeBtn', async () => {
   transitionToMap();
 
   if (TEMPLES.length === 0) {
     await loadTemples();
-    console.log("Loaded temples:", TEMPLES.length);
   }
 
   if (!map) {
@@ -2090,18 +3583,17 @@ document.getElementById('templeBtn').addEventListener('click', async () => {
   }
 });
 
+bindClick('achievementBtn', showAchievementPage);
+
 const island = document.getElementById('islandPanel');
-const toggle = document.getElementById('dockToggle');
-const handle = document.getElementById('islandHandle');
 
-// open
-toggle.onclick = () => {
-  island.classList.remove('closed');
-};
+bindClick('dockToggle', () => {
+  island?.classList.remove('closed');
+});
 
-handle.onclick = () => {
-  island.classList.add('closed');
-};
+bindClick('islandHandle', () => {
+  island?.classList.add('closed');
+});
 </script>
 </body>
 </html>

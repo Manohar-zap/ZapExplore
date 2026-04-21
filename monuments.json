@@ -1,0 +1,107 @@
+[
+  {
+    "category": "north_india",
+    "items": [
+      {"id":"mon_1","name":"Taj Mahal","state":"Uttar Pradesh","lat":27.1751,"lng":78.0421,"type":"mausoleum"},
+      {"id":"mon_2","name":"Agra Fort","state":"Uttar Pradesh","lat":27.1795,"lng":78.0211,"type":"fort"},
+      {"id":"mon_3","name":"Fatehpur Sikri","state":"Uttar Pradesh","lat":27.0945,"lng":77.6678,"type":"city"},
+      {"id":"mon_4","name":"Red Fort","state":"Delhi","lat":28.6562,"lng":77.2410,"type":"fort"},
+      {"id":"mon_5","name":"Qutub Minar","state":"Delhi","lat":28.5244,"lng":77.1855,"type":"tower"},
+      {"id":"mon_6","name":"India Gate","state":"Delhi","lat":28.6129,"lng":77.2295,"type":"memorial"},
+      {"id":"mon_7","name":"Humayun's Tomb","state":"Delhi","lat":28.5933,"lng":77.2507,"type":"tomb"},
+      {"id":"mon_8","name":"Safdarjung Tomb","state":"Delhi","lat":28.5899,"lng":77.2100,"type":"tomb"},
+      {"id":"mon_9","name":"Jama Masjid Delhi","state":"Delhi","lat":28.6507,"lng":77.2334,"type":"mosque"},
+      {"id":"mon_10","name":"Akshardham Temple Delhi","state":"Delhi","lat":28.6127,"lng":77.2773,"type":"temple"},
+      {"id":"mon_11","name":"Lotus Temple","state":"Delhi","lat":28.5535,"lng":77.2588,"type":"temple"},
+      {"id":"mon_12","name":"Jantar Mantar Delhi","state":"Delhi","lat":28.6271,"lng":77.2166,"type":"observatory"},
+      {"id":"mon_13","name":"Buland Darwaza","state":"Uttar Pradesh","lat":27.0942,"lng":77.6675,"type":"gate"},
+      {"id":"mon_14","name":"Itimad-ud-Daulah Tomb","state":"Uttar Pradesh","lat":27.1928,"lng":78.0315,"type":"tomb"}
+    ]
+  },
+
+  {
+    "category": "rajasthan",
+    "items": [
+      {"id":"mon_15","name":"Amber Fort","state":"Rajasthan","lat":26.9855,"lng":75.8513,"type":"fort"},
+      {"id":"mon_16","name":"Nahargarh Fort","state":"Rajasthan","lat":26.9373,"lng":75.8190,"type":"fort"},
+      {"id":"mon_17","name":"Jaigarh Fort","state":"Rajasthan","lat":26.9850,"lng":75.8500,"type":"fort"},
+      {"id":"mon_18","name":"Hawa Mahal","state":"Rajasthan","lat":26.9239,"lng":75.8267,"type":"palace"},
+      {"id":"mon_19","name":"City Palace Jaipur","state":"Rajasthan","lat":26.9255,"lng":75.8236,"type":"palace"},
+      {"id":"mon_20","name":"City Palace Udaipur","state":"Rajasthan","lat":24.5763,"lng":73.6830,"type":"palace"},
+      {"id":"mon_21","name":"Lake Palace Udaipur","state":"Rajasthan","lat":24.5755,"lng":73.6807,"type":"palace"},
+      {"id":"mon_22","name":"Mehrangarh Fort","state":"Rajasthan","lat":26.2970,"lng":73.0181,"type":"fort"},
+      {"id":"mon_23","name":"Umaid Bhawan Palace","state":"Rajasthan","lat":26.2980,"lng":73.0400,"type":"palace"},
+      {"id":"mon_24","name":"Jaisalmer Fort","state":"Rajasthan","lat":26.9124,"lng":70.9120,"type":"fort"},
+      {"id":"mon_25","name":"Patwon Ki Haveli","state":"Rajasthan","lat":26.9157,"lng":70.9150,"type":"haveli"},
+      {"id":"mon_26","name":"Chittorgarh Fort","state":"Rajasthan","lat":24.8887,"lng":74.6269,"type":"fort"},
+      {"id":"mon_27","name":"Kumbhalgarh Fort","state":"Rajasthan","lat":25.1493,"lng":73.5800,"type":"fort"},
+      {"id":"mon_28","name":"Junagarh Fort","state":"Rajasthan","lat":28.0229,"lng":73.3119,"type":"fort"}
+    ]
+  },
+
+  {
+    "category": "south_india",
+    "items": [
+      {"id":"mon_29","name":"Meenakshi Temple","state":"Tamil Nadu","lat":9.9195,"lng":78.1193,"type":"temple"},
+      {"id":"mon_30","name":"Brihadeeswara Temple","state":"Tamil Nadu","lat":10.7828,"lng":79.1318,"type":"temple"},
+      {"id":"mon_31","name":"Ramanathaswamy Temple","state":"Tamil Nadu","lat":9.2881,"lng":79.3129,"type":"temple"},
+      {"id":"mon_32","name":"Shore Temple","state":"Tamil Nadu","lat":12.6208,"lng":80.1930,"type":"temple"},
+      {"id":"mon_33","name":"Hampi Monuments","state":"Karnataka","lat":15.3350,"lng":76.4600,"type":"ruins"},
+      {"id":"mon_34","name":"Mysore Palace","state":"Karnataka","lat":12.3051,"lng":76.6551,"type":"palace"},
+      {"id":"mon_35","name":"Gol Gumbaz","state":"Karnataka","lat":16.8302,"lng":75.7350,"type":"tomb"},
+      {"id":"mon_36","name":"Charminar","state":"Telangana","lat":17.3616,"lng":78.4747,"type":"monument"},
+      {"id":"mon_37","name":"Chowmahalla Palace","state":"Telangana","lat":17.3578,"lng":78.4717,"type":"palace"},
+      {"id":"mon_38","name":"Padmanabhaswamy Temple","state":"Kerala","lat":8.4828,"lng":76.9430,"type":"temple"}
+    ]
+  },
+
+  {
+    "category": "central_india",
+    "items": [
+      {"id":"mon_39","name":"Khajuraho Temples","state":"Madhya Pradesh","lat":24.8318,"lng":79.9199,"type":"temple"},
+      {"id":"mon_40","name":"Sanchi Stupa","state":"Madhya Pradesh","lat":23.4793,"lng":77.7397,"type":"stupa"},
+      {"id":"mon_41","name":"Bhimbetka Rock Shelters","state":"Madhya Pradesh","lat":22.9390,"lng":77.6070,"type":"rock"},
+      {"id":"mon_42","name":"Gwalior Fort","state":"Madhya Pradesh","lat":26.2295,"lng":78.1734,"type":"fort"},
+      {"id":"mon_43","name":"Orchha Fort Complex","state":"Madhya Pradesh","lat":25.3513,"lng":78.6400,"type":"fort"}
+    ]
+  },
+
+  {
+    "category": "east_india",
+    "items": [
+      {"id":"mon_44","name":"Konark Sun Temple","state":"Odisha","lat":19.8876,"lng":86.0945,"type":"temple"},
+      {"id":"mon_45","name":"Jagannath Temple","state":"Odisha","lat":19.8049,"lng":85.8189,"type":"temple"},
+      {"id":"mon_46","name":"Lingaraj Temple","state":"Odisha","lat":20.2380,"lng":85.8330,"type":"temple"},
+      {"id":"mon_47","name":"Victoria Memorial","state":"West Bengal","lat":22.5448,"lng":88.3426,"type":"memorial"},
+      {"id":"mon_48","name":"Howrah Bridge","state":"West Bengal","lat":22.5850,"lng":88.3468,"type":"bridge"},
+      {"id":"mon_49","name":"Nalanda University Ruins","state":"Bihar","lat":25.1357,"lng":85.4440,"type":"ruins"},
+      {"id":"mon_50","name":"Mahabodhi Temple","state":"Bihar","lat":24.6950,"lng":84.9910,"type":"temple"}
+    ]
+  },
+
+  {
+    "category": "west_india",
+    "items": [
+      {"id":"mon_51","name":"Gateway of India","state":"Maharashtra","lat":18.9220,"lng":72.8347,"type":"memorial"},
+      {"id":"mon_52","name":"Ajanta Caves","state":"Maharashtra","lat":20.5519,"lng":75.7033,"type":"cave"},
+      {"id":"mon_53","name":"Ellora Caves","state":"Maharashtra","lat":20.0258,"lng":75.1780,"type":"cave"},
+      {"id":"mon_54","name":"Elephanta Caves","state":"Maharashtra","lat":18.9633,"lng":72.9310,"type":"cave"},
+      {"id":"mon_55","name":"Raigad Fort","state":"Maharashtra","lat":18.2346,"lng":73.4400,"type":"fort"},
+      {"id":"mon_56","name":"Shaniwar Wada","state":"Maharashtra","lat":18.5196,"lng":73.8553,"type":"fort"},
+      {"id":"mon_57","name":"Rani ki Vav","state":"Gujarat","lat":23.8587,"lng":72.1018,"type":"stepwell"},
+      {"id":"mon_58","name":"Somnath Temple","state":"Gujarat","lat":20.8880,"lng":70.4010,"type":"temple"}
+    ]
+  },
+
+  {
+    "category": "extras",
+    "items": [
+      {"id":"mon_59","name":"Basilica of Bom Jesus","state":"Goa","lat":15.5009,"lng":73.9115,"type":"church"},
+      {"id":"mon_60","name":"Se Cathedral","state":"Goa","lat":15.5033,"lng":73.9125,"type":"church"},
+      {"id":"mon_61","name":"Cellular Jail","state":"Andaman","lat":11.6730,"lng":92.7450,"type":"jail"},
+      {"id":"mon_62","name":"Tawang Monastery","state":"Arunachal Pradesh","lat":27.5860,"lng":91.8660,"type":"monastery"},
+      {"id":"mon_63","name":"Kangra Fort","state":"Himachal Pradesh","lat":32.0998,"lng":76.2691,"type":"fort"},
+      {"id":"mon_64","name":"Golden Temple","state":"Punjab","lat":31.6200,"lng":74.8765,"type":"temple"}
+    ]
+  }
+]

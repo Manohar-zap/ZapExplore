@@ -1,0 +1,100 @@
+[
+  {
+    "category": "Easy Treks",
+    "items": [
+      { "name": "Triund Trek", "state": "Himachal Pradesh", "lat": 32.259, "lng": 76.323 },
+      { "name": "Nag Tibba Trek", "state": "Uttarakhand", "lat": 30.483, "lng": 78.139 },
+      { "name": "Rajmachi Trek", "state": "Maharashtra", "lat": 18.827, "lng": 73.401 },
+      { "name": "Lohagad Trek", "state": "Maharashtra", "lat": 18.711, "lng": 73.477 },
+      { "name": "Visapur Trek", "state": "Maharashtra", "lat": 18.721, "lng": 73.489 },
+      { "name": "Kalsubai Trek", "state": "Maharashtra", "lat": 19.601, "lng": 73.706 },
+      { "name": "Tadiandamol Trek", "state": "Karnataka", "lat": 12.217, "lng": 75.733 },
+      { "name": "Mullayanagiri Trek", "state": "Karnataka", "lat": 13.390, "lng": 75.722 },
+      { "name": "Baba Budangiri Trek", "state": "Karnataka", "lat": 13.417, "lng": 75.733 },
+      { "name": "Nandi Hills Trek", "state": "Karnataka", "lat": 13.370, "lng": 77.683 },
+      { "name": "Skandagiri Trek", "state": "Karnataka", "lat": 13.384, "lng": 77.683 },
+      { "name": "Savandurga Trek", "state": "Karnataka", "lat": 12.918, "lng": 77.294 },
+      { "name": "Makalidurga Trek", "state": "Karnataka", "lat": 13.398, "lng": 77.517 },
+      { "name": "Kudremukh (short route)", "state": "Karnataka", "lat": 13.133, "lng": 75.250 },
+      { "name": "Chembra Peak Trek", "state": "Kerala", "lat": 11.558, "lng": 76.052 },
+      { "name": "Varkala Cliff Walk", "state": "Kerala", "lat": 8.737, "lng": 76.703 },
+      { "name": "Gokarna Beach Trek", "state": "Karnataka", "lat": 14.550, "lng": 74.318 },
+      { "name": "Andharban Trek", "state": "Maharashtra", "lat": 18.408, "lng": 73.420 },
+      { "name": "Peb Fort Trek", "state": "Maharashtra", "lat": 18.985, "lng": 73.323 },
+      { "name": "Karnala Fort Trek", "state": "Maharashtra", "lat": 18.881, "lng": 73.113 },
+      { "name": "Tikona Fort Trek", "state": "Maharashtra", "lat": 18.637, "lng": 73.530 },
+      { "name": "Duke’s Nose Trek", "state": "Maharashtra", "lat": 18.750, "lng": 73.405 },
+      { "name": "Bhimashankar Trek", "state": "Maharashtra", "lat": 19.072, "lng": 73.553 },
+      { "name": "Sinhagad Trek", "state": "Maharashtra", "lat": 18.366, "lng": 73.755 },
+      { "name": "Torna Trek", "state": "Maharashtra", "lat": 18.276, "lng": 73.622 },
+      { "name": "Araku Valley Trails", "state": "Andhra Pradesh", "lat": 18.327, "lng": 82.880 },
+      { "name": "Coorg Coffee Trails", "state": "Karnataka", "lat": 12.337, "lng": 75.806 },
+      { "name": "Agumbe Trails", "state": "Karnataka", "lat": 13.509, "lng": 75.090 }
+    ]
+  },
+  {
+    "category": "Moderate Treks",
+    "items": [
+      { "name": "Kedarkantha Trek", "state": "Uttarakhand", "lat": 31.022, "lng": 78.174 },
+      { "name": "Valley of Flowers Trek", "state": "Uttarakhand", "lat": 30.728, "lng": 79.605 },
+      { "name": "Beas Kund Trek", "state": "Himachal Pradesh", "lat": 32.370, "lng": 77.130 },
+      { "name": "Bhrigu Lake Trek", "state": "Himachal Pradesh", "lat": 32.311, "lng": 77.200 },
+      { "name": "Kuari Pass Trek", "state": "Uttarakhand", "lat": 30.561, "lng": 79.563 },
+      { "name": "Dayara Bugyal Trek", "state": "Uttarakhand", "lat": 30.820, "lng": 78.500 },
+      { "name": "Chopta Chandrashila Trek", "state": "Uttarakhand", "lat": 30.489, "lng": 79.217 },
+      { "name": "Sandakphu Trek", "state": "West Bengal", "lat": 27.106, "lng": 88.014 },
+      { "name": "Dzukou Valley Trek", "state": "Nagaland", "lat": 25.573, "lng": 94.116 },
+      { "name": "Har Ki Dun Trek", "state": "Uttarakhand", "lat": 31.121, "lng": 78.320 },
+      { "name": "Hampta Pass Trek", "state": "Himachal Pradesh", "lat": 32.371, "lng": 77.240 },
+      { "name": "Kudremukh Trek", "state": "Karnataka", "lat": 13.133, "lng": 75.250 },
+      { "name": "Kumara Parvatha Trek", "state": "Karnataka", "lat": 12.658, "lng": 75.594 },
+      { "name": "Netravati Peak Trek", "state": "Karnataka", "lat": 12.987, "lng": 75.533 },
+      { "name": "Kodachadri Trek", "state": "Karnataka", "lat": 13.858, "lng": 74.871 },
+      { "name": "Rajgad Trek", "state": "Maharashtra", "lat": 18.244, "lng": 73.682 },
+      { "name": "Harishchandragad Trek", "state": "Maharashtra", "lat": 19.390, "lng": 73.776 },
+      { "name": "Living Root Bridge Trek", "state": "Meghalaya", "lat": 25.290, "lng": 91.731 },
+      { "name": "Ziro Valley Trek", "state": "Arunachal Pradesh", "lat": 27.544, "lng": 93.819 },
+      { "name": "Markha Valley Trek", "state": "Ladakh", "lat": 34.167, "lng": 77.583 }
+    ]
+  },
+  {
+    "category": "Hard Treks",
+    "items": [
+      { "name": "Rupin Pass Trek", "state": "Uttarakhand", "lat": 31.188, "lng": 78.440 },
+      { "name": "Goechala Trek", "state": "Sikkim", "lat": 27.358, "lng": 88.220 },
+      { "name": "Pin Parvati Pass Trek", "state": "Himachal Pradesh", "lat": 31.833, "lng": 77.900 },
+      { "name": "Chandrakhani Pass Trek", "state": "Himachal Pradesh", "lat": 32.083, "lng": 77.383 },
+      { "name": "Dzongri Trek", "state": "Sikkim", "lat": 27.470, "lng": 88.190 },
+      { "name": "Stok Kangri Trek", "state": "Ladakh", "lat": 34.010, "lng": 77.580 },
+      { "name": "Bali Pass Trek", "state": "Uttarakhand", "lat": 31.130, "lng": 78.450 },
+      { "name": "Borasu Pass Trek", "state": "Uttarakhand", "lat": 31.200, "lng": 78.550 },
+      { "name": "Kalindi Khal Trek", "state": "Uttarakhand", "lat": 30.940, "lng": 79.350 },
+      { "name": "Roopkund Trek", "state": "Uttarakhand", "lat": 30.257, "lng": 79.731 },
+      { "name": "Kashmir Great Lakes Trek", "state": "Jammu & Kashmir", "lat": 34.300, "lng": 75.200 },
+      { "name": "Tarsar Marsar Trek", "state": "Jammu & Kashmir", "lat": 33.900, "lng": 75.300 },
+      { "name": "Kedartal Trek", "state": "Uttarakhand", "lat": 30.870, "lng": 78.730 },
+      { "name": "Gaumukh Tapovan Trek", "state": "Uttarakhand", "lat": 30.940, "lng": 79.070 },
+      { "name": "Indrahar Pass Trek", "state": "Himachal Pradesh", "lat": 32.283, "lng": 76.500 }
+    ]
+  },
+  {
+    "category": "Extreme Treks",
+    "items": [
+      { "name": "Chadar Trek", "state": "Ladakh", "lat": 34.200, "lng": 77.500 },
+      { "name": "Auden’s Col Trek", "state": "Uttarakhand", "lat": 30.900, "lng": 79.300 },
+      { "name": "Kalindi Khal Trek", "state": "Uttarakhand", "lat": 30.940, "lng": 79.350 },
+      { "name": "Parang La Trek", "state": "Ladakh", "lat": 33.900, "lng": 78.000 },
+      { "name": "Snow Leopard Trek", "state": "Ladakh", "lat": 34.200, "lng": 77.600 },
+      { "name": "Kang Yatse II", "state": "Ladakh", "lat": 33.800, "lng": 77.900 },
+      { "name": "Mentok Kangri Trek", "state": "Ladakh", "lat": 33.500, "lng": 78.300 },
+      { "name": "Nun Kun Base Trek", "state": "Jammu & Kashmir", "lat": 33.600, "lng": 76.300 },
+      { "name": "Black Peak Trek", "state": "Uttarakhand", "lat": 31.100, "lng": 78.500 },
+      { "name": "Nanda Devi Inner Sanctuary", "state": "Uttarakhand", "lat": 30.380, "lng": 79.970 },
+      { "name": "Zanskar Traverse", "state": "Ladakh", "lat": 33.500, "lng": 76.800 },
+      { "name": "Lamkhaga Pass Trek", "state": "Himachal Pradesh", "lat": 31.300, "lng": 78.600 },
+      { "name": "Bhaba Pass Trek", "state": "Himachal Pradesh", "lat": 31.500, "lng": 78.000 },
+      { "name": "Kang La Trek", "state": "Ladakh", "lat": 33.900, "lng": 77.800 },
+      { "name": "Hanuman Tibba Trek", "state": "Himachal Pradesh", "lat": 32.300, "lng": 77.200 }
+    ]
+  }
+]

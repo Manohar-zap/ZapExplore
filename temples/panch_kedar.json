@@ -3,5 +3,6 @@
   {"name":"Tungnath Temple","state":"Uttarakhand","lat":30.4894,"lng":79.2153,"category":"Yatra","subcategory":"Panch Kedar"},
   {"name":"Rudranath Temple","state":"Uttarakhand","lat":30.5620,"lng":79.3310,"category":"Yatra","subcategory":"Panch Kedar"},
   {"name":"Madhyamaheshwar Temple","state":"Uttarakhand","lat":30.6495,"lng":79.2210,"category":"Yatra","subcategory":"Panch Kedar"},
-  {"name":"Kalpeshwar Temple","state":"Uttarakhand","lat":30.5450,"lng":79.4300,"category":"Yatra","subcategory":"Panch Kedar"}
+  {"name":"Kalpeshwar Temple","state":"Uttarakhand","lat":30.5450,"lng":79.4300,"category":"Yatra","subcategory":"Panch Kedar"},
+  {"name":"zap","state":"Karnataka","lat":13.172562,"lng":77.538063,"category":"Yatra","group":"Panch Kedar"}
 ]
