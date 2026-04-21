@@ -1002,6 +1002,18 @@ body::before{
     0 10px 30px rgba(0,0,0,0.6);
 }
 
+.info-card .clickable {
+  padding: 12px 0;
+  cursor: pointer;
+  transition: all 0.2s;
+  opacity: 0.85;
+}
+
+.info-card .clickable:hover {
+  opacity: 1;
+  transform: translateX(4px);
+}
+
 .progress-card{
   background: rgba(255,255,255,0.06);
   padding: 20px;
@@ -1213,6 +1225,53 @@ body::before{
 #header-img.show {
   opacity: 1;
 }
+
+.clickable{
+  cursor:pointer;
+  opacity:0.9;
+  transition:0.2s;
+}
+.clickable:hover{
+  opacity:1;
+  transform:translateX(4px);
+}
+
+/* 🔥 VIEW TRANSITION ANIMATIONS */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+#desc {
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
 </style>
 </head>
 <body>
@@ -1230,7 +1289,7 @@ window.updateName = async () => {
   });
 
   alert("Updated!");
-  showUserDashboard(); // refresh
+  showProfileDashboard(); // refresh dashboard
 };
 import { 
   getAuth, 
@@ -2068,21 +2127,26 @@ bindClick('monumentBtn', async () => {
 });
 
 document.addEventListener("click", (e) => {
-    const panel = document.getElementById("panel");
-    const toggle = document.querySelector(".toggle") || document.getElementById("dockToggle");
-    const islandPanel = document.getElementById("islandPanel");
+  const panel = document.getElementById("panel");
+  const toggle = document.getElementById("dockToggle");
+  const islandPanel = document.getElementById("islandPanel");
 
-    if (Date.now() - lastPanelOpenedAt < 150) return;
+  // 🔥 prevent instant close after opening
+  if (Date.now() - lastPanelOpenedAt < 250) return;
 
-    if(
-        panel &&
-        panel.classList.contains("active") &&
-        !panel.contains(e.target) &&
-        (!toggle || !toggle.contains(e.target)) &&
-        (!islandPanel || !islandPanel.contains(e.target))
-    ){
-        panel.classList.remove("active");
-    }
+  // ✅ if click is INSIDE panel → do nothing
+  if (panel && panel.contains(e.target)) return;
+
+  // ✅ if click is inside island panel → do nothing
+  if (islandPanel && islandPanel.contains(e.target)) return;
+
+  // ✅ if click is toggle button → do nothing
+  if (toggle && toggle.contains(e.target)) return;
+
+  // ❌ otherwise close
+  if (panel && panel.classList.contains("active")) {
+    panel.classList.remove("active");
+  }
 });
 function getProgress() {
   return JSON.parse(localStorage.getItem("temple_progress") || "{}");
@@ -2096,7 +2160,10 @@ function getYatraProgress(yatra) {
   const progress = getProgress();
   const temples = TEMPLES.filter(t => t.subcategory === yatra);
 
-  const done = temples.filter(t => progress[t.name]).length;
+  const done = temples.filter(t => {
+    const entry = progress[t.name];
+    return entry && (entry.visited === true || entry === true);
+  }).length;
 
   return `${done}/${temples.length}`;
 }
@@ -2402,11 +2469,15 @@ async function verifyTempleVisit(temple) {
 }
 function markTempleComplete(temple) {
   const progress = getProgress();
+  const now = new Date();
 
-  progress[temple.name] = true;
+  progress[temple.name] = {
+    visited: true,
+    date: now.toLocaleDateString('en-IN'),
+    time: now.toLocaleTimeString('en-IN')
+  };
 
   saveProgress(progress);
-
   checkYatraCompletion(temple.subcategory);
 }
 function checkYatraCompletion(yatraName) {
@@ -2480,8 +2551,42 @@ async function loadTemples() {
     console.error("Temple load error:", e);
   }
 }
-bindClick("loginBtn", async () => {
+// 🔥 PROFILE DASHBOARD STATE
+let profileDashboardState = {
+  currentSlide: 'main',  // main, badge, history
+  user: null,
+  totalVisited: 0,
+  score: 0,
+  badgeLevel: 'Beginner'
+};
 
+// 🔥 PROFILE VIEW STATE & NAVIGATION
+let profileView = 'main'; // main | badge | history
+
+function navigateProfileView(viewName) {
+  profileView = viewName;
+  
+  const views = {
+    'main': renderMainDashboard,
+    'badge': renderBadgeView,
+    'history': renderHistoryView
+  };
+  
+  const render = views[viewName];
+  if (render) {
+    render();
+  }
+}
+
+function showBackButton() {
+  document.getElementById("panelBackBtn").style.visibility = "visible";
+}
+
+function hideBackButton() {
+  document.getElementById("panelBackBtn").style.visibility = "hidden";
+}
+
+async function showProfileDashboard() {
   const user = window.firebaseAuth?.currentUser;
 
   if (!user) {
@@ -2495,26 +2600,58 @@ bindClick("loginBtn", async () => {
     await loadTemples();
   }
 
+  // Store profile state
+  profileDashboardState.user = user;
+  
+  const progress = getProgress();
+  const totalVisited = Object.keys(progress).length;
+  
+  // Calculate score: (visited / total) * 100
+  const totalTemples = TEMPLES.length || 1;
+  const progressPercentage = Math.round((totalVisited / totalTemples) * 100);
+  const score = totalVisited * 100; // achievement score
+  const badgeLevel = getExplorerLevel(score);
+  
+  profileDashboardState.totalVisited = totalVisited;
+  profileDashboardState.score = score;
+  profileDashboardState.badgeLevel = badgeLevel;
+
   openPanel();
   showPanelSections('profile');
   document.getElementById('panel-mode-label').innerText = "PROFILE";
   document.getElementById('panel-title').innerText = "MY DASHBOARD";
-
   document.getElementById('header-img').style.display = 'none';
+  
+  // Reset to main view
+  profileView = 'main';
+  hideBackButton();
+  panelHistory = [];
+  
+  renderMainDashboard();
+}
+
+function renderMainDashboard() {
+  const user = profileDashboardState.user;
+  const totalVisited = profileDashboardState.totalVisited;
+  const badgeLevel = profileDashboardState.badgeLevel;
+  const score = profileDashboardState.score;
+  const progress = getProgress();
+  
   const name = user.displayName || "User";
   const email = user.email || "";
   const photo = user.photoURL || "./assets/profile.svg";
-
-  const progress = getProgress();
-  const totalVisited = Object.keys(progress).length;
-
+  
+  const totalTemples = TEMPLES.length || 1;
+  const progressPercentage = Math.round((totalVisited / totalTemples) * 100);
   const yatras = [...new Set(TEMPLES.map(t => t.subcategory))];
 
-  document.getElementById('desc').innerHTML = `
-
-<!-- TOP -->
+  document.getElementById('panel-title').innerText = "MY DASHBOARD";
+  hideBackButton();
+  
+  const descContent = `
+<!-- TOP PROFILE SECTION -->
 <div class="profile-top">
-  <img src="${photo}" class="profile-img">
+  <img src="${photo}" class="profile-img" alt="">
   <div>
     <div class="profile-name">${name}</div>
     <div class="profile-email">${email}</div>
@@ -2522,77 +2659,204 @@ bindClick("loginBtn", async () => {
   <div class="badge">🏆</div>
 </div>
 
-<!-- 🔥 INFO CARD (THIS WAS MISSING) -->
+<!-- INFO CARD: Name + Badge + Clickable Rows -->
 <div class="info-card">
-  <div>Rank: Beginner</div>
-  <div>Plan: Free</div>
-  <div>Badge: Explorer</div>
-  <div>History: ${totalVisited} visits</div>
+  <div><strong>${name}</strong> • <span style="color:#fcd34d;">${badgeLevel}</span></div>
+  
+  <div class="clickable" id="badgeRowNav" style="border-bottom:1px solid rgba(255,255,255,0.1);padding-bottom:10px;margin-bottom:10px;">
+    🎖 Badge: <strong>${badgeLevel}</strong> →
+  </div>
+  
+  <div class="clickable" id="historyRowNav">
+    📜 History: <strong>${totalVisited} visits</strong> →
+  </div>
 </div>
 
-<!-- 🔥 MAIN PROGRESS CARD -->
+<!-- PROGRESS CARD -->
 <div class="progress-card">
-
   <div class="progress-header">
     <div class="filter" id="filterBtn">Filter ⏷</div>
-<div id="filterOptions" class="filter-options">
-  <div data-type="all">All</div>
-  <div data-type="yatra">Yatra</div>
-  <div data-type="state">State</div>
-</div>
-
-    <div class="circle">
-      <div class="inner">${totalVisited}%</div>
+    <div id="filterOptions" class="filter-options">
+      <div data-type="all">All Yatras</div>
+      <div data-type="active">Active</div>
+    </div>
+    
+    <div class="circle" style="background:conic-gradient(#3b82f6 0deg ${(progressPercentage / 100) * 360}deg, rgba(255,255,255,0.1) ${(progressPercentage / 100) * 360}deg 360deg);display:flex;align-items:center;justify-content:center;">
+      <div style="width:60px;height:60px;border-radius:50%;background:rgba(10,18,35,0.95);display:flex;align-items:center;justify-content:center;">
+        <div class="inner" style="font-size:16px;font-weight:700;">${progressPercentage}%</div>
+      </div>
     </div>
   </div>
 
   <div id="taskList"></div>
 
-  <div class="share">Share achievement</div>
-
+  <div class="share">Explore more destinations →</div>
 </div>
 `;
-const filterBtn = document.getElementById("filterBtn");
-const filterOptions = document.getElementById("filterOptions");
 
-filterBtn.onclick = () => {
-  filterOptions.style.display =
-    filterOptions.style.display === "block" ? "none" : "block";
-};
-let currentFilter = "all";
+  document.getElementById('desc').innerHTML = descContent;
 
-document.querySelectorAll("#filterOptions div").forEach(opt => {
-  opt.onclick = () => {
-    currentFilter = opt.dataset.type;
-    filterOptions.style.display = "none";
-    renderTasks();
-  };
-});
- renderTasks();
+  // Setup filter button
+  const filterBtn = document.getElementById("filterBtn");
+  const filterOptions = document.getElementById("filterOptions");
+
+  if (filterBtn) {
+    filterBtn.onclick = () => {
+      filterOptions.style.display =
+        filterOptions.style.display === "block" ? "none" : "block";
+    };
+  }
+
+  // Render only 3 recent tasks
   const taskContainer = document.getElementById("taskList");
-  taskContainer.innerHTML = "";
+  if (taskContainer) {
+    taskContainer.innerHTML = "";
 
-  yatras.forEach(y => {
-    const total = TEMPLES.filter(t => t.subcategory === y).length;
-    const done = TEMPLES.filter(t =>
-      t.subcategory === y && progress[t.name]
-    ).length;
+    yatras.slice(0, 3).forEach(y => {
+      const total = TEMPLES.filter(t => t.subcategory === y).length;
+      const done = TEMPLES.filter(t =>
+        t.subcategory === y && progress[t.name]
+      ).length;
 
-    const percent = total ? Math.round((done / total) * 100) : 0;
+      const percent = total ? Math.round((done / total) * 100) : 0;
 
-    const div = document.createElement("div");
-    div.className = "task";
+      const div = document.createElement("div");
+      div.className = "task";
 
-    div.innerHTML = `
-      <div class="task-title">${y}</div>
-      <div class="bar">
-        <div class="fill" style="width:${percent}%"></div>
+      div.innerHTML = `
+        <div class="task-title">${y}</div>
+        <div class="bar">
+          <div class="fill" style="width:${percent}%"></div>
+        </div>
+      `;
+
+      taskContainer.appendChild(div);
+    });
+  }
+
+  // Badge row click → Badge view
+  document.getElementById("badgeRowNav").onclick = (e) => {
+  e.stopPropagation();
+  navigateProfileView('badge');
+};
+
+document.getElementById("historyRowNav").onclick = (e) => {
+  e.stopPropagation();
+  navigateProfileView('history');
+};
+}
+
+function renderBadgeView() {
+  const badgeLevel = profileDashboardState.badgeLevel;
+  const totalVisited = profileDashboardState.totalVisited;
+  const score = profileDashboardState.score;
+  
+  const badgeLevels = [
+    { level: 'Beginner', emoji: '🌱', minScore: 0 },
+    { level: 'Explorer', emoji: '🧭', minScore: 200 },
+    { level: 'Trailblazer', emoji: '🥾', minScore: 600 },
+    { level: 'Master', emoji: '👑', minScore: 1200 },
+    { level: 'Legend', emoji: '⭐', minScore: 2000 }
+  ];
+  
+  document.getElementById('panel-title').innerText = "BADGES";
+  showBackButton();
+
+  let badgeHtml = `
+<div style="margin-bottom:20px;text-align:center;padding:20px;background:rgba(255,255,255,0.05);border-radius:16px;border:1px solid rgba(255,255,255,0.1);">
+  <div style="font-size:48px;margin-bottom:12px;animation:pulse 2s infinite;">${badgeLevels.find(b => b.level === badgeLevel)?.emoji || '🏆'}</div>
+  <div style="font-size:24px;font-weight:700;margin-bottom:4px;">${badgeLevel}</div>
+  <div style="font-size:12px;color:#94a3b8;">Current Badge Level</div>
+</div>
+
+<div class="info-card">
+  <strong>Progress Stats</strong>
+  <div style="margin-top:12px;display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+    <div style="background:rgba(255,255,255,0.05);padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.08);">
+      <div style="font-size:20px;font-weight:700;color:#38bdf8;">${totalVisited}</div>
+      <div style="font-size:11px;color:#94a3b8;margin-top:4px;">Total Visits</div>
+    </div>
+    <div style="background:rgba(255,255,255,0.05);padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.08);">
+      <div style="font-size:20px;font-weight:700;color:#fcd34d;">${score}</div>
+      <div style="font-size:11px;color:#94a3b8;margin-top:4px;">Score</div>
+    </div>
+  </div>
+</div>
+
+<div style="margin-top:16px;">
+  <div style="font-size:12px;font-weight:600;color:#94a3b8;margin-bottom:10px;text-transform:uppercase;letter-spacing:0.8px;">Badge Levels</div>
+`;
+
+  badgeLevels.forEach(badge => {
+    const isCurrent = badge.level === badgeLevel;
+    const isUnlocked = score >= badge.minScore;
+    
+    badgeHtml += `
+    <div style="padding:10px;margin-bottom:8px;background:${isCurrent ? 'rgba(56,189,248,0.15)' : 'rgba(255,255,255,0.03)'};border:1px solid ${isCurrent ? 'rgba(56,189,248,0.3)' : 'rgba(255,255,255,0.08)'};border-radius:10px;opacity:${isUnlocked ? '1' : '0.5'};transition:all 0.2s;">
+      <div style="display:flex;align-items:center;justify-content:space-between;">
+        <div>
+          <div style="font-size:16px;margin-bottom:2px;">${badge.emoji} <strong>${badge.level}</strong></div>
+          <div style="font-size:11px;color:#94a3b8;">Score: ${badge.minScore}+</div>
+        </div>
+        <div style="font-size:14px;">${isUnlocked ? '✅' : '🔒'}</div>
+      </div>
+    </div>
+    `;
+  });
+
+  badgeHtml += `</div>`;
+
+  document.getElementById('desc').innerHTML = badgeHtml;
+}
+
+function renderHistoryView() {
+  document.getElementById('panel-title').innerText = "HISTORY";
+  showBackButton();
+
+  const progress = getProgress();
+  const visited = Object.keys(progress);
+
+  if (visited.length === 0) {
+    document.getElementById('desc').innerHTML = `
+      <div class="achievement-empty">
+        <div style="font-size:32px;margin-bottom:12px;">📭</div>
+        <div style="font-size:14px;color:#cbd5e1;">No visits yet</div>
+        <div style="font-size:12px;color:#94a3b8;margin-top:8px;">Start exploring to build your history!</div>
       </div>
     `;
+    return;
+  }
 
-    taskContainer.appendChild(div);
+  let historyHtml = `
+    <div style="font-size:12px;font-weight:600;color:#94a3b8;margin-bottom:12px;text-transform:uppercase;letter-spacing:0.8px;">Visited Destinations (${visited.length})</div>
+  `;
+
+  visited.forEach((temple, idx) => {
+    const entry = progress[temple];
+    const isOldFormat = entry === true;
+    
+    const date = isOldFormat ? 'Unknown' : (entry.date || 'Unknown');
+    const time = isOldFormat ? 'Unknown' : (entry.time || 'Unknown');
+    
+    const icons = ['🛕', '🏔', '🌊', '🕉', '⛩'];
+    const icon = icons[idx % icons.length];
+    
+    historyHtml += `
+      <div style="padding:12px;margin-bottom:8px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:10px;display:flex;align-items:center;gap:12px;transition:all 0.2s;">
+        <div style="font-size:20px;">${icon}</div>
+        <div style="flex:1;min-width:0;">
+          <div style="font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#e2e8f0;">${temple}</div>
+          <div style="font-size:11px;color:#94a3b8;margin-top:3px;">📅 ${date} • 🕐 ${time}</div>
+        </div>
+        <div style="font-size:14px;color:#22c55e;">✓</div>
+      </div>
+    `;
   });
-});
+
+  document.getElementById('desc').innerHTML = historyHtml;
+}
+
+bindClick("loginBtn", showProfileDashboard);
 /* ═══════════════════════════════════
    APP STATE
 ═══════════════════════════════════ */
@@ -3504,7 +3768,13 @@ function showPanelSections(mode) {
   }
 }
 bindClick("panelBackBtn", () => {
+  // 🔥 IF IN PROFILE DASHBOARD → go back to main view
+  if (profileView && profileView !== 'main') {
+    navigateProfileView('main');
+    return;
+  }
 
+  // 🔥 OTHERWISE → use panel history
   if (panelHistory.length <= 1) {
     // nothing to go back to
     panelHistory = [];
